@@ -4,6 +4,9 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JToggleButton;
@@ -45,7 +48,6 @@ public class MyButton extends JToggleButton {
 	 */
 	
 	private KeyboardPiano kp;
-	private String text = null;
 	private String imageName = null; //default is U & N
 	private String imageUpPath = null;
 	private String imageDownPath = null;
@@ -64,12 +66,12 @@ public class MyButton extends JToggleButton {
         setContentAreaFilled(false);
         
 		this.kp = kp;
-		this.text = text;
 		setImage(name);
         this.setHorizontalTextPosition(SwingConstants.CENTER); //Text displays on center
         this.setBorderPainted(false); //do NOT paint the border of the button
 //		this.setPreferredSize(new Dimension(WIDTH, HEIGHT)); //the size of button(most of the case)
-        this.setPreferredSize(new Dimension(100, 100));
+
+        this.addMouseListener(new MouseMonitor(this));
 	}
 	
 	public void setImage(String name) { //UpName
@@ -203,4 +205,29 @@ public class MyButton extends JToggleButton {
 		return kp.getPicPath(upImageName);
 	}
 
+	private class MouseMonitor extends MouseAdapter {
+		
+		JToggleButton button = null;
+		
+		MouseMonitor(JToggleButton button) {
+			this.button = button;
+		}
+		
+		@Override
+		public void mousePressed(MouseEvent e) {
+			button.setSelected(true);
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			button.setSelected(false);
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) { 
+			button.setSelected(false);
+		}
+		
+	}
+	
 }
