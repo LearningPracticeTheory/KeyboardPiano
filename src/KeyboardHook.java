@@ -15,7 +15,6 @@ public class KeyboardHook implements Runnable {
 	KeyboardPiano kp;
 	private HHOOK hhk = null;
 	private LowLevelKeyboardProc keyboardProc = new KeyboardProc();
-	private int type = 0;
 	
 	private static final int FLAG_ENTER_DOWN = 0;
 	private static final int FLAG_ENTER_UP = FLAG_ENTER_DOWN + 128;
@@ -31,15 +30,14 @@ public class KeyboardHook implements Runnable {
 
 	private class KeyboardProc implements LowLevelKeyboardProc {
 
-		private int key = 0;
 		private int flags = 0;
 		
 		@Override
 		public LRESULT callback(int code, WPARAM wParam, KBDLLHOOKSTRUCT event) {
 			if(code >= 0) {
-				key = event.vkCode;
-				type = Integer.parseInt(wParam.toString());
-				System.out.println(type);
+				int key = event.vkCode;
+				int type = Integer.parseInt(wParam.toString());
+System.out.println(type);
 				flags = event.flags;
 				switchKey(key, type);
 				return new LRESULT(1); //KIA all keys
@@ -362,7 +360,7 @@ public class KeyboardHook implements Runnable {
 				select(kp.tglbtnFn, type);
 				break;
 			case KeyboardPiano.VK_ENTER : //two case
-				System.out.println(flags);
+//System.out.println(flags);
 				if(flags == FLAG_ENTER_UP) {
 					kp.tglbtnEnter.setSelected(false);	
 				} else if(flags == FLAG_NUMPADENTER_UP) {
@@ -375,11 +373,19 @@ public class KeyboardHook implements Runnable {
 				}
 				break;
 			case KeyboardPiano.VK_ALT_LEFT :
+//System.out.println(flags);
 				if(type == ALT_UP) {
 					kp.tglbtnAltleft.setSelected(false);
 				} else if(type == ALT_DOWN) {
 					kp.tglbtnAltleft.setSelected(true);
 				}
+				/*
+				if(flags == 32) {
+					kp.tglbtnAltleft.setSelected(true);
+				} else if(flags == 128) {
+					kp.tglbtnAltleft.setSelected(false);
+				}
+				*/
 //System.out.println("ALT_LEFT");
 				break;
 			case KeyboardPiano.VK_ALT_RIGHT :
@@ -397,6 +403,9 @@ public class KeyboardHook implements Runnable {
 			if(type == KeyboardPiano.BUTTON_UP) {
 				jtb.setSelected(false);
 			} else if(type == KeyboardPiano.BUTTON_DOWN) {
+				if(jtb.isSelected()) {
+					return;
+				}
 				jtb.setSelected(true);
 			}
 		}
@@ -405,10 +414,12 @@ public class KeyboardHook implements Runnable {
 
 	@Override
 	public void run() {
+		
 		HMODULE hMod = Kernel32.INSTANCE.GetModuleHandle(null);
 		hhk = User32.INSTANCE.SetWindowsHookEx(User32.WH_KEYBOARD_LL, keyboardProc, hMod, 0);
 		WinUser.MSG msg = new WinUser.MSG();
 		while ((User32.INSTANCE.GetMessage(msg, null, 0, 0)) != 0) { }
+		
 	}
 
 }
