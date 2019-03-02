@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.GroupLayout;
@@ -8,16 +9,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.FormSpecs;
-import com.jgoodies.forms.layout.RowSpec;
-
 public class KeyboardPiano {
 
 	private JFrame frmKeyboardpiano;
 	private JTextField textField;
 	private JTextField textField_1;
+	private Color backGround = new Color(230, 231, 235);
 
 	/**
 	 * Launch the application.
@@ -49,16 +46,19 @@ public class KeyboardPiano {
 		frmKeyboardpiano = new JFrame();
 		frmKeyboardpiano.setTitle("KeyboardPiano");
 //		frame.setBounds(100, 100, 1096, 756);
-		frmKeyboardpiano.setSize(1112, 782);
+		frmKeyboardpiano.setSize(1086, 782);
+		frmKeyboardpiano.setResizable(false);
 		frmKeyboardpiano.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmKeyboardpiano.setLocationRelativeTo(null);
 		frmKeyboardpiano.getContentPane().setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(backGround);
 		frmKeyboardpiano.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(73, 78, 83));
 		panel.add(panel_1, BorderLayout.NORTH);
 		
 		textField = new JTextField();
@@ -66,6 +66,7 @@ public class KeyboardPiano {
 		textField.setColumns(10);
 		
 		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(46, 48, 54));
 		panel.add(panel_2, BorderLayout.SOUTH);
 		
 		textField_1 = new JTextField();
@@ -73,17 +74,22 @@ public class KeyboardPiano {
 		textField_1.setColumns(10);
 		
 		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(backGround);
 		panel.add(panel_3, BorderLayout.CENTER);
 		
 		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(backGround);
 		
 		JPanel panel_7 = new JPanel();
+		panel_7.setBackground(backGround);
 		
 		JPanel panel_10 = new JPanel();
+		panel_10.setBackground(backGround);
 		
 		JToggleButton tglbtnNewToggleButton = new JToggleButton("New toggle button");
 		
 		JPanel panel_16 = new JPanel();
+		panel_16.setBackground(backGround);
 		
 		JToggleButton toggleButton_13 = new JToggleButton("New toggle button");
 		
@@ -94,6 +100,7 @@ public class KeyboardPiano {
 		JToggleButton toggleButton_16 = new JToggleButton("New toggle button");
 		
 		JPanel panel_17 = new JPanel();
+		panel_17.setBackground(backGround);
 		
 		JToggleButton toggleButton_17 = new JToggleButton("New toggle button");
 		
@@ -104,6 +111,7 @@ public class KeyboardPiano {
 		JToggleButton toggleButton_20 = new JToggleButton("New toggle button");
 		
 		JPanel panel_18 = new JPanel();
+		panel_18.setBackground(backGround);
 		
 		JToggleButton toggleButton_21 = new JToggleButton("New toggle button");
 		
@@ -174,6 +182,7 @@ public class KeyboardPiano {
 		panel_10.setLayout(gl_panel_10);
 		
 		JPanel panel_11 = new JPanel();
+		panel_11.setBackground(backGround);
 		
 		JToggleButton tglbtnNewToggleButton_1 = new JToggleButton("New toggle button");
 		
@@ -258,6 +267,7 @@ public class KeyboardPiano {
 		panel_11.setLayout(gl_panel_11);
 		
 		JPanel panel_12 = new JPanel();
+		panel_12.setBackground(backGround);
 		
 		JToggleButton toggleButton_25 = new JToggleButton("New toggle button");
 		
@@ -342,6 +352,7 @@ public class KeyboardPiano {
 		panel_12.setLayout(gl_panel_12);
 		
 		JPanel panel_13 = new JPanel();
+		panel_13.setBackground(backGround);
 		
 		JToggleButton toggleButton_39 = new JToggleButton("New toggle button");
 		
@@ -421,6 +432,7 @@ public class KeyboardPiano {
 		panel_13.setLayout(gl_panel_13);
 		
 		JPanel panel_14 = new JPanel();
+		panel_14.setBackground(backGround);
 		
 		JToggleButton toggleButton_52 = new JToggleButton("New toggle button");
 		
@@ -495,6 +507,7 @@ public class KeyboardPiano {
 		panel_14.setLayout(gl_panel_14);
 		
 		JPanel panel_15 = new JPanel();
+		panel_15.setBackground(backGround);
 		
 		JToggleButton toggleButton_64 = new JToggleButton("New toggle button");
 		
@@ -549,23 +562,17 @@ public class KeyboardPiano {
 		panel_15.setLayout(gl_panel_15);
 		
 		JPanel panel_8 = new JPanel();
+		panel_8.setBackground(backGround);
 		
 		JPanel panel_9 = new JPanel();
+		panel_9.setBackground(backGround);
 		
 		JPanel panel_5 = new JPanel();
 		
 		JPanel panel_6 = new JPanel();
-		panel_3.setLayout(new FormLayout(new ColumnSpec[] {
-				FormSpecs.UNRELATED_GAP_COLSPEC,
-				ColumnSpec.decode("1062px"),},
-			new RowSpec[] {
-				RowSpec.decode("28px"),
-				RowSpec.decode("261px"),
-				FormSpecs.PARAGRAPH_GAP_ROWSPEC,
-				RowSpec.decode("120px"),
-				RowSpec.decode("242px"),}));
 		
 		JPanel panel_19 = new JPanel();
+		panel_19.setBackground(backGround);
 		
 		JToggleButton toggleButton_72 = new JToggleButton("New toggle button");
 		
@@ -595,6 +602,7 @@ public class KeyboardPiano {
 		panel_19.setLayout(gl_panel_19);
 		
 		JPanel panel_20 = new JPanel();
+		panel_20.setBackground(backGround);
 		
 		JToggleButton toggleButton_75 = new JToggleButton("New toggle button");
 		
@@ -624,6 +632,7 @@ public class KeyboardPiano {
 		panel_20.setLayout(gl_panel_20);
 		
 		JPanel panel_21 = new JPanel();
+		panel_21.setBackground(backGround);
 		
 		JToggleButton toggleButton_78 = new JToggleButton("New toggle button");
 		
@@ -653,6 +662,7 @@ public class KeyboardPiano {
 		panel_21.setLayout(gl_panel_21);
 		
 		JPanel panel_22 = new JPanel();
+		panel_22.setBackground(backGround);
 		GroupLayout gl_panel_22 = new GroupLayout(panel_22);
 		gl_panel_22.setHorizontalGroup(
 			gl_panel_22.createParallelGroup(Alignment.LEADING)
@@ -665,12 +675,15 @@ public class KeyboardPiano {
 		panel_22.setLayout(gl_panel_22);
 		
 		JPanel panel_23 = new JPanel();
+		panel_23.setBackground(backGround);
 		
 		JPanel panel_25 = new JPanel();
+		panel_25.setBackground(backGround);
 		
 		JToggleButton toggleButton_81 = new JToggleButton("New toggle button");
 		
 		JPanel panel_26 = new JPanel();
+		panel_26.setBackground(backGround);
 		GroupLayout gl_panel_23 = new GroupLayout(panel_23);
 		gl_panel_23.setHorizontalGroup(
 			gl_panel_23.createParallelGroup(Alignment.LEADING)
@@ -694,6 +707,7 @@ public class KeyboardPiano {
 		panel_23.setLayout(gl_panel_23);
 		
 		JPanel panel_24 = new JPanel();
+		panel_24.setBackground(backGround);
 		
 		JToggleButton toggleButton_82 = new JToggleButton("New toggle button");
 		
@@ -721,121 +735,61 @@ public class KeyboardPiano {
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_24.setLayout(gl_panel_24);
-		panel_7.setLayout(new FormLayout(new ColumnSpec[] {
-				ColumnSpec.decode("686px"),},
-			new RowSpec[] {
-				RowSpec.decode("40px"),
-				FormSpecs.RELATED_GAP_ROWSPEC,
-				RowSpec.decode("39px"),
-				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
-				RowSpec.decode("40px"),
-				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
-				RowSpec.decode("39px"),
-				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
-				RowSpec.decode("40px"),
-				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
-				RowSpec.decode("39px"),}));
-		panel_7.add(panel_10, "1, 1, fill, fill");
-		panel_7.add(panel_11, "1, 3, fill, fill");
-		panel_7.add(panel_12, "1, 5, fill, fill");
-		panel_7.add(panel_13, "1, 7, fill, fill");
-		panel_7.add(panel_14, "1, 9, fill, fill");
-		panel_7.add(panel_15, "1, 11, fill, fill");
-		panel_4.setLayout(new FormLayout(new ColumnSpec[] {
-				ColumnSpec.decode("686px"),
-				ColumnSpec.decode("24px"),
-				ColumnSpec.decode("134px"),
-				ColumnSpec.decode("24px"),
-				ColumnSpec.decode("183px"),},
-			new RowSpec[] {
-				RowSpec.decode("261px"),}));
-		panel_4.add(panel_7, "1, 1, left, fill");
-		panel_4.add(panel_8, "3, 1, left, top");
-		panel_8.setLayout(new FormLayout(new ColumnSpec[] {
-				ColumnSpec.decode("134px"),},
-			new RowSpec[] {
-				RowSpec.decode("40px"),
-				FormSpecs.RELATED_GAP_ROWSPEC,
-				RowSpec.decode("39px"),
-				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
-				RowSpec.decode("40px"),
-				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
-				RowSpec.decode("39px"),
-				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
-				RowSpec.decode("40px"),
-				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
-				RowSpec.decode("39px"),}));
-		panel_8.add(panel_19, "1, 1, fill, fill");
-		panel_8.add(panel_20, "1, 3, fill, fill");
-		panel_8.add(panel_21, "1, 5, fill, fill");
-		panel_8.add(panel_22, "1, 7, fill, top");
-		panel_8.add(panel_23, "1, 9, fill, fill");
-		panel_8.add(panel_24, "1, 11, fill, fill");
-		panel_4.add(panel_9, "5, 1, fill, fill");
-		panel_9.setLayout(new FormLayout(new ColumnSpec[] {
-				ColumnSpec.decode("134px:grow"),
-				ColumnSpec.decode("4px"),
-				ColumnSpec.decode("43px:grow"),},
-			new RowSpec[] {
-				RowSpec.decode("39px:grow"),
-				RowSpec.decode("6px"),
-				RowSpec.decode("39px:grow"),
-				RowSpec.decode("2px"),
-				RowSpec.decode("82px:grow"),
-				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
-				RowSpec.decode("82px:grow"),}));
+		GroupLayout gl_panel_7 = new GroupLayout(panel_7);
+		gl_panel_7.setHorizontalGroup(
+			gl_panel_7.createParallelGroup(Alignment.LEADING)
+				.addComponent(panel_10, GroupLayout.PREFERRED_SIZE, 686, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_11, GroupLayout.PREFERRED_SIZE, 686, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_12, GroupLayout.PREFERRED_SIZE, 686, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_13, GroupLayout.PREFERRED_SIZE, 686, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_14, GroupLayout.PREFERRED_SIZE, 686, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_15, GroupLayout.PREFERRED_SIZE, 686, GroupLayout.PREFERRED_SIZE)
+		);
+		gl_panel_7.setVerticalGroup(
+			gl_panel_7.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_7.createSequentialGroup()
+					.addComponent(panel_10, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addGap(7)
+					.addComponent(panel_11, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_12, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_13, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_14, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_15, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+		);
+		panel_7.setLayout(gl_panel_7);
 		
 		JPanel panel_27 = new JPanel();
-		panel_9.add(panel_27, "1, 1, fill, fill");
-		
-		JToggleButton toggleButton_85 = new JToggleButton("New toggle button");
-		
-		JToggleButton toggleButton_86 = new JToggleButton("New toggle button");
-		
-		JToggleButton toggleButton_87 = new JToggleButton("New toggle button");
+		panel_27.setBackground(backGround);
 		GroupLayout gl_panel_27 = new GroupLayout(panel_27);
 		gl_panel_27.setHorizontalGroup(
 			gl_panel_27.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_27.createSequentialGroup()
-					.addComponent(toggleButton_85, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-					.addGap(4)
-					.addComponent(toggleButton_86, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-					.addGap(4)
-					.addComponent(toggleButton_87, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(1, Short.MAX_VALUE))
+				.addGap(0, 135, Short.MAX_VALUE)
 		);
 		gl_panel_27.setVerticalGroup(
 			gl_panel_27.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_27.createSequentialGroup()
-					.addGroup(gl_panel_27.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_85, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_86, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_87, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(1, Short.MAX_VALUE))
+				.addGap(0, 41, Short.MAX_VALUE)
 		);
 		panel_27.setLayout(gl_panel_27);
 		
 		JPanel panel_28 = new JPanel();
-		panel_9.add(panel_28, "3, 1, fill, fill");
-		
-		JToggleButton toggleButton_103 = new JToggleButton("New toggle button");
+		panel_28.setBackground(backGround);
 		GroupLayout gl_panel_28 = new GroupLayout(panel_28);
 		gl_panel_28.setHorizontalGroup(
 			gl_panel_28.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_28.createSequentialGroup()
-					.addComponent(toggleButton_103, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(1, Short.MAX_VALUE))
+				.addGap(0, 44, Short.MAX_VALUE)
 		);
 		gl_panel_28.setVerticalGroup(
 			gl_panel_28.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_28.createSequentialGroup()
-					.addComponent(toggleButton_103, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(1, Short.MAX_VALUE))
+				.addGap(0, 41, Short.MAX_VALUE)
 		);
 		panel_28.setLayout(gl_panel_28);
 		
 		JPanel panel_29 = new JPanel();
-		panel_9.add(panel_29, "1, 3, fill, fill");
+		panel_29.setBackground(backGround);
 		
 		JToggleButton toggleButton_88 = new JToggleButton("New toggle button");
 		
@@ -865,7 +819,7 @@ public class KeyboardPiano {
 		panel_29.setLayout(gl_panel_29);
 		
 		JPanel panel_30 = new JPanel();
-		panel_9.add(panel_30, "3, 3, fill, fill");
+		panel_30.setBackground(backGround);
 		
 		JToggleButton toggleButton_104 = new JToggleButton("New toggle button");
 		GroupLayout gl_panel_30 = new GroupLayout(panel_30);
@@ -884,16 +838,10 @@ public class KeyboardPiano {
 		panel_30.setLayout(gl_panel_30);
 		
 		JPanel panel_31 = new JPanel();
-		panel_9.add(panel_31, "1, 5, fill, fill");
-		panel_31.setLayout(new FormLayout(new ColumnSpec[] {
-				ColumnSpec.decode("134px:grow"),},
-			new RowSpec[] {
-				RowSpec.decode("39px:grow"),
-				FormSpecs.LABEL_COMPONENT_GAP_ROWSPEC,
-				RowSpec.decode("39px:grow"),}));
+		panel_31.setBackground(backGround);
 		
 		JPanel panel_38 = new JPanel();
-		panel_31.add(panel_38, "1, 1, fill, fill");
+		panel_38.setBackground(backGround);
 		
 		JToggleButton toggleButton_91 = new JToggleButton("New toggle button");
 		
@@ -923,7 +871,7 @@ public class KeyboardPiano {
 		panel_38.setLayout(gl_panel_38);
 		
 		JPanel panel_37 = new JPanel();
-		panel_31.add(panel_37, "1, 3, fill, fill");
+		panel_37.setBackground(backGround);
 		
 		JToggleButton toggleButton_94 = new JToggleButton("New toggle button");
 		
@@ -951,9 +899,23 @@ public class KeyboardPiano {
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_37.setLayout(gl_panel_37);
+		GroupLayout gl_panel_31 = new GroupLayout(panel_31);
+		gl_panel_31.setHorizontalGroup(
+			gl_panel_31.createParallelGroup(Alignment.LEADING)
+				.addComponent(panel_38, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_37, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+		);
+		gl_panel_31.setVerticalGroup(
+			gl_panel_31.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_31.createSequentialGroup()
+					.addComponent(panel_38, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_37, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+		);
+		panel_31.setLayout(gl_panel_31);
 		
 		JPanel panel_32 = new JPanel();
-		panel_9.add(panel_32, "3, 5, fill, fill");
+		panel_32.setBackground(backGround);
 		
 		JToggleButton toggleButton_105 = new JToggleButton("New toggle button");
 		GroupLayout gl_panel_32 = new GroupLayout(panel_32);
@@ -972,16 +934,10 @@ public class KeyboardPiano {
 		panel_32.setLayout(gl_panel_32);
 		
 		JPanel panel_33 = new JPanel();
-		panel_9.add(panel_33, "1, 7, fill, fill");
-		panel_33.setLayout(new FormLayout(new ColumnSpec[] {
-				ColumnSpec.decode("134px:grow"),},
-			new RowSpec[] {
-				RowSpec.decode("39px:grow"),
-				RowSpec.decode("4px"),
-				RowSpec.decode("39px:grow"),}));
+		panel_33.setBackground(backGround);
 		
 		JPanel panel_35 = new JPanel();
-		panel_33.add(panel_35, "1, 1, fill, fill");
+		panel_35.setBackground(backGround);
 		
 		JToggleButton toggleButton_97 = new JToggleButton("New toggle button");
 		
@@ -1011,7 +967,7 @@ public class KeyboardPiano {
 		panel_35.setLayout(gl_panel_35);
 		
 		JPanel panel_36 = new JPanel();
-		panel_33.add(panel_36, "1, 3, fill, fill");
+		panel_36.setBackground(backGround);
 		
 		JToggleButton toggleButton_100 = new JToggleButton("New toggle button");
 		
@@ -1039,9 +995,23 @@ public class KeyboardPiano {
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_36.setLayout(gl_panel_36);
+		GroupLayout gl_panel_33 = new GroupLayout(panel_33);
+		gl_panel_33.setHorizontalGroup(
+			gl_panel_33.createParallelGroup(Alignment.LEADING)
+				.addComponent(panel_35, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_36, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+		);
+		gl_panel_33.setVerticalGroup(
+			gl_panel_33.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_33.createSequentialGroup()
+					.addComponent(panel_35, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_36, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
+		);
+		panel_33.setLayout(gl_panel_33);
 		
 		JPanel panel_34 = new JPanel();
-		panel_9.add(panel_34, "3, 7, fill, fill");
+		panel_34.setBackground(backGround);
 		
 		JToggleButton toggleButton_106 = new JToggleButton("New toggle button");
 		GroupLayout gl_panel_34 = new GroupLayout(panel_34);
@@ -1058,9 +1028,109 @@ public class KeyboardPiano {
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_34.setLayout(gl_panel_34);
-		panel_3.add(panel_4, "2, 2, left, top");
-		panel_3.add(panel_5, "2, 4, fill, fill");
-		panel_3.add(panel_6, "2, 5, fill, fill");
+		GroupLayout gl_panel_4 = new GroupLayout(panel_4);
+		gl_panel_4.setHorizontalGroup(
+			gl_panel_4.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_4.createSequentialGroup()
+					.addComponent(panel_7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(24)
+					.addComponent(panel_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(24)
+					.addComponent(panel_9, GroupLayout.PREFERRED_SIZE, 183, GroupLayout.PREFERRED_SIZE))
+		);
+		gl_panel_4.setVerticalGroup(
+			gl_panel_4.createParallelGroup(Alignment.LEADING)
+				.addComponent(panel_7, GroupLayout.PREFERRED_SIZE, 261, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_9, GroupLayout.PREFERRED_SIZE, 261, GroupLayout.PREFERRED_SIZE)
+		);
+		GroupLayout gl_panel_9 = new GroupLayout(panel_9);
+		gl_panel_9.setHorizontalGroup(
+			gl_panel_9.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_9.createSequentialGroup()
+					.addComponent(panel_27, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_28, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE))
+				.addGroup(gl_panel_9.createSequentialGroup()
+					.addComponent(panel_29, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_30, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE))
+				.addGroup(gl_panel_9.createSequentialGroup()
+					.addComponent(panel_31, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_32, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE))
+				.addGroup(gl_panel_9.createSequentialGroup()
+					.addComponent(panel_33, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_34, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE))
+		);
+		gl_panel_9.setVerticalGroup(
+			gl_panel_9.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_9.createSequentialGroup()
+					.addGroup(gl_panel_9.createParallelGroup(Alignment.LEADING)
+						.addComponent(panel_27, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel_28, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
+					.addGap(6)
+					.addGroup(gl_panel_9.createParallelGroup(Alignment.LEADING)
+						.addComponent(panel_29, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel_30, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
+					.addGap(2)
+					.addGroup(gl_panel_9.createParallelGroup(Alignment.LEADING)
+						.addComponent(panel_31, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel_32, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE))
+					.addGap(4)
+					.addGroup(gl_panel_9.createParallelGroup(Alignment.LEADING)
+						.addComponent(panel_33, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel_34, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)))
+		);
+		panel_9.setLayout(gl_panel_9);
+		GroupLayout gl_panel_8 = new GroupLayout(panel_8);
+		gl_panel_8.setHorizontalGroup(
+			gl_panel_8.createParallelGroup(Alignment.LEADING)
+				.addComponent(panel_19, GroupLayout.PREFERRED_SIZE, 134, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_20, GroupLayout.PREFERRED_SIZE, 134, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_21, GroupLayout.PREFERRED_SIZE, 134, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_22, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_23, GroupLayout.PREFERRED_SIZE, 134, GroupLayout.PREFERRED_SIZE)
+				.addComponent(panel_24, GroupLayout.PREFERRED_SIZE, 134, GroupLayout.PREFERRED_SIZE)
+		);
+		gl_panel_8.setVerticalGroup(
+			gl_panel_8.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_8.createSequentialGroup()
+					.addComponent(panel_19, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addGap(7)
+					.addComponent(panel_20, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_21, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_22, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_23, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addGap(4)
+					.addComponent(panel_24, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+		);
+		panel_8.setLayout(gl_panel_8);
+		panel_4.setLayout(gl_panel_4);
+		GroupLayout gl_panel_3 = new GroupLayout(panel_3);
+		gl_panel_3.setHorizontalGroup(
+			gl_panel_3.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_3.createSequentialGroup()
+					.addGap(14)
+					.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
+						.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 1050, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel_5, GroupLayout.PREFERRED_SIZE, 1050, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel_6, GroupLayout.PREFERRED_SIZE, 1050, GroupLayout.PREFERRED_SIZE)))
+		);
+		gl_panel_3.setVerticalGroup(
+			gl_panel_3.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_3.createSequentialGroup()
+					.addGap(28)
+					.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(16)
+					.addComponent(panel_5, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
+					.addComponent(panel_6, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE))
+		);
+		panel_3.setLayout(gl_panel_3);
 		
 	}
 }
