@@ -248,7 +248,8 @@ public class KeyboardPiano {
 	public static final int VK_NUMPAD_PLUS = 107;
 	//public static final int VK_NUMPAD_ENTER 13; //VK_ENTER == VK_NUMPAD_ENTER == 13;
 
-	
+	public static final int BUTTON_UP = 257; //0x0101
+	public static final int BUTTON_DOWN = 256; //0x0100
 	
 	/**
 	 * Launch the application.
