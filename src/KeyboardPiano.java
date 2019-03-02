@@ -55,8 +55,8 @@ public class KeyboardPiano {
 	 JToggleButton tglbtnI = new MyButton(this, "I", "SLWUA1_3");
 	 JToggleButton tglbtnO = new MyButton(this, "O", "SLWUA2_3");
 	 JToggleButton tglbtnP = new MyButton(this, "P", "XLWUA4_3");
-	 JToggleButton tglbtnClosebracket = new MyButton(this, "CloseBracket", "SLWUA4_3"); //[  
-	 JToggleButton tglbtnOpenbracket = new MyButton(this, "OpenBracket", "SLWUA5_3"); //]
+	 JToggleButton tglbtnClosebracket = new MyButton(this, "CloseBracket", "SLWUA5_3"); //[  
+	 JToggleButton tglbtnOpenbracket = new MyButton(this, "OpenBracket", "SLWUA4_3"); //]
 	 JToggleButton tglbtnBackslash = new MyButton(this, "BackSlash", "SLWUB6_3"); //\
 	
 	 JToggleButton tglbtnCaps = new MyButton(this, "Caps", "NNRNC_Caps");
@@ -73,7 +73,7 @@ public class KeyboardPiano {
 	 JToggleButton tglbtnQuote = new MyButton(this, "Quote", "SLWUA4_4"); //'
 	 JToggleButton tglbtnEnter = new MyButton(this, "Enter", "NNRNC_Enter");
 	
-	 JToggleButton tglbtnShiftleft = new MyButton(this, "ShiftLeft", "NNRND_Shift");
+	 JToggleButton tglbtnShiftleft = new MyButton(this, "ShiftLeft", "XLWUD1_6");
 	 JToggleButton tglbtnZ = new MyButton(this, "Z", "SLWUA1_6");
 	 JToggleButton tglbtnX = new MyButton(this, "X", "SLWUA2_6");
 	 JToggleButton tglbtnC = new MyButton(this, "C", "XLWUA4_6");
@@ -128,7 +128,7 @@ public class KeyboardPiano {
 	 JToggleButton tglbtnNumpad_2 = new MyButton(this, "NumPad_2", "SRLUA2_4");
 	 JToggleButton tglbtnNumpad_3 = new MyButton(this, "NumPad_3", "XRLUA4_4");
 	 JToggleButton tglbtnNumpad_0 = new MyButton(this, "NumPad_0", "SRLUC5_5");
-	 JToggleButton tglbtnNumpaddecimal = new MyButton(this, "NumPadDecimal", "SRLUC5_5");
+	 JToggleButton tglbtnNumpaddecimal = new MyButton(this, "NumPadDecimal", "SRLUA5_5");
 	 JToggleButton tglbtnNumpadplus = new MyButton(this, "NumPadPlus", "XRLUF4_3");
 	 JToggleButton tglbtnNumpadenter = new MyButton(this, "NumPadEnter", "XRLUF1_4");
 	

@@ -68,17 +68,20 @@ public class MyButton extends JToggleButton {
 		setImage(name);
         this.setHorizontalTextPosition(SwingConstants.CENTER); //Text displays on center
         this.setBorderPainted(false); //do NOT paint the border of the button
-		this.setPreferredSize(new Dimension(WIDTH, HEIGHT)); //the size of button(most of the case)
+//		this.setPreferredSize(new Dimension(WIDTH, HEIGHT)); //the size of button(most of the case)
+        this.setPreferredSize(new Dimension(100, 100));
 	}
 	
 	public void setImage(String name) { //UpName
 		imageName = name;
-		imageUpPath = getImageUpPath(name);
+		imageUpPath = getPath(name);
 		imageUp = new ImageIcon(imageUpPath);
+		/*
 		if(imageName.indexOf(DIRECTION_INDEX) == N) {
 			return; //imageDownPath & wavPath & imageDownIcon == null;
 		}
-		imageDownPath = getImageDownPath(getImageDownName(name));
+		*/
+		imageDownPath = getPath(getImageDownName(name));
 		wavPath = getWavPath(name);
 		imageDown = new ImageIcon(imageDownPath);
 //System.out.println(imageUpName + " " + imageUpPath);
@@ -88,9 +91,7 @@ public class MyButton extends JToggleButton {
 	
 	private void graphicsImageSet(Graphics2D g2d, int type, int widthMinus, int heightMinus) {
 		imageUp.setImage(imageUp.getImage().getScaledInstance(type-widthMinus, HEIGHT-heightMinus, Image.SCALE_DEFAULT));
-        if(imageDown != null) {
-        	imageDown.setImage(imageDown.getImage().getScaledInstance(type-widthMinus, HEIGHT-heightMinus, Image.SCALE_DEFAULT));
-        }
+    	imageDown.setImage(imageDown.getImage().getScaledInstance(type-widthMinus, HEIGHT-heightMinus, Image.SCALE_DEFAULT));
         g2d.fillRoundRect(0, 0, type, HEIGHT, ARC_WIDTH, ARC_HEIGHT); //make Rectangle more beautiful
 	}
 	
@@ -107,16 +108,14 @@ public class MyButton extends JToggleButton {
 			graphicsImageSet(g2d, C_TYPE, 4, 2);
 			break;
 		case D :
-			graphicsImageSet(g2d, D_TYPE, 5, 2);
+			graphicsImageSet(g2d, D_TYPE, 3, 2);
 			break;
 		case E :
-			graphicsImageSet(g2d, E_TYPE, 20, 2);
+			graphicsImageSet(g2d, E_TYPE, 6, 2);
 			break;
 		case F :
 			imageUp.setImage(imageUp.getImage().getScaledInstance(WIDTH-2, SPECIAL_HEIGHT-2, Image.SCALE_DEFAULT));
-	        if(imageDown != null) {
-	        	imageDown.setImage(imageDown.getImage().getScaledInstance(WIDTH-2, SPECIAL_HEIGHT-2, Image.SCALE_DEFAULT));
-	        }
+        	imageDown.setImage(imageDown.getImage().getScaledInstance(WIDTH-2, SPECIAL_HEIGHT-2, Image.SCALE_DEFAULT));
 	        g2d.fillRoundRect(0, 0, WIDTH, SPECIAL_HEIGHT, ARC_WIDTH, ARC_HEIGHT);
 			break;
 		}
@@ -135,9 +134,11 @@ public class MyButton extends JToggleButton {
         switchCase(g2d, imageName.charAt(TYPE_INDEX));
         
 		if(this.isSelected()) {
+			/*
 			if(imageDown == null) { //the NO Direction case which is Brown
 				return;
 			}
+			*/
 			g2d.drawImage(imageDown.getImage(), 1, 1, null);
 			/*
 			 * play music once
@@ -160,7 +161,7 @@ public class MyButton extends JToggleButton {
 	}
 	
 	private String getWavName(String name) {
-		if(name.indexOf(DIRECTION_INDEX) == N) {
+		if(name.charAt(DIRECTION_INDEX) == N) {
 			return null;
 		}
 		String tmp = String.valueOf(name.charAt(SHARP_INDEX));
@@ -169,23 +170,16 @@ public class MyButton extends JToggleButton {
 		return tmp;
 	}
 
-	private String getImageDownPath(String downImageName) {
-		if(downImageName == null) {
-			return null;
-		}
-		return kp.getPicPath(downImageName);
-	}
-
 	private String getImageDownName(String name) {
+		if(name.charAt(DIRECTION_INDEX) == N) {
+			return name;
+		}
 		return replaceColorDirection(name);
 	}
 	
 	private String replaceColorDirection(String name) {
 //		String thatCD = getColorDirection(name); //that
 //		String thisCD = kp.getDownColorDirection(thatCD);
-		if(name.indexOf(DIRECTION_INDEX) == N) {
-			return null;
-		}
 		String thisCD = kp.getDownColorDirection(getColorDirection(name));
 		String tmp = name.substring(0, COLOR_INDEX); //[0, color)
 		tmp += thisCD;
@@ -200,7 +194,12 @@ public class MyButton extends JToggleButton {
 		return name.substring(COLOR_INDEX, DIRECTION_INDEX+1);
 	}
 
-	private String getImageUpPath(String upImageName) {
+	private String getPath(String upImageName) {
+		
+		if(upImageName.equals("NNRNC_Enter")) {
+			System.out.println(kp.getPicPath(upImageName));
+		}
+		
 		return kp.getPicPath(upImageName);
 	}
 
