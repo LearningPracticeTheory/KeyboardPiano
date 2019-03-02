@@ -37,7 +37,9 @@ public class KeyboardHook implements Runnable {
 			if(code >= 0) {
 				int key = event.vkCode;
 				int type = Integer.parseInt(wParam.toString());
-System.out.println(type);
+//System.out.println(type);
+//System.out.println(event);
+				System.out.println(wParam);
 				flags = event.flags;
 				switchKey(key, type);
 				return new LRESULT(1); //KIA all keys
@@ -362,14 +364,14 @@ System.out.println(type);
 			case KeyboardPiano.VK_ENTER : //two case
 //System.out.println(flags);
 				if(flags == FLAG_ENTER_UP) {
-					kp.tglbtnEnter.setSelected(false);	
+					kp.tglbtnEnter.setSelected(false);
 				} else if(flags == FLAG_NUMPADENTER_UP) {
 					kp.tglbtnNumpadenter.setSelected(false);
 				} 
 				if(flags == FLAG_ENTER_DOWN) {
-					kp.tglbtnEnter.setSelected(true);	
+					buttonSelected(kp.tglbtnEnter);
 				} else if(flags == FLAG_NUMPADENTER_DOWN) {
-					kp.tglbtnNumpadenter.setSelected(true);
+					buttonSelected(kp.tglbtnNumpadenter);
 				}
 				break;
 			case KeyboardPiano.VK_ALT_LEFT :
@@ -377,7 +379,7 @@ System.out.println(type);
 				if(type == ALT_UP) {
 					kp.tglbtnAltleft.setSelected(false);
 				} else if(type == ALT_DOWN) {
-					kp.tglbtnAltleft.setSelected(true);
+					buttonSelected(kp.tglbtnAltleft);
 				}
 				/*
 				if(flags == 32) {
@@ -392,21 +394,25 @@ System.out.println(type);
 				if(type == ALT_UP) {
 					kp.tglbtnAltright.setSelected(false);
 				} else if(type == ALT_DOWN) {
-					kp.tglbtnAltright.setSelected(true);
+					buttonSelected(kp.tglbtnAltright);
 				}
 //System.out.println("ALT_RIGHT");
 				break;
 			}
 		}
 
- 		public void select(JToggleButton jtb, int type) {
+ 		private void buttonSelected(JToggleButton button) {
+ 			if(button.isSelected()) {
+ 				return;
+ 			}
+ 			button.setSelected(true);
+		}
+
+		public void select(JToggleButton jtb, int type) {
 			if(type == KeyboardPiano.BUTTON_UP) {
 				jtb.setSelected(false);
 			} else if(type == KeyboardPiano.BUTTON_DOWN) {
-				if(jtb.isSelected()) {
-					return;
-				}
-				jtb.setSelected(true);
+				buttonSelected(jtb);
 			}
 		}
 		
