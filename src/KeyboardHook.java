@@ -16,10 +16,10 @@ public class KeyboardHook implements Runnable {
 	private HHOOK hhk = null;
 	private LowLevelKeyboardProc keyboardProc = new KeyboardProc();
 	
-	private static final int FLAG_ENTER_DOWN = 0;
-	private static final int FLAG_ENTER_UP = FLAG_ENTER_DOWN + 128;
-	private static final int FLAG_NUMPADENTER_DOWN = 1;
-	private static final int FLAG_NUMPADENTER_UP = FLAG_NUMPADENTER_DOWN + 128;
+	private static final int FLAG_DOWN = 1;
+	private static final int FLAG_UP = FLAG_DOWN + 128;
+	private static final int FLAG_NUMPAD__DOWN = 0;
+	private static final int FLAG_NUMPAD__UP = FLAG_NUMPAD__DOWN + 128;
 	
 	public KeyboardHook(KeyboardPiano kp) {
 		this.kp = kp;
@@ -272,38 +272,6 @@ public class KeyboardHook implements Runnable {
 				select(kp.tglbtnPause, type);
 				break;
 				
-			case KeyboardPiano.VK_INSERT :
-				select(kp.tglbtnIns, type);
-				break;
-			case KeyboardPiano.VK_HOME :
-				select(kp.tglbtnHome, type);
-				break;
-			case KeyboardPiano.VK_PAGE_UP :
-				select(kp.tglbtnPgup, type);
-				break;
-			case KeyboardPiano.VK_DELETE :
-				select(kp.tglbtnDel, type);
-				break;
-			case KeyboardPiano.VK_END :
-				select(kp.tglbtnEnd, type);
-				break;
-			case KeyboardPiano.VK_PAGE_DOWN :
-				select(kp.tglbtnPgdn, type);
-				break;
-				
-			case KeyboardPiano.VK_UP :
-				select(kp.tglbtnUp, type);
-				break;
-			case KeyboardPiano.VK_LEFT :
-				select(kp.tglbtnLeft, type);
-				break;
-			case KeyboardPiano.VK_DOWN :
-				select(kp.tglbtnDown, type);
-				break;
-			case KeyboardPiano.VK_RIGHT :
-				select(kp.tglbtnRight, type);
-				break;
-				
 			case KeyboardPiano.VK_NUM_LOCK :
 				select(kp.tglbtnNum, type);
 				break;
@@ -329,6 +297,7 @@ public class KeyboardHook implements Runnable {
 				select(kp.tglbtnNumpad_4, type);
 				break;
 			case KeyboardPiano.VK_NUMPAD_5 :
+			case KeyboardPiano.VK_NUMPAD_5_FLAG:
 				select(kp.tglbtnNumpad_5, type);
 				break;
 			case KeyboardPiano.VK_NUMPAD_6 :
@@ -395,19 +364,80 @@ public class KeyboardHook implements Runnable {
 				 */
 //System.out.println("ALT_RIGHT");
 				break;
+				
+			case KeyboardPiano.VK_INSERT :
+//				select(kp.tglbtnIns, type);
+				flagCase(kp.tglbtnIns, kp.tglbtnNumpad_0);
+				break;
+			case KeyboardPiano.VK_HOME :
+//				select(kp.tglbtnHome, type);
+				flagCase(kp.tglbtnHome, kp.tglbtnNumpad_7);
+				break;
+			case KeyboardPiano.VK_PAGE_UP :
+//				select(kp.tglbtnPgup, type);
+				flagCase(kp.tglbtnPgup, kp.tglbtnNumpad_9);
+				break;
+			case KeyboardPiano.VK_DELETE :
+//				select(kp.tglbtnDel, type);
+				flagCase(kp.tglbtnDel, kp.tglbtnNumpaddecimal);
+				break;
+			case KeyboardPiano.VK_END :
+//				select(kp.tglbtnEnd, type);
+				flagCase(kp.tglbtnEnd, kp.tglbtnNumpad_1);
+				break;
+			case KeyboardPiano.VK_PAGE_DOWN :
+//				select(kp.tglbtnPgdn, type);
+				flagCase(kp.tglbtnPgdn, kp.tglbtnNumpad_3);
+				break;
+				
+			case KeyboardPiano.VK_UP :
+//				select(kp.tglbtnUp, type);
+				flagCase(kp.tglbtnUp, kp.tglbtnNumpad_8);
+				break;
+			case KeyboardPiano.VK_LEFT :
+//				select(kp.tglbtnLeft, type);
+				flagCase(kp.tglbtnLeft, kp.tglbtnNumpad_4);
+				break;
+			case KeyboardPiano.VK_DOWN :
+//				select(kp.tglbtnDown, type);
+				flagCase(kp.tglbtnDown, kp.tglbtnNumpad_2);
+				break;
+			case KeyboardPiano.VK_RIGHT :
+//				select(kp.tglbtnRight, type);
+				flagCase(kp.tglbtnRight, kp.tglbtnNumpad_6);
+				break;
+			
 			case KeyboardPiano.VK_ENTER : //two case
 //System.out.println(flags);
-				if(flags == FLAG_ENTER_UP) {
+//				flagCase(kp.tglbtnEnter, kp.tglbtnNumpadenter);
+				/*
+				 * Enter & NumpadEnter is different from other flag cases
+				 */
+				if(flags == FLAG_NUMPAD__UP) {
 					kp.tglbtnEnter.setSelected(false);
-				} else if(flags == FLAG_NUMPADENTER_UP) {
+				} else if(flags == FLAG_UP) {
 					kp.tglbtnNumpadenter.setSelected(false);
 				} 
-				if(flags == FLAG_ENTER_DOWN) {
+				if(flags == FLAG_NUMPAD__DOWN) {
 					buttonSelected(kp.tglbtnEnter);
-				} else if(flags == FLAG_NUMPADENTER_DOWN) {
+				} else if(flags == FLAG_DOWN) {
 					buttonSelected(kp.tglbtnNumpadenter);
 				}
 				break;
+			}
+			
+		}
+		
+		private void flagCase(JToggleButton button, JToggleButton numpadButton) {
+			if(flags == FLAG_NUMPAD__UP) {
+				numpadButton.setSelected(false);
+			} else if(flags == FLAG_UP) {
+				button.setSelected(false);
+			} 
+			if(flags == FLAG_NUMPAD__DOWN) {
+				buttonSelected(numpadButton);
+			} else if(flags == FLAG_DOWN) {
+				buttonSelected(button);
 			}
 		}
 

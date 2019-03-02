@@ -239,6 +239,7 @@ public class KeyboardPiano {
 	public static final int VK_NUMPAD_9 = 105;
 	public static final int VK_NUMPAD_4 = 100;
 	public static final int VK_NUMPAD_5 = 101;
+	public static final int VK_NUMPAD_5_FLAG = 12; //0xc
 	public static final int VK_NUMPAD_6 = 102;
 	public static final int VK_NUMPAD_1 = 97;
 	public static final int VK_NUMPAD_2 = 98;
