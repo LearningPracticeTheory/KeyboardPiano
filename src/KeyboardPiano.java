@@ -15,7 +15,8 @@ public class KeyboardPiano {
 	private JTextField textField;
 	private JTextField textField_1;
 	private Color backGround = new Color(230, 231, 235);
-
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -86,97 +87,97 @@ public class KeyboardPiano {
 		JPanel panel_10 = new JPanel();
 		panel_10.setBackground(backGround);
 		
-		JToggleButton tglbtnNewToggleButton = new JToggleButton("New toggle button");
+		JToggleButton tglbtnEsc = new JToggleButton("Esc");
 		
 		JPanel panel_16 = new JPanel();
 		panel_16.setBackground(backGround);
 		
-		JToggleButton toggleButton_13 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnF_1 = new JToggleButton("F1");
 		
-		JToggleButton toggleButton_14 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnF_2 = new JToggleButton("F2");
 		
-		JToggleButton toggleButton_15 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnF_3 = new JToggleButton("F3");
 		
-		JToggleButton toggleButton_16 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnF_4 = new JToggleButton("F4");
 		
 		JPanel panel_17 = new JPanel();
 		panel_17.setBackground(backGround);
 		
-		JToggleButton toggleButton_17 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnF_8 = new JToggleButton("F8");
 		
-		JToggleButton toggleButton_18 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnF_7 = new JToggleButton("F7");
 		
-		JToggleButton toggleButton_19 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnF_6 = new JToggleButton("F6");
 		
-		JToggleButton toggleButton_20 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnF_5 = new JToggleButton("F5");
 		
 		JPanel panel_18 = new JPanel();
 		panel_18.setBackground(backGround);
 		
-		JToggleButton toggleButton_21 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnF_9 = new JToggleButton("F9");
 		
-		JToggleButton toggleButton_22 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnF_10 = new JToggleButton("F10");
 		
-		JToggleButton toggleButton_23 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnF_11 = new JToggleButton("F11");
 		
-		JToggleButton toggleButton_24 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnF_12 = new JToggleButton("F12");
 		GroupLayout gl_panel_10 = new GroupLayout(panel_10);
 		gl_panel_10.setHorizontalGroup(
 			gl_panel_10.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_10.createSequentialGroup()
-					.addComponent(tglbtnNewToggleButton, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnEsc, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
 					.addComponent(panel_16, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_13, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnF_1, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_14, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnF_2, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_15, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnF_3, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_16, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnF_4, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
 					.addComponent(panel_17, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_20, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnF_5, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_19, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnF_6, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_18, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnF_7, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_17, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnF_8, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
 					.addComponent(panel_18, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_21, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnF_9, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_22, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnF_10, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_23, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnF_11, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_24, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnF_12, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_10.setVerticalGroup(
 			gl_panel_10.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_10.createSequentialGroup()
 					.addGroup(gl_panel_10.createParallelGroup(Alignment.LEADING)
-						.addComponent(tglbtnNewToggleButton, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnEsc, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel_16, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_13, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_14, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_15, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_16, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnF_1, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnF_2, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnF_3, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnF_4, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel_17, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_20, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_19, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_18, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_17, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnF_5, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnF_6, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnF_7, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnF_8, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel_18, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_21, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_22, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_23, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_24, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnF_9, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnF_10, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnF_11, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnF_12, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_10.setLayout(gl_panel_10);
@@ -184,84 +185,84 @@ public class KeyboardPiano {
 		JPanel panel_11 = new JPanel();
 		panel_11.setBackground(backGround);
 		
-		JToggleButton tglbtnNewToggleButton_1 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnBackquote = new JToggleButton("BackQuote");
 		
-		JToggleButton toggleButton = new JToggleButton("New toggle button");
+		JToggleButton tglbtn_1 = new JToggleButton("1");
 		
-		JToggleButton toggleButton_1 = new JToggleButton("New toggle button");
+		JToggleButton tglbtn_2 = new JToggleButton("2");
 		
-		JToggleButton toggleButton_2 = new JToggleButton("New toggle button");
+		JToggleButton tglbtn_3 = new JToggleButton("3");
 		
-		JToggleButton toggleButton_3 = new JToggleButton("New toggle button");
+		JToggleButton tglbtn_6 = new JToggleButton("6");
 		
-		JToggleButton toggleButton_4 = new JToggleButton("New toggle button");
+		JToggleButton tglbtn_4 = new JToggleButton("4");
 		
-		JToggleButton toggleButton_5 = new JToggleButton("New toggle button");
+		JToggleButton tglbtn_5 = new JToggleButton("5");
 		
-		JToggleButton toggleButton_6 = new JToggleButton("New toggle button");
+		JToggleButton tglbtn_9 = new JToggleButton("9");
 		
-		JToggleButton toggleButton_7 = new JToggleButton("New toggle button");
+		JToggleButton tglbtn_7 = new JToggleButton("7");
 		
-		JToggleButton toggleButton_8 = new JToggleButton("New toggle button");
+		JToggleButton tglbtn_8 = new JToggleButton("8");
 		
-		JToggleButton toggleButton_9 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnEquals = new JToggleButton("Equals");
 		
-		JToggleButton toggleButton_10 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnMinus = new JToggleButton("Minus");
 		
-		JToggleButton toggleButton_11 = new JToggleButton("New toggle button");
+		JToggleButton tglbtn_0 = new JToggleButton("0");
 		
-		JToggleButton toggleButton_12 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnBackspace = new JToggleButton("BackSpace");
 		GroupLayout gl_panel_11 = new GroupLayout(panel_11);
 		gl_panel_11.setHorizontalGroup(
 			gl_panel_11.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_11.createSequentialGroup()
-					.addComponent(tglbtnNewToggleButton_1, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnBackquote, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtn_1, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_1, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtn_2, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_2, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtn_3, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_4, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtn_4, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_5, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtn_5, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_3, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtn_6, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_7, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtn_7, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_8, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtn_8, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_6, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtn_9, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_11, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtn_0, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_10, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnMinus, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_9, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnEquals, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_12, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnBackspace, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_11.setVerticalGroup(
 			gl_panel_11.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_11.createSequentialGroup()
 					.addGroup(gl_panel_11.createParallelGroup(Alignment.LEADING)
-						.addComponent(tglbtnNewToggleButton_1, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_1, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_2, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_4, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_5, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_3, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_7, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_8, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_6, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_11, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_10, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_9, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_12, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnBackquote, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtn_1, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtn_2, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtn_3, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtn_4, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtn_5, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtn_6, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtn_7, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtn_8, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtn_9, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtn_0, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnMinus, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnEquals, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnBackspace, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_11.setLayout(gl_panel_11);
@@ -269,84 +270,84 @@ public class KeyboardPiano {
 		JPanel panel_12 = new JPanel();
 		panel_12.setBackground(backGround);
 		
-		JToggleButton toggleButton_25 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnTab = new JToggleButton("Tab");
 		
-		JToggleButton toggleButton_26 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnQ = new JToggleButton("Q");
 		
-		JToggleButton toggleButton_27 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnW = new JToggleButton("W");
 		
-		JToggleButton toggleButton_28 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnE = new JToggleButton("E");
 		
-		JToggleButton toggleButton_29 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnT = new JToggleButton("T");
 		
-		JToggleButton toggleButton_30 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnR = new JToggleButton("R");
 		
-		JToggleButton toggleButton_31 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnY = new JToggleButton("Y");
 		
-		JToggleButton toggleButton_32 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnU = new JToggleButton("U");
 		
-		JToggleButton toggleButton_33 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnI = new JToggleButton("I");
 		
-		JToggleButton toggleButton_34 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnP = new JToggleButton("P");
 		
-		JToggleButton toggleButton_35 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnO = new JToggleButton("O");
 		
-		JToggleButton toggleButton_36 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnClosebracket = new JToggleButton("CloseBracket");
 		
-		JToggleButton toggleButton_37 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnOpenbracket = new JToggleButton("OpenBracket");
 		
-		JToggleButton toggleButton_38 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnBackslash = new JToggleButton("BackSlash");
 		GroupLayout gl_panel_12 = new GroupLayout(panel_12);
 		gl_panel_12.setHorizontalGroup(
 			gl_panel_12.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_12.createSequentialGroup()
-					.addComponent(toggleButton_25, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnTab, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_26, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnQ, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_27, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnW, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_28, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnE, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_30, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnR, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_29, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnT, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_31, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnY, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_32, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnU, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_33, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnI, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_35, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnO, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_34, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnP, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_37, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnOpenbracket, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_36, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnClosebracket, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_38, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnBackslash, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_12.setVerticalGroup(
 			gl_panel_12.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_12.createSequentialGroup()
 					.addGroup(gl_panel_12.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_25, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_26, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_27, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_28, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_30, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_29, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_31, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_32, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_33, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_35, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_34, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_37, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_36, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_38, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnTab, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnQ, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnW, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnE, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnR, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnT, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnY, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnU, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnI, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnO, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnP, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnOpenbracket, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnClosebracket, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnBackslash, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_12.setLayout(gl_panel_12);
@@ -354,79 +355,79 @@ public class KeyboardPiano {
 		JPanel panel_13 = new JPanel();
 		panel_13.setBackground(backGround);
 		
-		JToggleButton toggleButton_39 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnCaps = new JToggleButton("Caps");
 		
-		JToggleButton toggleButton_40 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnA = new JToggleButton("A");
 		
-		JToggleButton toggleButton_41 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnS = new JToggleButton("S");
 		
-		JToggleButton toggleButton_42 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnD = new JToggleButton("D");
 		
-		JToggleButton toggleButton_43 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnG = new JToggleButton("G");
 		
-		JToggleButton toggleButton_44 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnF = new JToggleButton("F");
 		
-		JToggleButton toggleButton_45 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnH = new JToggleButton("H");
 		
-		JToggleButton toggleButton_46 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnJ = new JToggleButton("J");
 		
-		JToggleButton toggleButton_47 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnK = new JToggleButton("K");
 		
-		JToggleButton toggleButton_48 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnSemicolon = new JToggleButton("Semicolon");
 		
-		JToggleButton toggleButton_49 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnL = new JToggleButton("L");
 		
-		JToggleButton toggleButton_50 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnQuote = new JToggleButton("Quote");
 		
-		JToggleButton toggleButton_51 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnEnter = new JToggleButton("Enter");
 		GroupLayout gl_panel_13 = new GroupLayout(panel_13);
 		gl_panel_13.setHorizontalGroup(
 			gl_panel_13.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_13.createSequentialGroup()
-					.addComponent(toggleButton_39, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnCaps, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_40, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnA, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_41, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnS, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_42, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnD, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_44, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnF, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_43, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnG, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_45, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnH, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_46, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnJ, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_47, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnK, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_49, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnL, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_48, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnSemicolon, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_50, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnQuote, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_51, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnEnter, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_13.setVerticalGroup(
 			gl_panel_13.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_13.createSequentialGroup()
 					.addGroup(gl_panel_13.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_39, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_40, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_41, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_42, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_44, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_43, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_45, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_46, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_47, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_49, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_48, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_50, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_51, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnCaps, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnA, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnS, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnD, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnF, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnG, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnH, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnJ, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnK, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnL, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnSemicolon, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnQuote, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnEnter, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panel_13.setLayout(gl_panel_13);
@@ -434,74 +435,74 @@ public class KeyboardPiano {
 		JPanel panel_14 = new JPanel();
 		panel_14.setBackground(backGround);
 		
-		JToggleButton toggleButton_52 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnShiftleft = new JToggleButton("ShiftLeft");
 		
-		JToggleButton toggleButton_53 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnZ = new JToggleButton("Z");
 		
-		JToggleButton toggleButton_54 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnX = new JToggleButton("X");
 		
-		JToggleButton toggleButton_55 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnC = new JToggleButton("C");
 		
-		JToggleButton toggleButton_56 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnB = new JToggleButton("B");
 		
-		JToggleButton toggleButton_57 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnV = new JToggleButton("V");
 		
-		JToggleButton toggleButton_58 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnN = new JToggleButton("N");
 		
-		JToggleButton toggleButton_59 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnM = new JToggleButton("M");
 		
-		JToggleButton toggleButton_60 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnComma = new JToggleButton("Comma");
 		
-		JToggleButton toggleButton_61 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnSlash = new JToggleButton("Slash");
 		
-		JToggleButton toggleButton_62 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnPeriod = new JToggleButton("Period");
 		
-		JToggleButton toggleButton_63 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnShiftright = new JToggleButton("ShiftRight");
 		GroupLayout gl_panel_14 = new GroupLayout(panel_14);
 		gl_panel_14.setHorizontalGroup(
 			gl_panel_14.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_14.createSequentialGroup()
-					.addComponent(toggleButton_52, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnShiftleft, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_53, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnZ, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_54, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnX, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_55, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnC, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_57, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnV, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_56, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnB, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_58, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnN, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_59, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnM, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_60, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnComma, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_62, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnPeriod, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_61, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnSlash, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_63, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnShiftright, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_14.setVerticalGroup(
 			gl_panel_14.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_14.createSequentialGroup()
 					.addGroup(gl_panel_14.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_52, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_53, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_54, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_55, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_57, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_56, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_58, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_59, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_60, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_62, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_61, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_63, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnShiftleft, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnZ, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnX, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnC, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnV, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnB, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnN, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnM, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnComma, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnPeriod, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnSlash, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnShiftright, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_14.setLayout(gl_panel_14);
@@ -509,54 +510,54 @@ public class KeyboardPiano {
 		JPanel panel_15 = new JPanel();
 		panel_15.setBackground(backGround);
 		
-		JToggleButton toggleButton_64 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnCtrlleft = new JToggleButton("CtrlLeft");
 		
-		JToggleButton toggleButton_65 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnWinleft = new JToggleButton("WinLeft");
 		
-		JToggleButton toggleButton_66 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnAltleft = new JToggleButton("AltLeft");
 		
-		JToggleButton toggleButton_67 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnSpace = new JToggleButton("Space");
 		
-		JToggleButton toggleButton_68 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnCtrlright = new JToggleButton("CtrlRight");
 		
-		JToggleButton toggleButton_69 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnFn = new JToggleButton("Fn");
 		
-		JToggleButton toggleButton_70 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnWinright = new JToggleButton("WinRight");
 		
-		JToggleButton toggleButton_71 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnAltright = new JToggleButton("AltRight");
 		GroupLayout gl_panel_15 = new GroupLayout(panel_15);
 		gl_panel_15.setHorizontalGroup(
 			gl_panel_15.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_15.createSequentialGroup()
-					.addComponent(toggleButton_64, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnCtrlleft, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_65, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnWinleft, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_66, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnAltleft, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_67, GroupLayout.PREFERRED_SIZE, 318, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnSpace, GroupLayout.PREFERRED_SIZE, 318, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_71, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnAltright, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_70, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnWinright, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_69, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnFn, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_68, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnCtrlright, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_15.setVerticalGroup(
 			gl_panel_15.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_15.createSequentialGroup()
 					.addGroup(gl_panel_15.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_64, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_65, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_66, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_67, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_71, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_70, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_69, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_68, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnCtrlleft, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnWinleft, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnAltleft, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnSpace, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnAltright, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnWinright, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnFn, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnCtrlright, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_15.setLayout(gl_panel_15);
@@ -574,29 +575,29 @@ public class KeyboardPiano {
 		JPanel panel_19 = new JPanel();
 		panel_19.setBackground(backGround);
 		
-		JToggleButton toggleButton_72 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnPrtsc = new JToggleButton("PrtSc");
 		
-		JToggleButton toggleButton_73 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnScrlk = new JToggleButton("ScrLk");
 		
-		JToggleButton toggleButton_74 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnPause = new JToggleButton("Pause");
 		GroupLayout gl_panel_19 = new GroupLayout(panel_19);
 		gl_panel_19.setHorizontalGroup(
 			gl_panel_19.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_19.createSequentialGroup()
-					.addComponent(toggleButton_72, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnPrtsc, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_73, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnScrlk, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_74, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnPause, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		gl_panel_19.setVerticalGroup(
 			gl_panel_19.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_19.createSequentialGroup()
 					.addGroup(gl_panel_19.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_72, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_73, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_74, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnPrtsc, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnScrlk, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnPause, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_19.setLayout(gl_panel_19);
@@ -604,29 +605,29 @@ public class KeyboardPiano {
 		JPanel panel_20 = new JPanel();
 		panel_20.setBackground(backGround);
 		
-		JToggleButton toggleButton_75 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnIns = new JToggleButton("Ins");
 		
-		JToggleButton toggleButton_76 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnHome = new JToggleButton("Home");
 		
-		JToggleButton toggleButton_77 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnPgup = new JToggleButton("PgUp");
 		GroupLayout gl_panel_20 = new GroupLayout(panel_20);
 		gl_panel_20.setHorizontalGroup(
 			gl_panel_20.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_20.createSequentialGroup()
-					.addComponent(toggleButton_75, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnIns, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_76, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnHome, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_77, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnPgup, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_20.setVerticalGroup(
 			gl_panel_20.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_20.createSequentialGroup()
 					.addGroup(gl_panel_20.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_75, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_76, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_77, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnIns, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnHome, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnPgup, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_20.setLayout(gl_panel_20);
@@ -634,29 +635,29 @@ public class KeyboardPiano {
 		JPanel panel_21 = new JPanel();
 		panel_21.setBackground(backGround);
 		
-		JToggleButton toggleButton_78 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnDel = new JToggleButton("Del");
 		
-		JToggleButton toggleButton_79 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnEnd = new JToggleButton("End");
 		
-		JToggleButton toggleButton_80 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnPgdn = new JToggleButton("PgDn");
 		GroupLayout gl_panel_21 = new GroupLayout(panel_21);
 		gl_panel_21.setHorizontalGroup(
 			gl_panel_21.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_21.createSequentialGroup()
-					.addComponent(toggleButton_78, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnDel, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_79, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnEnd, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_80, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnPgdn, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_21.setVerticalGroup(
 			gl_panel_21.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_21.createSequentialGroup()
 					.addGroup(gl_panel_21.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_78, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_79, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_80, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnDel, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnEnd, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnPgdn, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_21.setLayout(gl_panel_21);
@@ -680,7 +681,7 @@ public class KeyboardPiano {
 		JPanel panel_25 = new JPanel();
 		panel_25.setBackground(backGround);
 		
-		JToggleButton toggleButton_81 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnUp = new JToggleButton("Up");
 		
 		JPanel panel_26 = new JPanel();
 		panel_26.setBackground(backGround);
@@ -690,7 +691,7 @@ public class KeyboardPiano {
 				.addGroup(gl_panel_23.createSequentialGroup()
 					.addComponent(panel_25, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_81, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnUp, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
 					.addComponent(panel_26, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
@@ -700,7 +701,7 @@ public class KeyboardPiano {
 				.addGroup(gl_panel_23.createSequentialGroup()
 					.addGroup(gl_panel_23.createParallelGroup(Alignment.LEADING)
 						.addComponent(panel_25, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_81, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnUp, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel_26, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
@@ -709,29 +710,29 @@ public class KeyboardPiano {
 		JPanel panel_24 = new JPanel();
 		panel_24.setBackground(backGround);
 		
-		JToggleButton toggleButton_82 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnLeft = new JToggleButton("Left");
 		
-		JToggleButton toggleButton_83 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnDown = new JToggleButton("Down");
 		
-		JToggleButton toggleButton_84 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnRight = new JToggleButton("Right");
 		GroupLayout gl_panel_24 = new GroupLayout(panel_24);
 		gl_panel_24.setHorizontalGroup(
 			gl_panel_24.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_24.createSequentialGroup()
-					.addComponent(toggleButton_82, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnLeft, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_83, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnDown, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_84, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnRight, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_24.setVerticalGroup(
 			gl_panel_24.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_24.createSequentialGroup()
 					.addGroup(gl_panel_24.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_82, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_83, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_84, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnLeft, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnDown, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnRight, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_24.setLayout(gl_panel_24);
@@ -791,29 +792,29 @@ public class KeyboardPiano {
 		JPanel panel_29 = new JPanel();
 		panel_29.setBackground(backGround);
 		
-		JToggleButton toggleButton_88 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNum = new JToggleButton("Num");
 		
-		JToggleButton toggleButton_89 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpaddivide = new JToggleButton("NumPadDivide");
 		
-		JToggleButton toggleButton_90 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpadmultiply = new JToggleButton("NumPadMultiply");
 		GroupLayout gl_panel_29 = new GroupLayout(panel_29);
 		gl_panel_29.setHorizontalGroup(
 			gl_panel_29.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_29.createSequentialGroup()
-					.addComponent(toggleButton_88, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNum, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_89, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpaddivide, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_90, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpadmultiply, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_29.setVerticalGroup(
 			gl_panel_29.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_29.createSequentialGroup()
 					.addGroup(gl_panel_29.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_88, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_89, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_90, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnNum, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnNumpaddivide, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnNumpadmultiply, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_29.setLayout(gl_panel_29);
@@ -821,18 +822,18 @@ public class KeyboardPiano {
 		JPanel panel_30 = new JPanel();
 		panel_30.setBackground(backGround);
 		
-		JToggleButton toggleButton_104 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpadminus = new JToggleButton("NumPadMinus");
 		GroupLayout gl_panel_30 = new GroupLayout(panel_30);
 		gl_panel_30.setHorizontalGroup(
 			gl_panel_30.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_30.createSequentialGroup()
-					.addComponent(toggleButton_104, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpadminus, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_30.setVerticalGroup(
 			gl_panel_30.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_30.createSequentialGroup()
-					.addComponent(toggleButton_104, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpadminus, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_30.setLayout(gl_panel_30);
@@ -843,29 +844,29 @@ public class KeyboardPiano {
 		JPanel panel_38 = new JPanel();
 		panel_38.setBackground(backGround);
 		
-		JToggleButton toggleButton_91 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpad_7 = new JToggleButton("NumPad_7");
 		
-		JToggleButton toggleButton_92 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpad_8 = new JToggleButton("NumPad_8");
 		
-		JToggleButton toggleButton_93 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpad_9 = new JToggleButton("NumPad_9");
 		GroupLayout gl_panel_38 = new GroupLayout(panel_38);
 		gl_panel_38.setHorizontalGroup(
 			gl_panel_38.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_38.createSequentialGroup()
-					.addComponent(toggleButton_91, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpad_7, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_92, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpad_8, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_93, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpad_9, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_38.setVerticalGroup(
 			gl_panel_38.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_38.createSequentialGroup()
 					.addGroup(gl_panel_38.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_91, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_92, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_93, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnNumpad_7, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnNumpad_8, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnNumpad_9, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_38.setLayout(gl_panel_38);
@@ -873,29 +874,29 @@ public class KeyboardPiano {
 		JPanel panel_37 = new JPanel();
 		panel_37.setBackground(backGround);
 		
-		JToggleButton toggleButton_94 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpad_4 = new JToggleButton("NumPad_4");
 		
-		JToggleButton toggleButton_95 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpad_5 = new JToggleButton("NumPad_5");
 		
-		JToggleButton toggleButton_96 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpad_6 = new JToggleButton("NumPad_6");
 		GroupLayout gl_panel_37 = new GroupLayout(panel_37);
 		gl_panel_37.setHorizontalGroup(
 			gl_panel_37.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_37.createSequentialGroup()
-					.addComponent(toggleButton_94, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpad_4, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_95, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpad_5, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_96, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpad_6, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_37.setVerticalGroup(
 			gl_panel_37.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_37.createSequentialGroup()
 					.addGroup(gl_panel_37.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_94, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_95, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_96, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnNumpad_4, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnNumpad_5, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnNumpad_6, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_37.setLayout(gl_panel_37);
@@ -917,18 +918,18 @@ public class KeyboardPiano {
 		JPanel panel_32 = new JPanel();
 		panel_32.setBackground(backGround);
 		
-		JToggleButton toggleButton_105 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpadplus = new JToggleButton("NumPadPlus");
 		GroupLayout gl_panel_32 = new GroupLayout(panel_32);
 		gl_panel_32.setHorizontalGroup(
 			gl_panel_32.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_32.createSequentialGroup()
-					.addComponent(toggleButton_105, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpadplus, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_32.setVerticalGroup(
 			gl_panel_32.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_32.createSequentialGroup()
-					.addComponent(toggleButton_105, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpadplus, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_32.setLayout(gl_panel_32);
@@ -939,29 +940,29 @@ public class KeyboardPiano {
 		JPanel panel_35 = new JPanel();
 		panel_35.setBackground(backGround);
 		
-		JToggleButton toggleButton_97 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpad_1 = new JToggleButton("NumPad_1");
 		
-		JToggleButton toggleButton_98 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpad_2 = new JToggleButton("NumPad_2");
 		
-		JToggleButton toggleButton_99 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpad_3 = new JToggleButton("NumPad_3");
 		GroupLayout gl_panel_35 = new GroupLayout(panel_35);
 		gl_panel_35.setHorizontalGroup(
 			gl_panel_35.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_35.createSequentialGroup()
-					.addComponent(toggleButton_97, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpad_1, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_98, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpad_2, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_99, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpad_3, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_35.setVerticalGroup(
 			gl_panel_35.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_35.createSequentialGroup()
 					.addGroup(gl_panel_35.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_97, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_98, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_99, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tglbtnNumpad_1, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnNumpad_2, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnNumpad_3, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_35.setLayout(gl_panel_35);
@@ -969,29 +970,24 @@ public class KeyboardPiano {
 		JPanel panel_36 = new JPanel();
 		panel_36.setBackground(backGround);
 		
-		JToggleButton toggleButton_100 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpaddecimal = new JToggleButton("NumPadDecimal");
 		
-		JToggleButton toggleButton_101 = new JToggleButton("New toggle button");
-		
-		JToggleButton toggleButton_102 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpad_0 = new JToggleButton("NumPad_0");
 		GroupLayout gl_panel_36 = new GroupLayout(panel_36);
 		gl_panel_36.setHorizontalGroup(
 			gl_panel_36.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_36.createSequentialGroup()
-					.addComponent(toggleButton_100, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpad_0, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
 					.addGap(4)
-					.addComponent(toggleButton_101, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-					.addGap(4)
-					.addComponent(toggleButton_102, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpaddecimal, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		gl_panel_36.setVerticalGroup(
 			gl_panel_36.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_36.createSequentialGroup()
-					.addGroup(gl_panel_36.createParallelGroup(Alignment.LEADING)
-						.addComponent(toggleButton_100, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_101, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-						.addComponent(toggleButton_102, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+					.addGroup(gl_panel_36.createParallelGroup(Alignment.BASELINE)
+						.addComponent(tglbtnNumpaddecimal, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tglbtnNumpad_0, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_36.setLayout(gl_panel_36);
@@ -1013,18 +1009,18 @@ public class KeyboardPiano {
 		JPanel panel_34 = new JPanel();
 		panel_34.setBackground(backGround);
 		
-		JToggleButton toggleButton_106 = new JToggleButton("New toggle button");
+		JToggleButton tglbtnNumpadenter = new JToggleButton("NumPadEnter");
 		GroupLayout gl_panel_34 = new GroupLayout(panel_34);
 		gl_panel_34.setHorizontalGroup(
 			gl_panel_34.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_34.createSequentialGroup()
-					.addComponent(toggleButton_106, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(1, Short.MAX_VALUE))
+					.addComponent(tglbtnNumpadenter, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		gl_panel_34.setVerticalGroup(
 			gl_panel_34.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_34.createSequentialGroup()
-					.addComponent(toggleButton_106, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
+					.addComponent(tglbtnNumpadenter, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(1, Short.MAX_VALUE))
 		);
 		panel_34.setLayout(gl_panel_34);
