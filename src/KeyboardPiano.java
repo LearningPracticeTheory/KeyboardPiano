@@ -117,7 +117,7 @@ public class KeyboardPiano {
 	 JToggleButton tglbtnNum = new MyButton(this, "Num", "SRLUA4_3");
 	 JToggleButton tglbtnNumpaddivide = new MyButton(this, "NumPadDivide", "SRLUA5_3");
 	 JToggleButton tglbtnNumpadmultiply = new MyButton(this, "NumPadMultiply", "SRLUA6_3");
-	 JToggleButton tglbtnNumpadminus = new MyButton(this, "NumPadMinus", "XRLUA1_3");
+	 JToggleButton tglbtnNumpadminus = new MyButton(this, "NumPadMinus", "XRLUA1_2");
 	 JToggleButton tglbtnNumpad_7 = new MyButton(this, "NumPad_7", "XRLUA1_3");
 	 JToggleButton tglbtnNumpad_8 = new MyButton(this, "NumPad_8", "SRLUA1_3");
 	 JToggleButton tglbtnNumpad_9 = new MyButton(this, "NumPad_9", "SRLUA2_3");
@@ -128,7 +128,7 @@ public class KeyboardPiano {
 	 JToggleButton tglbtnNumpad_2 = new MyButton(this, "NumPad_2", "SRLUA2_4");
 	 JToggleButton tglbtnNumpad_3 = new MyButton(this, "NumPad_3", "XRLUA4_4");
 	 JToggleButton tglbtnNumpad_0 = new MyButton(this, "NumPad_0", "SRLUC5_5");
-	 JToggleButton tglbtnNumpaddecimal = new MyButton(this, "NumPadDecimal", "SRLUA5_5");
+	 JToggleButton tglbtnNumpaddecimal = new MyButton(this, "NumPadDecimal", "SRLUA6_5");
 	 JToggleButton tglbtnNumpadplus = new MyButton(this, "NumPadPlus", "XRLUF4_3");
 	 JToggleButton tglbtnNumpadenter = new MyButton(this, "NumPadEnter", "XRLUF1_4");
 	
@@ -252,6 +252,8 @@ public class KeyboardPiano {
 	
 	public static final int BUTTON_UP = 257; //0x0101
 	public static final int BUTTON_DOWN = 256; //0x0100
+	public static final char L = 'L';
+	public static final char R = 'R';
 	
 	/**
 	 * Launch the application.
