@@ -267,8 +267,20 @@ public class KeyboardPiano {
 				}
 			}
 		});
-		
-		
+	}
+	
+	/*
+	 * get path of picture from the key
+	 */
+	public static String getPicPath(String key) {
+		return PropertiesManage.getPicProperty(key);
+	}
+	
+	/*
+	 * get path of music(wav) from the key
+	 */
+	public static String getWavPath(String key) {
+		return PropertiesManage.getWavProperty(key);
 	}
 	
 	/**
