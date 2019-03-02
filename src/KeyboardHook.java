@@ -21,9 +21,6 @@ public class KeyboardHook implements Runnable {
 	private static final int FLAG_NUMPADENTER_DOWN = 1;
 	private static final int FLAG_NUMPADENTER_UP = FLAG_NUMPADENTER_DOWN + 128;
 	
-	private static final int ALT_DOWN = 260;
-	private static final int ALT_UP = 257;
-	
 	public KeyboardHook(KeyboardPiano kp) {
 		this.kp = kp;
 	}
@@ -37,10 +34,11 @@ public class KeyboardHook implements Runnable {
 			if(code >= 0) {
 				int key = event.vkCode;
 				int type = Integer.parseInt(wParam.toString());
-//System.out.println(type);
-//System.out.println(event);
+//				System.out.println(type);
 				System.out.println(wParam);
 				flags = event.flags;
+				System.out.println(event);
+				System.out.println("F" + flags);
 				switchKey(key, type);
 				return new LRESULT(1); //KIA all keys
 			}
@@ -361,6 +359,42 @@ public class KeyboardHook implements Runnable {
 			case KeyboardPiano.VK_FN : //-1
 				select(kp.tglbtnFn, type);
 				break;
+			case KeyboardPiano.VK_ALT_LEFT :
+				select(kp.tglbtnAltleft, type);
+//				System.out.println("KK" + key);
+//System.out.println(flags);
+				/*
+				if(type == ALT_UP) {
+					kp.tglbtnAltleft.setSelected(false);
+					kp.button_up = KeyboardPiano.TYPE_OTHERS_BUTTON_UP;
+					kp.button_down = KeyboardPiano.TYPE_ALT_UPDATE_BUTTON_DOWN;
+				} else if(type == ALT_DOWN) {
+					buttonSelected(kp.tglbtnAltleft);
+					kp.button_up = KeyboardPiano.TYPE_ALT_UPDATE_BUTTON_UP;
+					kp.button_down = KeyboardPiano.TYPE_ALT_UPDATE_BUTTON_DOWN;
+				}
+				 */
+				/* Use flags to identify key pressed or released
+				if(flags == FLAG_LEFT_ALT_DOWN) {
+					kp.tglbtnAltleft.setSelected(true);
+				} else if(flags == FLAG_LEFT_ALT_UP) {
+					kp.tglbtnAltleft.setSelected(false);
+				}
+				 */
+//System.out.println("ALT_LEFT");
+				break;
+			case KeyboardPiano.VK_ALT_RIGHT :
+				select(kp.tglbtnAltright, type);
+				/*
+				if(type == ALT_UP) {
+					kp.tglbtnAltright.setSelected(false);
+				} 
+				if(type == ALT_DOWN) {
+					buttonSelected(kp.tglbtnAltright);
+				}
+				 */
+//System.out.println("ALT_RIGHT");
+				break;
 			case KeyboardPiano.VK_ENTER : //two case
 //System.out.println(flags);
 				if(flags == FLAG_ENTER_UP) {
@@ -374,30 +408,6 @@ public class KeyboardHook implements Runnable {
 					buttonSelected(kp.tglbtnNumpadenter);
 				}
 				break;
-			case KeyboardPiano.VK_ALT_LEFT :
-//System.out.println(flags);
-				if(type == ALT_UP) {
-					kp.tglbtnAltleft.setSelected(false);
-				} else if(type == ALT_DOWN) {
-					buttonSelected(kp.tglbtnAltleft);
-				}
-				/*
-				if(flags == 32) {
-					kp.tglbtnAltleft.setSelected(true);
-				} else if(flags == 128) {
-					kp.tglbtnAltleft.setSelected(false);
-				}
-				*/
-//System.out.println("ALT_LEFT");
-				break;
-			case KeyboardPiano.VK_ALT_RIGHT :
-				if(type == ALT_UP) {
-					kp.tglbtnAltright.setSelected(false);
-				} else if(type == ALT_DOWN) {
-					buttonSelected(kp.tglbtnAltright);
-				}
-//System.out.println("ALT_RIGHT");
-				break;
 			}
 		}
 
@@ -409,9 +419,13 @@ public class KeyboardHook implements Runnable {
 		}
 
 		public void select(JToggleButton jtb, int type) {
-			if(type == KeyboardPiano.BUTTON_UP) {
+			if(type == KeyboardPiano.ALT_UP
+					|| type == KeyboardPiano.TYPE_ALT_UPDATE_BUTTON_UP 
+					|| type == KeyboardPiano.TYPE_OTHERS_BUTTON_UP) {
 				jtb.setSelected(false);
-			} else if(type == KeyboardPiano.BUTTON_DOWN) {
+			} else if( type == KeyboardPiano.ALT_DOWN
+					|| type == KeyboardPiano.TYPE_ALT_UPDATE_BUTTON_DOWN
+					|| type == KeyboardPiano.TYPE_OTHERS_BUTTON_DOWN) {
 				buttonSelected(jtb);
 			}
 		}

@@ -250,8 +250,16 @@ public class KeyboardPiano {
 
 	public static final int VK_FN = -1; //which is never got
 	
-	public static final int BUTTON_UP = 257; //0x0101
-	public static final int BUTTON_DOWN = 256; //0x0100
+	public static final int TYPE_OTHERS_BUTTON_UP = 257;
+	public static final int TYPE_OTHERS_BUTTON_DOWN = 256;
+	public static final int TYPE_ALT_UPDATE_BUTTON_UP = 261;
+	public static final int TYPE_ALT_UPDATE_BUTTON_DOWN = 260;
+	public static final int ALT_UP = 257;
+	public static final int ALT_DOWN = 260;
+
+//	public int button_up = TYPE_OTHERS_BUTTON_UP; //0x0101
+//	public int button_down = TYPE_ALT_UPDATE_BUTTON_DOWN; //0x0100
+	
 	public static final char L = 'L';
 	public static final char R = 'R';
 	
