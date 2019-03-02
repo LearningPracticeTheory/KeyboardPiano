@@ -272,15 +272,29 @@ public class KeyboardPiano {
 	/*
 	 * get path of picture from the key
 	 */
-	public static String getPicPath(String key) {
+	public String getPicPath(String key) {
 		return PropertiesManage.getPicProperty(key);
 	}
 	
 	/*
 	 * get path of music(wav) from the key
 	 */
-	public static String getWavPath(String key) {
+	public String getWavPath(String key) {
 		return PropertiesManage.getWavProperty(key);
+	}
+	
+	/*
+	 * return the other case of Color & Direction(U/D)
+	 */
+	public final String getDownColorDirection(String type) {
+		if(type.equals("WU")) {
+			return "GD";
+		} else if(type.equals("LU")) {
+			return "BD";
+		} else if(type.equals("RX")) {
+			return type;
+		}
+		return null;
 	}
 	
 	/**
