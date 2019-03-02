@@ -11,126 +11,126 @@ import javax.swing.JToggleButton;
 
 public class KeyboardPiano {
 
-	private JFrame frmKeyboardpiano;
-	private JTextField textField;
-	private JTextField textField_1;
-	private Color backGround = new Color(230, 231, 235);
-	private JToggleButton tglbtnEsc = new JToggleButton("Esc");
-	private JToggleButton tglbtnF_1 = new JToggleButton("F1");
-	private JToggleButton tglbtnF_2 = new JToggleButton("F2");
-	private JToggleButton tglbtnF_3 = new JToggleButton("F3");
-	private JToggleButton tglbtnF_4 = new JToggleButton("F4");
-	private JToggleButton tglbtnF_5 = new JToggleButton("F5");
-	private JToggleButton tglbtnF_6 = new JToggleButton("F6");
-	private JToggleButton tglbtnF_7 = new JToggleButton("F7");
-	private JToggleButton tglbtnF_8 = new JToggleButton("F8");
-	private JToggleButton tglbtnF_9 = new JToggleButton("F9");
-	private JToggleButton tglbtnF_10 = new JToggleButton("F10");
-	private JToggleButton tglbtnF_11 = new JToggleButton("F11");
-	private JToggleButton tglbtnF_12 = new JToggleButton("F12");
+	 JFrame frmKeyboardpiano;
+	 JTextField textField;
+	 JTextField textField_1;
+	 Color backGround = new Color(230, 231, 235);
+	 JToggleButton tglbtnEsc = new JToggleButton("Esc");
+	 JToggleButton tglbtnF_1 = new JToggleButton("F1");
+	 JToggleButton tglbtnF_2 = new JToggleButton("F2");
+	 JToggleButton tglbtnF_3 = new JToggleButton("F3");
+	 JToggleButton tglbtnF_4 = new JToggleButton("F4");
+	 JToggleButton tglbtnF_5 = new JToggleButton("F5");
+	 JToggleButton tglbtnF_6 = new JToggleButton("F6");
+	 JToggleButton tglbtnF_7 = new JToggleButton("F7");
+	 JToggleButton tglbtnF_8 = new JToggleButton("F8");
+	 JToggleButton tglbtnF_9 = new JToggleButton("F9");
+	 JToggleButton tglbtnF_10 = new JToggleButton("F10");
+	 JToggleButton tglbtnF_11 = new JToggleButton("F11");
+	 JToggleButton tglbtnF_12 = new JToggleButton("F12");
 	
-	private JToggleButton tglbtnBackquote = new JToggleButton("BackQuote");
-	private JToggleButton tglbtn_1 = new JToggleButton("1");
-	private JToggleButton tglbtn_2 = new JToggleButton("2");
-	private JToggleButton tglbtn_3 = new JToggleButton("3");
-	private JToggleButton tglbtn_4 = new JToggleButton("4");
-	private JToggleButton tglbtn_5 = new JToggleButton("5");
-	private JToggleButton tglbtn_6 = new JToggleButton("6");
-	private JToggleButton tglbtn_7 = new JToggleButton("7");
-	private JToggleButton tglbtn_8 = new JToggleButton("8");
-	private JToggleButton tglbtn_9 = new JToggleButton("9");
-	private JToggleButton tglbtn_0 = new JToggleButton("0");
-	private JToggleButton tglbtnMinus = new JToggleButton("Minus"); //-
-	private JToggleButton tglbtnEquals = new JToggleButton("Equals"); //=
-	private JToggleButton tglbtnBackspace = new JToggleButton("BackSpace");
+	 JToggleButton tglbtnBackquote = new JToggleButton("BackQuote");
+	 JToggleButton tglbtn_1 = new JToggleButton("1");
+	 JToggleButton tglbtn_2 = new JToggleButton("2");
+	 JToggleButton tglbtn_3 = new JToggleButton("3");
+	 JToggleButton tglbtn_4 = new JToggleButton("4");
+	 JToggleButton tglbtn_5 = new JToggleButton("5");
+	 JToggleButton tglbtn_6 = new JToggleButton("6");
+	 JToggleButton tglbtn_7 = new JToggleButton("7");
+	 JToggleButton tglbtn_8 = new JToggleButton("8");
+	 JToggleButton tglbtn_9 = new JToggleButton("9");
+	 JToggleButton tglbtn_0 = new JToggleButton("0");
+	 JToggleButton tglbtnMinus = new JToggleButton("Minus"); //-
+	 JToggleButton tglbtnEquals = new JToggleButton("Equals"); //=
+	 JToggleButton tglbtnBackspace = new JToggleButton("BackSpace");
 	
-	private JToggleButton tglbtnTab = new JToggleButton("Tab");
-	private JToggleButton tglbtnQ = new JToggleButton("Q");
-	private JToggleButton tglbtnW = new JToggleButton("W");
-	private JToggleButton tglbtnE = new JToggleButton("E");
-	private JToggleButton tglbtnT = new JToggleButton("T");
-	private JToggleButton tglbtnR = new JToggleButton("R");
-	private JToggleButton tglbtnY = new JToggleButton("Y");
-	private JToggleButton tglbtnU = new JToggleButton("U");
-	private JToggleButton tglbtnI = new JToggleButton("I");
-	private JToggleButton tglbtnP = new JToggleButton("P");
-	private JToggleButton tglbtnO = new JToggleButton("O");
-	private JToggleButton tglbtnClosebracket = new JToggleButton("CloseBracket"); //[
-	private JToggleButton tglbtnOpenbracket = new JToggleButton("OpenBracket"); //]
-	private JToggleButton tglbtnBackslash = new JToggleButton("BackSlash"); //\
+	 JToggleButton tglbtnTab = new JToggleButton("Tab");
+	 JToggleButton tglbtnQ = new JToggleButton("Q");
+	 JToggleButton tglbtnW = new JToggleButton("W");
+	 JToggleButton tglbtnE = new JToggleButton("E");
+	 JToggleButton tglbtnT = new JToggleButton("T");
+	 JToggleButton tglbtnR = new JToggleButton("R");
+	 JToggleButton tglbtnY = new JToggleButton("Y");
+	 JToggleButton tglbtnU = new JToggleButton("U");
+	 JToggleButton tglbtnI = new JToggleButton("I");
+	 JToggleButton tglbtnP = new JToggleButton("P");
+	 JToggleButton tglbtnO = new JToggleButton("O");
+	 JToggleButton tglbtnClosebracket = new JToggleButton("CloseBracket"); //[  
+	 JToggleButton tglbtnOpenbracket = new JToggleButton("OpenBracket"); //]
+	 JToggleButton tglbtnBackslash = new JToggleButton("BackSlash"); //\
 	
-	private JToggleButton tglbtnCaps = new JToggleButton("Caps");
-	private JToggleButton tglbtnA = new JToggleButton("A");
-	private JToggleButton tglbtnS = new JToggleButton("S");
-	private JToggleButton tglbtnD = new JToggleButton("D");
-	private JToggleButton tglbtnG = new JToggleButton("G");
-	private JToggleButton tglbtnF = new JToggleButton("F");
-	private JToggleButton tglbtnH = new JToggleButton("H");
-	private JToggleButton tglbtnJ = new JToggleButton("J");
-	private JToggleButton tglbtnK = new JToggleButton("K");
-	private JToggleButton tglbtnL = new JToggleButton("L");
-	private JToggleButton tglbtnSemicolon = new JToggleButton("Semicolon"); //;
-	private JToggleButton tglbtnQuote = new JToggleButton("Quote"); //'
-	private JToggleButton tglbtnEnter = new JToggleButton("Enter");
+	 JToggleButton tglbtnCaps = new JToggleButton("Caps");
+	 JToggleButton tglbtnA = new JToggleButton("A");
+	 JToggleButton tglbtnS = new JToggleButton("S");
+	 JToggleButton tglbtnD = new JToggleButton("D");
+	 JToggleButton tglbtnG = new JToggleButton("G");
+	 JToggleButton tglbtnF = new JToggleButton("F");
+	 JToggleButton tglbtnH = new JToggleButton("H");
+	 JToggleButton tglbtnJ = new JToggleButton("J");
+	 JToggleButton tglbtnK = new JToggleButton("K");
+	 JToggleButton tglbtnL = new JToggleButton("L");
+	 JToggleButton tglbtnSemicolon = new JToggleButton("Semicolon"); //;
+	 JToggleButton tglbtnQuote = new JToggleButton("Quote"); //'
+	 JToggleButton tglbtnEnter = new JToggleButton("Enter");
 	
-	private JToggleButton tglbtnShiftleft = new JToggleButton("ShiftLeft");
-	private JToggleButton tglbtnZ = new JToggleButton("Z");
-	private JToggleButton tglbtnX = new JToggleButton("X");
-	private JToggleButton tglbtnC = new JToggleButton("C");
-	private JToggleButton tglbtnB = new JToggleButton("B");
-	private JToggleButton tglbtnV = new JToggleButton("V");
-	private JToggleButton tglbtnN = new JToggleButton("N");
-	private JToggleButton tglbtnM = new JToggleButton("M");
-	private JToggleButton tglbtnComma = new JToggleButton("Comma"); //,
-	private JToggleButton tglbtnPeriod = new JToggleButton("Period"); //.
-	private JToggleButton tglbtnSlash = new JToggleButton("Slash"); ///
-	private JToggleButton tglbtnShiftright = new JToggleButton("ShiftRight");
+	 JToggleButton tglbtnShiftleft = new JToggleButton("ShiftLeft");
+	 JToggleButton tglbtnZ = new JToggleButton("Z");
+	 JToggleButton tglbtnX = new JToggleButton("X");
+	 JToggleButton tglbtnC = new JToggleButton("C");
+	 JToggleButton tglbtnB = new JToggleButton("B");
+	 JToggleButton tglbtnV = new JToggleButton("V");
+	 JToggleButton tglbtnN = new JToggleButton("N");
+	 JToggleButton tglbtnM = new JToggleButton("M");
+	 JToggleButton tglbtnComma = new JToggleButton("Comma"); //,
+	 JToggleButton tglbtnPeriod = new JToggleButton("Period"); //.
+	 JToggleButton tglbtnSlash = new JToggleButton("Slash"); ///
+	 JToggleButton tglbtnShiftright = new JToggleButton("ShiftRight");
 	
-	private JToggleButton tglbtnCtrlleft = new JToggleButton("CtrlLeft");
-	private JToggleButton tglbtnWinleft = new JToggleButton("WinLeft");
-	private JToggleButton tglbtnAltleft = new JToggleButton("AltLeft");
-	private JToggleButton tglbtnSpace = new JToggleButton("Space");
-	private JToggleButton tglbtnCtrlright = new JToggleButton("CtrlRight");
+	 JToggleButton tglbtnCtrlleft = new JToggleButton("CtrlLeft");
+	 JToggleButton tglbtnWinleft = new JToggleButton("WinLeft");
+	 JToggleButton tglbtnAltleft = new JToggleButton("AltLeft");
+	 JToggleButton tglbtnSpace = new JToggleButton("Space");
+	 JToggleButton tglbtnCtrlright = new JToggleButton("CtrlRight");
 	
 	/*
 	 * Can not catch Fn anyway, whether use KeyEvent/vkCode
 	 */
-	private JToggleButton tglbtnFn = new JToggleButton("Fn");
+	 JToggleButton tglbtnFn = new JToggleButton("Fn");
 	
-	private JToggleButton tglbtnWinright = new JToggleButton("WinRight");
-	private JToggleButton tglbtnAltright = new JToggleButton("AltRight");
+	 JToggleButton tglbtnWinright = new JToggleButton("WinRight");
+	 JToggleButton tglbtnAltright = new JToggleButton("AltRight");
 	
-	private JToggleButton tglbtnPrtsc = new JToggleButton("PrtSc");
-	private JToggleButton tglbtnScrlk = new JToggleButton("ScrLk");
-	private JToggleButton tglbtnPause = new JToggleButton("Pause");
-	private JToggleButton tglbtnIns = new JToggleButton("Ins");
-	private JToggleButton tglbtnHome = new JToggleButton("Home");
-	private JToggleButton tglbtnPgup = new JToggleButton("PgUp");
-	private JToggleButton tglbtnDel = new JToggleButton("Del");
-	private JToggleButton tglbtnEnd = new JToggleButton("End");
-	private JToggleButton tglbtnPgdn = new JToggleButton("PgDn");
-	private JToggleButton tglbtnUp = new JToggleButton("Up");
-	private JToggleButton tglbtnLeft = new JToggleButton("Left");
-	private JToggleButton tglbtnDown = new JToggleButton("Down");
-	private JToggleButton tglbtnRight = new JToggleButton("Right");	
+	 JToggleButton tglbtnPrtsc = new JToggleButton("PrtSc");
+	 JToggleButton tglbtnScrlk = new JToggleButton("ScrLk");
+	 JToggleButton tglbtnPause = new JToggleButton("Pause");
+	 JToggleButton tglbtnIns = new JToggleButton("Ins");
+	 JToggleButton tglbtnHome = new JToggleButton("Home");
+	 JToggleButton tglbtnPgup = new JToggleButton("PgUp");
+	 JToggleButton tglbtnDel = new JToggleButton("Del");
+	 JToggleButton tglbtnEnd = new JToggleButton("End");
+	 JToggleButton tglbtnPgdn = new JToggleButton("PgDn");
+	 JToggleButton tglbtnUp = new JToggleButton("Up");
+	 JToggleButton tglbtnLeft = new JToggleButton("Left");
+	 JToggleButton tglbtnDown = new JToggleButton("Down");
+	 JToggleButton tglbtnRight = new JToggleButton("Right");	
 	
-	private JToggleButton tglbtnNum = new JToggleButton("Num");
-	private JToggleButton tglbtnNumpaddivide = new JToggleButton("NumPadDivide");
-	private JToggleButton tglbtnNumpadmultiply = new JToggleButton("NumPadMultiply");
-	private JToggleButton tglbtnNumpadminus = new JToggleButton("NumPadMinus");
-	private JToggleButton tglbtnNumpad_7 = new JToggleButton("NumPad_7");
-	private JToggleButton tglbtnNumpad_8 = new JToggleButton("NumPad_8");
-	private JToggleButton tglbtnNumpad_9 = new JToggleButton("NumPad_9");
-	private JToggleButton tglbtnNumpad_4 = new JToggleButton("NumPad_4");
-	private JToggleButton tglbtnNumpad_5 = new JToggleButton("NumPad_5");
-	private JToggleButton tglbtnNumpad_6 = new JToggleButton("NumPad_6");
-	private JToggleButton tglbtnNumpad_1 = new JToggleButton("NumPad_1");
-	private JToggleButton tglbtnNumpad_2 = new JToggleButton("NumPad_2");
-	private JToggleButton tglbtnNumpad_3 = new JToggleButton("NumPad_3");
-	private JToggleButton tglbtnNumpad_0 = new JToggleButton("NumPad_0");
-	private JToggleButton tglbtnNumpaddecimal = new JToggleButton("NumPadDecimal");
-	private JToggleButton tglbtnNumpadplus = new JToggleButton("NumPadPlus");
-	private JToggleButton tglbtnNumpadenter = new JToggleButton("NumPadEnter");
+	 JToggleButton tglbtnNum = new JToggleButton("Num");
+	 JToggleButton tglbtnNumpaddivide = new JToggleButton("NumPadDivide");
+	 JToggleButton tglbtnNumpadmultiply = new JToggleButton("NumPadMultiply");
+	 JToggleButton tglbtnNumpadminus = new JToggleButton("NumPadMinus");
+	 JToggleButton tglbtnNumpad_7 = new JToggleButton("NumPad_7");
+	 JToggleButton tglbtnNumpad_8 = new JToggleButton("NumPad_8");
+	 JToggleButton tglbtnNumpad_9 = new JToggleButton("NumPad_9");
+	 JToggleButton tglbtnNumpad_4 = new JToggleButton("NumPad_4");
+	 JToggleButton tglbtnNumpad_5 = new JToggleButton("NumPad_5");
+	 JToggleButton tglbtnNumpad_6 = new JToggleButton("NumPad_6");
+	 JToggleButton tglbtnNumpad_1 = new JToggleButton("NumPad_1");
+	 JToggleButton tglbtnNumpad_2 = new JToggleButton("NumPad_2");
+	 JToggleButton tglbtnNumpad_3 = new JToggleButton("NumPad_3");
+	 JToggleButton tglbtnNumpad_0 = new JToggleButton("NumPad_0");
+	 JToggleButton tglbtnNumpaddecimal = new JToggleButton("NumPadDecimal");
+	 JToggleButton tglbtnNumpadplus = new JToggleButton("NumPadPlus");
+	 JToggleButton tglbtnNumpadenter = new JToggleButton("NumPadEnter");
 	
 	/*
 	 * Without Fn key
@@ -248,7 +248,10 @@ public class KeyboardPiano {
 	public static final int VK_NUMPAD_PLUS = 107;
 	//public static final int VK_NUMPAD_ENTER 13; //VK_ENTER == VK_NUMPAD_ENTER == 13;
 
+	public static final int VK_FN = -1; //which is never got
 	
+	public static final int BUTTON_UP = 257; //0x0101
+	public static final int BUTTON_DOWN = 256; //0x0100
 	
 	/**
 	 * Launch the application.
@@ -264,13 +267,16 @@ public class KeyboardPiano {
 				}
 			}
 		});
+		
+		
 	}
-
+	
 	/**
 	 * Create the application.
 	 */
 	public KeyboardPiano() {
 		initialize();
+		new Thread(new KeyboardHook(this)).start();
 	}
 
 	/**
