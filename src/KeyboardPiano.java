@@ -15,7 +15,117 @@ public class KeyboardPiano {
 	private JTextField textField;
 	private JTextField textField_1;
 	private Color backGround = new Color(230, 231, 235);
+	private JToggleButton tglbtnEsc = new JToggleButton("Esc");
+	private JToggleButton tglbtnF_1 = new JToggleButton("F1");
+	private JToggleButton tglbtnF_2 = new JToggleButton("F2");
+	private JToggleButton tglbtnF_3 = new JToggleButton("F3");
+	private JToggleButton tglbtnF_4 = new JToggleButton("F4");
+	private JToggleButton tglbtnF_5 = new JToggleButton("F5");
+	private JToggleButton tglbtnF_6 = new JToggleButton("F6");
+	private JToggleButton tglbtnF_7 = new JToggleButton("F7");
+	private JToggleButton tglbtnF_8 = new JToggleButton("F8");
+	private JToggleButton tglbtnF_9 = new JToggleButton("F9");
+	private JToggleButton tglbtnF_10 = new JToggleButton("F10");
+	private JToggleButton tglbtnF_11 = new JToggleButton("F11");
+	private JToggleButton tglbtnF_12 = new JToggleButton("F12");
 	
+	private JToggleButton tglbtnBackquote = new JToggleButton("BackQuote");
+	private JToggleButton tglbtn_1 = new JToggleButton("1");
+	private JToggleButton tglbtn_2 = new JToggleButton("2");
+	private JToggleButton tglbtn_3 = new JToggleButton("3");
+	private JToggleButton tglbtn_4 = new JToggleButton("4");
+	private JToggleButton tglbtn_5 = new JToggleButton("5");
+	private JToggleButton tglbtn_6 = new JToggleButton("6");
+	private JToggleButton tglbtn_7 = new JToggleButton("7");
+	private JToggleButton tglbtn_8 = new JToggleButton("8");
+	private JToggleButton tglbtn_9 = new JToggleButton("9");
+	private JToggleButton tglbtn_0 = new JToggleButton("0");
+	private JToggleButton tglbtnMinus = new JToggleButton("Minus"); //-
+	private JToggleButton tglbtnEquals = new JToggleButton("Equals"); //=
+	private JToggleButton tglbtnBackspace = new JToggleButton("BackSpace");
+	
+	private JToggleButton tglbtnTab = new JToggleButton("Tab");
+	private JToggleButton tglbtnQ = new JToggleButton("Q");
+	private JToggleButton tglbtnW = new JToggleButton("W");
+	private JToggleButton tglbtnE = new JToggleButton("E");
+	private JToggleButton tglbtnT = new JToggleButton("T");
+	private JToggleButton tglbtnR = new JToggleButton("R");
+	private JToggleButton tglbtnY = new JToggleButton("Y");
+	private JToggleButton tglbtnU = new JToggleButton("U");
+	private JToggleButton tglbtnI = new JToggleButton("I");
+	private JToggleButton tglbtnP = new JToggleButton("P");
+	private JToggleButton tglbtnO = new JToggleButton("O");
+	private JToggleButton tglbtnClosebracket = new JToggleButton("CloseBracket"); //[
+	private JToggleButton tglbtnOpenbracket = new JToggleButton("OpenBracket"); //]
+	private JToggleButton tglbtnBackslash = new JToggleButton("BackSlash"); //\
+	
+	private JToggleButton tglbtnCaps = new JToggleButton("Caps");
+	private JToggleButton tglbtnA = new JToggleButton("A");
+	private JToggleButton tglbtnS = new JToggleButton("S");
+	private JToggleButton tglbtnD = new JToggleButton("D");
+	private JToggleButton tglbtnG = new JToggleButton("G");
+	private JToggleButton tglbtnF = new JToggleButton("F");
+	private JToggleButton tglbtnH = new JToggleButton("H");
+	private JToggleButton tglbtnJ = new JToggleButton("J");
+	private JToggleButton tglbtnK = new JToggleButton("K");
+	private JToggleButton tglbtnL = new JToggleButton("L");
+	private JToggleButton tglbtnSemicolon = new JToggleButton("Semicolon"); //;
+	private JToggleButton tglbtnQuote = new JToggleButton("Quote"); //'
+	private JToggleButton tglbtnEnter = new JToggleButton("Enter");
+	
+	private JToggleButton tglbtnShiftleft = new JToggleButton("ShiftLeft");
+	private JToggleButton tglbtnZ = new JToggleButton("Z");
+	private JToggleButton tglbtnX = new JToggleButton("X");
+	private JToggleButton tglbtnC = new JToggleButton("C");
+	private JToggleButton tglbtnB = new JToggleButton("B");
+	private JToggleButton tglbtnV = new JToggleButton("V");
+	private JToggleButton tglbtnN = new JToggleButton("N");
+	private JToggleButton tglbtnM = new JToggleButton("M");
+	private JToggleButton tglbtnComma = new JToggleButton("Comma"); //,
+	private JToggleButton tglbtnPeriod = new JToggleButton("Period"); //.
+	private JToggleButton tglbtnSlash = new JToggleButton("Slash"); ///
+	private JToggleButton tglbtnShiftright = new JToggleButton("ShiftRight");
+	
+	private JToggleButton tglbtnCtrlleft = new JToggleButton("CtrlLeft");
+	private JToggleButton tglbtnWinleft = new JToggleButton("WinLeft");
+	private JToggleButton tglbtnAltleft = new JToggleButton("AltLeft");
+	private JToggleButton tglbtnSpace = new JToggleButton("Space");
+	private JToggleButton tglbtnCtrlright = new JToggleButton("CtrlRight");
+	private JToggleButton tglbtnFn = new JToggleButton("Fn");
+	private JToggleButton tglbtnWinright = new JToggleButton("WinRight");
+	private JToggleButton tglbtnAltright = new JToggleButton("AltRight");
+	
+	private JToggleButton tglbtnPrtsc = new JToggleButton("PrtSc");
+	private JToggleButton tglbtnScrlk = new JToggleButton("ScrLk");
+	private JToggleButton tglbtnPause = new JToggleButton("Pause");
+	private JToggleButton tglbtnIns = new JToggleButton("Ins");
+	private JToggleButton tglbtnHome = new JToggleButton("Home");
+	private JToggleButton tglbtnPgup = new JToggleButton("PgUp");
+	private JToggleButton tglbtnDel = new JToggleButton("Del");
+	private JToggleButton tglbtnEnd = new JToggleButton("End");
+	private JToggleButton tglbtnPgdn = new JToggleButton("PgDn");
+	private JToggleButton tglbtnUp = new JToggleButton("Up");
+	private JToggleButton tglbtnLeft = new JToggleButton("Left");
+	private JToggleButton tglbtnDown = new JToggleButton("Down");
+	private JToggleButton tglbtnRight = new JToggleButton("Right");	
+	
+	private JToggleButton tglbtnNum = new JToggleButton("Num");
+	private JToggleButton tglbtnNumpaddivide = new JToggleButton("NumPadDivide");
+	private JToggleButton tglbtnNumpadmultiply = new JToggleButton("NumPadMultiply");
+	private JToggleButton tglbtnNumpadminus = new JToggleButton("NumPadMinus");
+	private JToggleButton tglbtnNumpad_7 = new JToggleButton("NumPad_7");
+	private JToggleButton tglbtnNumpad_8 = new JToggleButton("NumPad_8");
+	private JToggleButton tglbtnNumpad_9 = new JToggleButton("NumPad_9");
+	private JToggleButton tglbtnNumpad_4 = new JToggleButton("NumPad_4");
+	private JToggleButton tglbtnNumpad_5 = new JToggleButton("NumPad_5");
+	private JToggleButton tglbtnNumpad_6 = new JToggleButton("NumPad_6");
+	private JToggleButton tglbtnNumpad_1 = new JToggleButton("NumPad_1");
+	private JToggleButton tglbtnNumpad_2 = new JToggleButton("NumPad_2");
+	private JToggleButton tglbtnNumpad_3 = new JToggleButton("NumPad_3");
+	private JToggleButton tglbtnNumpad_0 = new JToggleButton("NumPad_0");
+	private JToggleButton tglbtnNumpaddecimal = new JToggleButton("NumPadDecimal");
+	private JToggleButton tglbtnNumpadplus = new JToggleButton("NumPadPlus");
+	private JToggleButton tglbtnNumpadenter = new JToggleButton("NumPadEnter");
 	
 	/**
 	 * Launch the application.
@@ -87,40 +197,17 @@ public class KeyboardPiano {
 		JPanel panel_10 = new JPanel();
 		panel_10.setBackground(backGround);
 		
-		JToggleButton tglbtnEsc = new JToggleButton("Esc");
-		
 		JPanel panel_16 = new JPanel();
 		panel_16.setBackground(backGround);
 		
-		JToggleButton tglbtnF_1 = new JToggleButton("F1");
-		
-		JToggleButton tglbtnF_2 = new JToggleButton("F2");
-		
-		JToggleButton tglbtnF_3 = new JToggleButton("F3");
-		
-		JToggleButton tglbtnF_4 = new JToggleButton("F4");
 		
 		JPanel panel_17 = new JPanel();
 		panel_17.setBackground(backGround);
 		
-		JToggleButton tglbtnF_8 = new JToggleButton("F8");
-		
-		JToggleButton tglbtnF_7 = new JToggleButton("F7");
-		
-		JToggleButton tglbtnF_6 = new JToggleButton("F6");
-		
-		JToggleButton tglbtnF_5 = new JToggleButton("F5");
 		
 		JPanel panel_18 = new JPanel();
 		panel_18.setBackground(backGround);
 		
-		JToggleButton tglbtnF_9 = new JToggleButton("F9");
-		
-		JToggleButton tglbtnF_10 = new JToggleButton("F10");
-		
-		JToggleButton tglbtnF_11 = new JToggleButton("F11");
-		
-		JToggleButton tglbtnF_12 = new JToggleButton("F12");
 		GroupLayout gl_panel_10 = new GroupLayout(panel_10);
 		gl_panel_10.setHorizontalGroup(
 			gl_panel_10.createParallelGroup(Alignment.LEADING)
@@ -185,33 +272,6 @@ public class KeyboardPiano {
 		JPanel panel_11 = new JPanel();
 		panel_11.setBackground(backGround);
 		
-		JToggleButton tglbtnBackquote = new JToggleButton("BackQuote");
-		
-		JToggleButton tglbtn_1 = new JToggleButton("1");
-		
-		JToggleButton tglbtn_2 = new JToggleButton("2");
-		
-		JToggleButton tglbtn_3 = new JToggleButton("3");
-		
-		JToggleButton tglbtn_6 = new JToggleButton("6");
-		
-		JToggleButton tglbtn_4 = new JToggleButton("4");
-		
-		JToggleButton tglbtn_5 = new JToggleButton("5");
-		
-		JToggleButton tglbtn_9 = new JToggleButton("9");
-		
-		JToggleButton tglbtn_7 = new JToggleButton("7");
-		
-		JToggleButton tglbtn_8 = new JToggleButton("8");
-		
-		JToggleButton tglbtnEquals = new JToggleButton("Equals");
-		
-		JToggleButton tglbtnMinus = new JToggleButton("Minus");
-		
-		JToggleButton tglbtn_0 = new JToggleButton("0");
-		
-		JToggleButton tglbtnBackspace = new JToggleButton("BackSpace");
 		GroupLayout gl_panel_11 = new GroupLayout(panel_11);
 		gl_panel_11.setHorizontalGroup(
 			gl_panel_11.createParallelGroup(Alignment.LEADING)
@@ -270,33 +330,7 @@ public class KeyboardPiano {
 		JPanel panel_12 = new JPanel();
 		panel_12.setBackground(backGround);
 		
-		JToggleButton tglbtnTab = new JToggleButton("Tab");
-		
-		JToggleButton tglbtnQ = new JToggleButton("Q");
-		
-		JToggleButton tglbtnW = new JToggleButton("W");
-		
-		JToggleButton tglbtnE = new JToggleButton("E");
-		
-		JToggleButton tglbtnT = new JToggleButton("T");
-		
-		JToggleButton tglbtnR = new JToggleButton("R");
-		
-		JToggleButton tglbtnY = new JToggleButton("Y");
-		
-		JToggleButton tglbtnU = new JToggleButton("U");
-		
-		JToggleButton tglbtnI = new JToggleButton("I");
-		
-		JToggleButton tglbtnP = new JToggleButton("P");
-		
-		JToggleButton tglbtnO = new JToggleButton("O");
-		
-		JToggleButton tglbtnClosebracket = new JToggleButton("CloseBracket");
-		
-		JToggleButton tglbtnOpenbracket = new JToggleButton("OpenBracket");
-		
-		JToggleButton tglbtnBackslash = new JToggleButton("BackSlash");
+
 		GroupLayout gl_panel_12 = new GroupLayout(panel_12);
 		gl_panel_12.setHorizontalGroup(
 			gl_panel_12.createParallelGroup(Alignment.LEADING)
@@ -355,31 +389,7 @@ public class KeyboardPiano {
 		JPanel panel_13 = new JPanel();
 		panel_13.setBackground(backGround);
 		
-		JToggleButton tglbtnCaps = new JToggleButton("Caps");
-		
-		JToggleButton tglbtnA = new JToggleButton("A");
-		
-		JToggleButton tglbtnS = new JToggleButton("S");
-		
-		JToggleButton tglbtnD = new JToggleButton("D");
-		
-		JToggleButton tglbtnG = new JToggleButton("G");
-		
-		JToggleButton tglbtnF = new JToggleButton("F");
-		
-		JToggleButton tglbtnH = new JToggleButton("H");
-		
-		JToggleButton tglbtnJ = new JToggleButton("J");
-		
-		JToggleButton tglbtnK = new JToggleButton("K");
-		
-		JToggleButton tglbtnSemicolon = new JToggleButton("Semicolon");
-		
-		JToggleButton tglbtnL = new JToggleButton("L");
-		
-		JToggleButton tglbtnQuote = new JToggleButton("Quote");
-		
-		JToggleButton tglbtnEnter = new JToggleButton("Enter");
+
 		GroupLayout gl_panel_13 = new GroupLayout(panel_13);
 		gl_panel_13.setHorizontalGroup(
 			gl_panel_13.createParallelGroup(Alignment.LEADING)
@@ -435,29 +445,7 @@ public class KeyboardPiano {
 		JPanel panel_14 = new JPanel();
 		panel_14.setBackground(backGround);
 		
-		JToggleButton tglbtnShiftleft = new JToggleButton("ShiftLeft");
-		
-		JToggleButton tglbtnZ = new JToggleButton("Z");
-		
-		JToggleButton tglbtnX = new JToggleButton("X");
-		
-		JToggleButton tglbtnC = new JToggleButton("C");
-		
-		JToggleButton tglbtnB = new JToggleButton("B");
-		
-		JToggleButton tglbtnV = new JToggleButton("V");
-		
-		JToggleButton tglbtnN = new JToggleButton("N");
-		
-		JToggleButton tglbtnM = new JToggleButton("M");
-		
-		JToggleButton tglbtnComma = new JToggleButton("Comma");
-		
-		JToggleButton tglbtnSlash = new JToggleButton("Slash");
-		
-		JToggleButton tglbtnPeriod = new JToggleButton("Period");
-		
-		JToggleButton tglbtnShiftright = new JToggleButton("ShiftRight");
+
 		GroupLayout gl_panel_14 = new GroupLayout(panel_14);
 		gl_panel_14.setHorizontalGroup(
 			gl_panel_14.createParallelGroup(Alignment.LEADING)
@@ -510,21 +498,7 @@ public class KeyboardPiano {
 		JPanel panel_15 = new JPanel();
 		panel_15.setBackground(backGround);
 		
-		JToggleButton tglbtnCtrlleft = new JToggleButton("CtrlLeft");
-		
-		JToggleButton tglbtnWinleft = new JToggleButton("WinLeft");
-		
-		JToggleButton tglbtnAltleft = new JToggleButton("AltLeft");
-		
-		JToggleButton tglbtnSpace = new JToggleButton("Space");
-		
-		JToggleButton tglbtnCtrlright = new JToggleButton("CtrlRight");
-		
-		JToggleButton tglbtnFn = new JToggleButton("Fn");
-		
-		JToggleButton tglbtnWinright = new JToggleButton("WinRight");
-		
-		JToggleButton tglbtnAltright = new JToggleButton("AltRight");
+
 		GroupLayout gl_panel_15 = new GroupLayout(panel_15);
 		gl_panel_15.setHorizontalGroup(
 			gl_panel_15.createParallelGroup(Alignment.LEADING)
@@ -575,11 +549,7 @@ public class KeyboardPiano {
 		JPanel panel_19 = new JPanel();
 		panel_19.setBackground(backGround);
 		
-		JToggleButton tglbtnPrtsc = new JToggleButton("PrtSc");
-		
-		JToggleButton tglbtnScrlk = new JToggleButton("ScrLk");
-		
-		JToggleButton tglbtnPause = new JToggleButton("Pause");
+
 		GroupLayout gl_panel_19 = new GroupLayout(panel_19);
 		gl_panel_19.setHorizontalGroup(
 			gl_panel_19.createParallelGroup(Alignment.LEADING)
@@ -605,11 +575,7 @@ public class KeyboardPiano {
 		JPanel panel_20 = new JPanel();
 		panel_20.setBackground(backGround);
 		
-		JToggleButton tglbtnIns = new JToggleButton("Ins");
-		
-		JToggleButton tglbtnHome = new JToggleButton("Home");
-		
-		JToggleButton tglbtnPgup = new JToggleButton("PgUp");
+
 		GroupLayout gl_panel_20 = new GroupLayout(panel_20);
 		gl_panel_20.setHorizontalGroup(
 			gl_panel_20.createParallelGroup(Alignment.LEADING)
@@ -635,11 +601,6 @@ public class KeyboardPiano {
 		JPanel panel_21 = new JPanel();
 		panel_21.setBackground(backGround);
 		
-		JToggleButton tglbtnDel = new JToggleButton("Del");
-		
-		JToggleButton tglbtnEnd = new JToggleButton("End");
-		
-		JToggleButton tglbtnPgdn = new JToggleButton("PgDn");
 		GroupLayout gl_panel_21 = new GroupLayout(panel_21);
 		gl_panel_21.setHorizontalGroup(
 			gl_panel_21.createParallelGroup(Alignment.LEADING)
@@ -681,8 +642,6 @@ public class KeyboardPiano {
 		JPanel panel_25 = new JPanel();
 		panel_25.setBackground(backGround);
 		
-		JToggleButton tglbtnUp = new JToggleButton("Up");
-		
 		JPanel panel_26 = new JPanel();
 		panel_26.setBackground(backGround);
 		GroupLayout gl_panel_23 = new GroupLayout(panel_23);
@@ -710,11 +669,7 @@ public class KeyboardPiano {
 		JPanel panel_24 = new JPanel();
 		panel_24.setBackground(backGround);
 		
-		JToggleButton tglbtnLeft = new JToggleButton("Left");
-		
-		JToggleButton tglbtnDown = new JToggleButton("Down");
-		
-		JToggleButton tglbtnRight = new JToggleButton("Right");
+
 		GroupLayout gl_panel_24 = new GroupLayout(panel_24);
 		gl_panel_24.setHorizontalGroup(
 			gl_panel_24.createParallelGroup(Alignment.LEADING)
@@ -792,11 +747,6 @@ public class KeyboardPiano {
 		JPanel panel_29 = new JPanel();
 		panel_29.setBackground(backGround);
 		
-		JToggleButton tglbtnNum = new JToggleButton("Num");
-		
-		JToggleButton tglbtnNumpaddivide = new JToggleButton("NumPadDivide");
-		
-		JToggleButton tglbtnNumpadmultiply = new JToggleButton("NumPadMultiply");
 		GroupLayout gl_panel_29 = new GroupLayout(panel_29);
 		gl_panel_29.setHorizontalGroup(
 			gl_panel_29.createParallelGroup(Alignment.LEADING)
@@ -822,7 +772,6 @@ public class KeyboardPiano {
 		JPanel panel_30 = new JPanel();
 		panel_30.setBackground(backGround);
 		
-		JToggleButton tglbtnNumpadminus = new JToggleButton("NumPadMinus");
 		GroupLayout gl_panel_30 = new GroupLayout(panel_30);
 		gl_panel_30.setHorizontalGroup(
 			gl_panel_30.createParallelGroup(Alignment.LEADING)
@@ -843,12 +792,7 @@ public class KeyboardPiano {
 		
 		JPanel panel_38 = new JPanel();
 		panel_38.setBackground(backGround);
-		
-		JToggleButton tglbtnNumpad_7 = new JToggleButton("NumPad_7");
-		
-		JToggleButton tglbtnNumpad_8 = new JToggleButton("NumPad_8");
-		
-		JToggleButton tglbtnNumpad_9 = new JToggleButton("NumPad_9");
+
 		GroupLayout gl_panel_38 = new GroupLayout(panel_38);
 		gl_panel_38.setHorizontalGroup(
 			gl_panel_38.createParallelGroup(Alignment.LEADING)
@@ -874,11 +818,7 @@ public class KeyboardPiano {
 		JPanel panel_37 = new JPanel();
 		panel_37.setBackground(backGround);
 		
-		JToggleButton tglbtnNumpad_4 = new JToggleButton("NumPad_4");
-		
-		JToggleButton tglbtnNumpad_5 = new JToggleButton("NumPad_5");
-		
-		JToggleButton tglbtnNumpad_6 = new JToggleButton("NumPad_6");
+
 		GroupLayout gl_panel_37 = new GroupLayout(panel_37);
 		gl_panel_37.setHorizontalGroup(
 			gl_panel_37.createParallelGroup(Alignment.LEADING)
@@ -918,7 +858,7 @@ public class KeyboardPiano {
 		JPanel panel_32 = new JPanel();
 		panel_32.setBackground(backGround);
 		
-		JToggleButton tglbtnNumpadplus = new JToggleButton("NumPadPlus");
+		
 		GroupLayout gl_panel_32 = new GroupLayout(panel_32);
 		gl_panel_32.setHorizontalGroup(
 			gl_panel_32.createParallelGroup(Alignment.LEADING)
@@ -940,11 +880,6 @@ public class KeyboardPiano {
 		JPanel panel_35 = new JPanel();
 		panel_35.setBackground(backGround);
 		
-		JToggleButton tglbtnNumpad_1 = new JToggleButton("NumPad_1");
-		
-		JToggleButton tglbtnNumpad_2 = new JToggleButton("NumPad_2");
-		
-		JToggleButton tglbtnNumpad_3 = new JToggleButton("NumPad_3");
 		GroupLayout gl_panel_35 = new GroupLayout(panel_35);
 		gl_panel_35.setHorizontalGroup(
 			gl_panel_35.createParallelGroup(Alignment.LEADING)
@@ -970,9 +905,6 @@ public class KeyboardPiano {
 		JPanel panel_36 = new JPanel();
 		panel_36.setBackground(backGround);
 		
-		JToggleButton tglbtnNumpaddecimal = new JToggleButton("NumPadDecimal");
-		
-		JToggleButton tglbtnNumpad_0 = new JToggleButton("NumPad_0");
 		GroupLayout gl_panel_36 = new GroupLayout(panel_36);
 		gl_panel_36.setHorizontalGroup(
 			gl_panel_36.createParallelGroup(Alignment.LEADING)
@@ -1009,7 +941,6 @@ public class KeyboardPiano {
 		JPanel panel_34 = new JPanel();
 		panel_34.setBackground(backGround);
 		
-		JToggleButton tglbtnNumpadenter = new JToggleButton("NumPadEnter");
 		GroupLayout gl_panel_34 = new GroupLayout(panel_34);
 		gl_panel_34.setHorizontalGroup(
 			gl_panel_34.createParallelGroup(Alignment.LEADING)
