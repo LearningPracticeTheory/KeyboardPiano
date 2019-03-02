@@ -1,12 +1,10 @@
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JToggleButton;
@@ -16,7 +14,7 @@ public class MyButton extends JToggleButton {
 
 	private static final long serialVersionUID = 1L;
 	private static final int SHARP_INDEX = 0;
-//	private static final int SIDE_INDEX = 1; 
+	private static final int SIDE_INDEX = 1; 
 	private static final int COLOR_INDEX = 2;
 	private static final int DIRECTION_INDEX = 3;
 	private static final int TYPE_INDEX = 4;
@@ -89,6 +87,9 @@ public class MyButton extends JToggleButton {
 //System.out.println(imageUpName + " " + imageUpPath);
 //System.out.println(imageDownName + " " + imageDownPath);
 //System.out.println(wavName);
+		if(name == "SLWUA5_5") {
+			System.out.println(wavPath);
+		}
 	}
 	
 	private void graphicsImageSet(Graphics2D g2d, int type, int widthMinus, int heightMinus) {
@@ -145,6 +146,7 @@ public class MyButton extends JToggleButton {
 			/*
 			 * play music once
 			 */
+			new Thread(new MusicPlayer(getType(), wavPath)).start();
 //			System.out.println("selected" + imageDown);
 		} else { //default is Up
 			g2d.drawImage(imageUp.getImage(), 1, 1, null);
@@ -197,14 +199,18 @@ public class MyButton extends JToggleButton {
 	}
 
 	private String getPath(String upImageName) {
-		
+		/*
 		if(upImageName.equals("NNRNC_Enter")) {
 			System.out.println(kp.getPicPath(upImageName));
 		}
-		
+		*/
 		return kp.getPicPath(upImageName);
 	}
-
+	
+	private char getType() {
+		return imageName.charAt(SIDE_INDEX);
+	}
+	
 	private class MouseMonitor extends MouseAdapter {
 		
 		JToggleButton button = null;
