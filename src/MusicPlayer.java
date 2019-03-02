@@ -21,10 +21,15 @@ public class MusicPlayer extends Thread {
 	private BufferedInputStream buffer = null;
 	private char musicType;
 	
+	public MusicPlayer(String wavPath) {
+		this.musicPath = wavPath;
+	}
+	
 	MusicPlayer(char musicType, String musicPath) {
 		this.musicType = musicType;
 		this.musicPath = musicPath;
 	}
+
 
 	@Override
 	public void run() {
@@ -71,9 +76,10 @@ public class MusicPlayer extends Thread {
 			if(!this.isInterrupted()) {
 				this.interrupt();
 			}
-			this.join();
+//			this.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
+			
 		}
 		
 	}

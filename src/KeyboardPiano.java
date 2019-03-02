@@ -313,6 +313,7 @@ public class KeyboardPiano {
 	 */
 	public KeyboardPiano() {
 		initialize();
+		new MusicPlayer(getWavPath("START")).start();
 		new Thread(new KeyboardHook(this)).start();
 	}
 
