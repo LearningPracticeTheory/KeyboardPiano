@@ -44,7 +44,6 @@ public class MyButton extends JToggleButton {
 	 * if the name start from "N", which means the index of "_" is 5
 	 * else the other case is 6
 	 */
-	
 	private KeyboardPiano kp;
 	private String imageName = null; //default is U & N
 	private String imageUpPath = null;
@@ -67,7 +66,6 @@ public class MyButton extends JToggleButton {
 		setImage(name);
         this.setHorizontalTextPosition(SwingConstants.CENTER); //Text displays on center
         this.setBorderPainted(false); //do NOT paint the border of the button
-//		this.setPreferredSize(new Dimension(WIDTH, HEIGHT)); //the size of button(most of the case)
 
         this.addMouseListener(new MouseMonitor(this));
 	}
@@ -76,20 +74,9 @@ public class MyButton extends JToggleButton {
 		imageName = name;
 		imageUpPath = getPath(name);
 		imageUp = new ImageIcon(imageUpPath);
-		/*
-		if(imageName.indexOf(DIRECTION_INDEX) == N) {
-			return; //imageDownPath & wavPath & imageDownIcon == null;
-		}
-		*/
 		imageDownPath = getPath(getImageDownName(name));
 		wavPath = getWavPath(name);
 		imageDown = new ImageIcon(imageDownPath);
-//System.out.println(imageUpName + " " + imageUpPath);
-//System.out.println(imageDownName + " " + imageDownPath);
-//System.out.println(wavName);
-		if(name == "SLWUA5_5") {
-			System.out.println(wavPath);
-		}
 	}
 	
 	private void graphicsImageSet(Graphics2D g2d, int type, int widthMinus, int heightMinus) {
@@ -99,7 +86,6 @@ public class MyButton extends JToggleButton {
 	}
 	
 	private void switchCase(Graphics2D g2d, int type) {
-//		System.out.println("-" + type);
 		switch(type) {
 		case A :
 			graphicsImageSet(g2d, A_TYPE, 2, 2);
@@ -137,23 +123,15 @@ public class MyButton extends JToggleButton {
         switchCase(g2d, imageName.charAt(TYPE_INDEX));
         
 		if(this.isSelected()) {
-			/*
-			if(imageDown == null) { //the NO Direction case which is Brown
-				return;
-			}
-			*/
 			g2d.drawImage(imageDown.getImage(), 1, 1, null);
 			/*
 			 * play music once
 			 */
 			new Thread(new MusicPlayer(getType(), wavPath)).start();
-//			System.out.println("selected" + imageDown);
 		} else { //default is Up
 			g2d.drawImage(imageUp.getImage(), 1, 1, null);
-//			System.out.println("NON-selected" + imageUp);
 		}
 		
-//        super.paintComponent(g); //super class will do paint
 	}
 	
 	private String getWavPath(String name) {
@@ -182,8 +160,6 @@ public class MyButton extends JToggleButton {
 	}
 	
 	private String replaceColorDirection(String name) {
-//		String thatCD = getColorDirection(name); //that
-//		String thisCD = kp.getDownColorDirection(thatCD);
 		String thisCD = kp.getDownColorDirection(getColorDirection(name));
 		String tmp = name.substring(0, COLOR_INDEX); //[0, color)
 		tmp += thisCD;
@@ -199,11 +175,6 @@ public class MyButton extends JToggleButton {
 	}
 
 	private String getPath(String upImageName) {
-		/*
-		if(upImageName.equals("NNRNC_Enter")) {
-			System.out.println(kp.getPicPath(upImageName));
-		}
-		*/
 		return kp.getPicPath(upImageName);
 	}
 	

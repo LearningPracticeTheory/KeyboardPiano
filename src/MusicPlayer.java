@@ -12,7 +12,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class MusicPlayer extends Thread {
 
-	private static final float LEFT_VALUE = -3.0f;
+	private static final float LEFT_VALUE = -3.5f;
 	private static final float RIGHT_VALUE = +3.0f;
 	
 	private String musicPath; 
@@ -30,10 +30,8 @@ public class MusicPlayer extends Thread {
 		this.musicPath = musicPath;
 	}
 
-
 	@Override
 	public void run() {
-
 		if(musicPath == null) {
 			return;
 		}
@@ -71,17 +69,20 @@ public class MusicPlayer extends Thread {
 		 * it seems that it doesn't work well
 		 * CPU usage will be like 30% while multiple type keys
 		 */
+		/*
 		try {
-			Thread.sleep(3000);
+//			Thread.sleep(3000);
+			
 			if(!this.isInterrupted()) {
-				this.interrupt();
 			}
+			
+			this.interrupt();
 //			this.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 			
 		}
-		
+		*/
 	}
 	
 }
