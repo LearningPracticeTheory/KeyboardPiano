@@ -1,5 +1,7 @@
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -7,6 +9,8 @@ import javax.swing.JToggleButton;
 
 public class KeyboardPiano {
 
+	ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+	
 	 JFrame frmKeyboardpiano = new JFrame();
 	 JTextField textField;
 	 JTextField textField_1;
