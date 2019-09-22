@@ -1,136 +1,138 @@
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowFocusListener;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-import javax.swing.JToggleButton;
 
 public class KeyboardPiano {
 
 	ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+	KeyboardHook keyboardHook = null;
 	
 	 JFrame frmKeyboardpiano = new JFrame();
 	 JTextField textField;
 	 JTextField textField_1;
 	 Color backGround = new Color(230, 231, 235);
-	 JToggleButton tglbtnEsc = new MyButton(this, "Esc", "NNRNA_Esc");
-	 JToggleButton tglbtnF_1 = new MyButton(this, "F1", "NNRNA_F1");
-	 JToggleButton tglbtnF_2 = new MyButton(this, "F2", "NNRNA_F2");
-	 JToggleButton tglbtnF_3 = new MyButton(this, "F3", "NNRNA_F3");
-	 JToggleButton tglbtnF_4 = new MyButton(this, "F4", "NNRNA_F4");
-	 JToggleButton tglbtnF_5 = new MyButton(this, "F5", "NNRNA_F5");
-	 JToggleButton tglbtnF_6 = new MyButton(this, "F6", "NNRNA_F6");
-	 JToggleButton tglbtnF_7 = new MyButton(this, "F7", "NNRNA_F7");
-	 JToggleButton tglbtnF_8 = new MyButton(this, "F8", "NNRNA_F8");
-	 JToggleButton tglbtnF_9 = new MyButton(this, "F9", "NNRNA_F9");
-	 JToggleButton tglbtnF_10 = new MyButton(this, "F10", "NNRNA_F10");
-	 JToggleButton tglbtnF_11 = new MyButton(this, "F11", "NNRNA_F11");
-	 JToggleButton tglbtnF_12 = new MyButton(this, "F12", "NNRNA_F12");
+	 MyButton tglbtnEsc = new MyButton(this, "Esc", "NNRNA_Esc");
+	 MyButton tglbtnF_1 = new MyButton(this, "F1", "NNRNA_F1");
+	 MyButton tglbtnF_2 = new MyButton(this, "F2", "NNRNA_F2");
+	 MyButton tglbtnF_3 = new MyButton(this, "F3", "NNRNA_F3");
+	 MyButton tglbtnF_4 = new MyButton(this, "F4", "NNRNA_F4");
+	 MyButton tglbtnF_5 = new MyButton(this, "F5", "NNRNA_F5");
+	 MyButton tglbtnF_6 = new MyButton(this, "F6", "NNRNA_F6");
+	 MyButton tglbtnF_7 = new MyButton(this, "F7", "NNRNA_F7");
+	 MyButton tglbtnF_8 = new MyButton(this, "F8", "NNRNA_F8");
+	 MyButton tglbtnF_9 = new MyButton(this, "F9", "NNRNA_F9");
+	 MyButton tglbtnF_10 = new MyButton(this, "F10", "NNRNA_F10");
+	 MyButton tglbtnF_11 = new MyButton(this, "F11", "NNRNA_F11");
+	 MyButton tglbtnF_12 = new MyButton(this, "F12", "NNRNA_F12");
 	
-	 JToggleButton tglbtnBackquote = new MyButton(this, "BackQuote", "NNRNA_BackQuote");
-	 JToggleButton tglbtn_1 = new MyButton(this, "1", "SLWUA1_3");
-	 JToggleButton tglbtn_2 = new MyButton(this, "2", "SLWUA2_3");
-	 JToggleButton tglbtn_3 = new MyButton(this, "3", "XLWUA4_3");
-	 JToggleButton tglbtn_4 = new MyButton(this, "4", "SLWUA4_3");
-	 JToggleButton tglbtn_5 = new MyButton(this, "5", "SLWUA5_3");
-	 JToggleButton tglbtn_6 = new MyButton(this, "6", "SLWUA6_3");
-	 JToggleButton tglbtn_7 = new MyButton(this, "7", "XLWUA1_2");
-	 JToggleButton tglbtn_8 = new MyButton(this, "8", "SLWUA1_2");
-	 JToggleButton tglbtn_9 = new MyButton(this, "9", "SLWUA2_2");
-	 JToggleButton tglbtn_0 = new MyButton(this, "0", "XLWUA4_2");
-	 JToggleButton tglbtnMinus = new MyButton(this, "Minus", "SLWUA4_2"); //-
-	 JToggleButton tglbtnEquals = new MyButton(this, "Equals", "SLWUA5_2"); //=
-	 JToggleButton tglbtnBackspace = new MyButton(this, "BackSpace", "NNRNC_Backspace");
+	 MyButton tglbtnBackquote = new MyButton(this, "BackQuote", "NNRNA_BackQuote");
+	 MyButton tglbtn_1 = new MyButton(this, "1", "SLWUA1_3");
+	 MyButton tglbtn_2 = new MyButton(this, "2", "SLWUA2_3");
+	 MyButton tglbtn_3 = new MyButton(this, "3", "XLWUA4_3");
+	 MyButton tglbtn_4 = new MyButton(this, "4", "SLWUA4_3");
+	 MyButton tglbtn_5 = new MyButton(this, "5", "SLWUA5_3");
+	 MyButton tglbtn_6 = new MyButton(this, "6", "SLWUA6_3");
+	 MyButton tglbtn_7 = new MyButton(this, "7", "XLWUA1_2");
+	 MyButton tglbtn_8 = new MyButton(this, "8", "SLWUA1_2");
+	 MyButton tglbtn_9 = new MyButton(this, "9", "SLWUA2_2");
+	 MyButton tglbtn_0 = new MyButton(this, "0", "XLWUA4_2");
+	 MyButton tglbtnMinus = new MyButton(this, "Minus", "SLWUA4_2"); //-
+	 MyButton tglbtnEquals = new MyButton(this, "Equals", "SLWUA5_2"); //=
+	 MyButton tglbtnBackspace = new MyButton(this, "BackSpace", "NNRNC_Backspace");
 	
-	 JToggleButton tglbtnTab = new MyButton(this, "Tab", "NNRNB_Tab");
-	 JToggleButton tglbtnQ = new MyButton(this, "Q", "SLWUA1_4");
-	 JToggleButton tglbtnW = new MyButton(this, "W", "SLWUA2_4");
-	 JToggleButton tglbtnE = new MyButton(this, "E", "XLWUA4_4");
-	 JToggleButton tglbtnR = new MyButton(this, "R", "SLWUA4_4");
-	 JToggleButton tglbtnT = new MyButton(this, "T", "SLWUA5_4");
-	 JToggleButton tglbtnY = new MyButton(this, "Y", "SLWUA6_4");
-	 JToggleButton tglbtnU = new MyButton(this, "U", "XLWUA1_3");
-	 JToggleButton tglbtnI = new MyButton(this, "I", "SLWUA1_3");
-	 JToggleButton tglbtnO = new MyButton(this, "O", "SLWUA2_3");
-	 JToggleButton tglbtnP = new MyButton(this, "P", "XLWUA4_3");
-	 JToggleButton tglbtnClosebracket = new MyButton(this, "CloseBracket", "SLWUA5_3"); //[  
-	 JToggleButton tglbtnOpenbracket = new MyButton(this, "OpenBracket", "SLWUA4_3"); //]
-	 JToggleButton tglbtnBackslash = new MyButton(this, "BackSlash", "SLWUB6_3"); //\
+	 MyButton tglbtnTab = new MyButton(this, "Tab", "NNRNB_Tab");
+	 MyButton tglbtnQ = new MyButton(this, "Q", "SLWUA1_4");
+	 MyButton tglbtnW = new MyButton(this, "W", "SLWUA2_4");
+	 MyButton tglbtnE = new MyButton(this, "E", "XLWUA4_4");
+	 MyButton tglbtnR = new MyButton(this, "R", "SLWUA4_4");
+	 MyButton tglbtnT = new MyButton(this, "T", "SLWUA5_4");
+	 MyButton tglbtnY = new MyButton(this, "Y", "SLWUA6_4");
+	 MyButton tglbtnU = new MyButton(this, "U", "XLWUA1_3");
+	 MyButton tglbtnI = new MyButton(this, "I", "SLWUA1_3");
+	 MyButton tglbtnO = new MyButton(this, "O", "SLWUA2_3");
+	 MyButton tglbtnP = new MyButton(this, "P", "XLWUA4_3");
+	 MyButton tglbtnClosebracket = new MyButton(this, "CloseBracket", "SLWUA5_3"); //[  
+	 MyButton tglbtnOpenbracket = new MyButton(this, "OpenBracket", "SLWUA4_3"); //]
+	 MyButton tglbtnBackslash = new MyButton(this, "BackSlash", "SLWUB6_3"); //\
 	
-	 JToggleButton tglbtnCaps = new MyButton(this, "Caps", "NNRNC_Caps");
-	 JToggleButton tglbtnA = new MyButton(this, "A", "SLWUA1_5");
-	 JToggleButton tglbtnS = new MyButton(this, "S", "SLWUA2_5");
-	 JToggleButton tglbtnD = new MyButton(this, "D", "XLWUA4_5");
-	 JToggleButton tglbtnF = new MyButton(this, "F", "SLWUA4_5");
-	 JToggleButton tglbtnG = new MyButton(this, "G", "SLWUA5_5");
-	 JToggleButton tglbtnH = new MyButton(this, "H", "SLWUA6_5");
-	 JToggleButton tglbtnJ = new MyButton(this, "J", "XLWUA1_4");
-	 JToggleButton tglbtnK = new MyButton(this, "K", "SLWUA1_4");
-	 JToggleButton tglbtnL = new MyButton(this, "L", "SLWUA2_4");
-	 JToggleButton tglbtnSemicolon = new MyButton(this, "Semicolon", "XLWUA4_4"); //;
-	 JToggleButton tglbtnQuote = new MyButton(this, "Quote", "SLWUA4_4"); //'
-	 JToggleButton tglbtnEnter = new MyButton(this, "Enter", "NNRNC_Enter");
+	 MyButton tglbtnCaps = new MyButton(this, "Caps", "NNRNC_Caps");
+	 MyButton tglbtnA = new MyButton(this, "A", "SLWUA1_5");
+	 MyButton tglbtnS = new MyButton(this, "S", "SLWUA2_5");
+	 MyButton tglbtnD = new MyButton(this, "D", "XLWUA4_5");
+	 MyButton tglbtnF = new MyButton(this, "F", "SLWUA4_5");
+	 MyButton tglbtnG = new MyButton(this, "G", "SLWUA5_5");
+	 MyButton tglbtnH = new MyButton(this, "H", "SLWUA6_5");
+	 MyButton tglbtnJ = new MyButton(this, "J", "XLWUA1_4");
+	 MyButton tglbtnK = new MyButton(this, "K", "SLWUA1_4");
+	 MyButton tglbtnL = new MyButton(this, "L", "SLWUA2_4");
+	 MyButton tglbtnSemicolon = new MyButton(this, "Semicolon", "XLWUA4_4"); //;
+	 MyButton tglbtnQuote = new MyButton(this, "Quote", "SLWUA4_4"); //'
+	 MyButton tglbtnEnter = new MyButton(this, "Enter", "NNRNC_Enter");
 	
-	 JToggleButton tglbtnShiftleft = new MyButton(this, "ShiftLeft", "XLWUD1_6");
-	 JToggleButton tglbtnZ = new MyButton(this, "Z", "SLWUA1_6");
-	 JToggleButton tglbtnX = new MyButton(this, "X", "SLWUA2_6");
-	 JToggleButton tglbtnC = new MyButton(this, "C", "XLWUA4_6");
-	 JToggleButton tglbtnV = new MyButton(this, "V", "SLWUA4_6");
-	 JToggleButton tglbtnB = new MyButton(this, "B", "SLWUA5_6");
-	 JToggleButton tglbtnN = new MyButton(this, "N", "SLWUA6_6");
-	 JToggleButton tglbtnM = new MyButton(this, "M", "XLWUA1_5");
-	 JToggleButton tglbtnComma = new MyButton(this, "Comma", "SLWUA1_5"); //,
-	 JToggleButton tglbtnPeriod = new MyButton(this, "Period", "SLWUA2_5"); //.
-	 JToggleButton tglbtnSlash = new MyButton(this, "Slash", "XLWUA4_5"); ///
-	 JToggleButton tglbtnShiftright = new MyButton(this, "ShiftRight", "NNRND_Shift");
+	 MyButton tglbtnShiftleft = new MyButton(this, "ShiftLeft", "XLWUD1_6");
+	 MyButton tglbtnZ = new MyButton(this, "Z", "SLWUA1_6");
+	 MyButton tglbtnX = new MyButton(this, "X", "SLWUA2_6");
+	 MyButton tglbtnC = new MyButton(this, "C", "XLWUA4_6");
+	 MyButton tglbtnV = new MyButton(this, "V", "SLWUA4_6");
+	 MyButton tglbtnB = new MyButton(this, "B", "SLWUA5_6");
+	 MyButton tglbtnN = new MyButton(this, "N", "SLWUA6_6");
+	 MyButton tglbtnM = new MyButton(this, "M", "XLWUA1_5");
+	 MyButton tglbtnComma = new MyButton(this, "Comma", "SLWUA1_5"); //,
+	 MyButton tglbtnPeriod = new MyButton(this, "Period", "SLWUA2_5"); //.
+	 MyButton tglbtnSlash = new MyButton(this, "Slash", "XLWUA4_5"); ///
+	 MyButton tglbtnShiftright = new MyButton(this, "ShiftRight", "NNRND_Shift");
 	
-	 JToggleButton tglbtnCtrlleft = new MyButton(this, "CtrlLeft", "NNRNB_Ctrl");
-	 JToggleButton tglbtnWinleft = new MyButton(this, "WinLeft", "NNRNA_Win");
-	 JToggleButton tglbtnAltleft = new MyButton(this, "AltLeft", "SLWUA6_6");
-	 JToggleButton tglbtnSpace = new MyButton(this, "Space", "NNRNE_Space");
-	 JToggleButton tglbtnCtrlright = new MyButton(this, "CtrlRight", "NNRNB_Ctrl");
+	 MyButton tglbtnCtrlleft = new MyButton(this, "CtrlLeft", "NNRNB_Ctrl");
+	 MyButton tglbtnWinleft = new MyButton(this, "WinLeft", "NNRNA_Win");
+	 MyButton tglbtnAltleft = new MyButton(this, "AltLeft", "SLWUA6_6");
+	 MyButton tglbtnSpace = new MyButton(this, "Space", "NNRNE_Space");
+	 MyButton tglbtnCtrlright = new MyButton(this, "CtrlRight", "NNRNB_Ctrl");
 	
 	/*
 	 * Can not catch Fn anyway, whether use KeyEvent/vkCode
 	 */
-	 JToggleButton tglbtnFn = new MyButton(this, "Fn", "NNRNA_Fn");
+	 MyButton tglbtnFn = new MyButton(this, "Fn", "NNRNA_Fn");
 	
-	 JToggleButton tglbtnWinright = new MyButton(this, "WinRight", "NNRNA_Win");
-	 JToggleButton tglbtnAltright = new MyButton(this, "AltRight", "NNRNA_Alt");
+	 MyButton tglbtnWinright = new MyButton(this, "WinRight", "NNRNA_Win");
+	 MyButton tglbtnAltright = new MyButton(this, "AltRight", "NNRNA_Alt");
 	
-	 JToggleButton tglbtnPrtsc = new MyButton(this, "PrtSc", "NNRNA_Play");
-	 JToggleButton tglbtnScrlk = new MyButton(this, "ScrLk", "NNRNA_Rec");
-	 JToggleButton tglbtnPause = new MyButton(this, "Pause", "NNRNA_Stop");
-	 JToggleButton tglbtnIns = new MyButton(this, "Ins", "SRLUA4_2");
-	 JToggleButton tglbtnHome = new MyButton(this, "Home", "SRLUA5_2");
-	 JToggleButton tglbtnPgup = new MyButton(this, "PgUp", "SRLUA6_2");
-	 JToggleButton tglbtnDel = new MyButton(this, "Del", "SRLUA1_2");
-	 JToggleButton tglbtnEnd = new MyButton(this, "End", "SRLUA2_2");
-	 JToggleButton tglbtnPgdn = new MyButton(this, "PgDn", "XRLUA4_2");
-	 JToggleButton tglbtnUp = new MyButton(this, "Up", "SRLUA4_5");
-	 JToggleButton tglbtnLeft = new MyButton(this, "Left", "SRLUA1_5");
-	 JToggleButton tglbtnDown = new MyButton(this, "Down", "SRLUA2_5");
-	 JToggleButton tglbtnRight = new MyButton(this, "Right", "XRLUA4_5");	
+	 MyButton tglbtnPrtsc = new MyButton(this, "PrtSc", "NNRNA_Play");
+	 MyButton tglbtnScrlk = new MyButton(this, "ScrLk", "NNRNA_Rec");
+	 MyButton tglbtnPause = new MyButton(this, "Pause", "NNRNA_Stop");
+	 MyButton tglbtnIns = new MyButton(this, "Ins", "SRLUA4_2");
+	 MyButton tglbtnHome = new MyButton(this, "Home", "SRLUA5_2");
+	 MyButton tglbtnPgup = new MyButton(this, "PgUp", "SRLUA6_2");
+	 MyButton tglbtnDel = new MyButton(this, "Del", "SRLUA1_2");
+	 MyButton tglbtnEnd = new MyButton(this, "End", "SRLUA2_2");
+	 MyButton tglbtnPgdn = new MyButton(this, "PgDn", "XRLUA4_2");
+	 MyButton tglbtnUp = new MyButton(this, "Up", "SRLUA4_5");
+	 MyButton tglbtnLeft = new MyButton(this, "Left", "SRLUA1_5");
+	 MyButton tglbtnDown = new MyButton(this, "Down", "SRLUA2_5");
+	 MyButton tglbtnRight = new MyButton(this, "Right", "XRLUA4_5");	
 	
-	 JToggleButton tglbtnNum = new MyButton(this, "Num", "SRLUA4_3");
-	 JToggleButton tglbtnNumpaddivide = new MyButton(this, "NumPadDivide", "SRLUA5_3");
-	 JToggleButton tglbtnNumpadmultiply = new MyButton(this, "NumPadMultiply", "SRLUA6_3");
-	 JToggleButton tglbtnNumpadminus = new MyButton(this, "NumPadMinus", "XRLUA1_2");
-	 JToggleButton tglbtnNumpad_7 = new MyButton(this, "NumPad_7", "XRLUA1_3");
-	 JToggleButton tglbtnNumpad_8 = new MyButton(this, "NumPad_8", "SRLUA1_3");
-	 JToggleButton tglbtnNumpad_9 = new MyButton(this, "NumPad_9", "SRLUA2_3");
-	 JToggleButton tglbtnNumpad_4 = new MyButton(this, "NumPad_4", "SRLUA4_4");
-	 JToggleButton tglbtnNumpad_5 = new MyButton(this, "NumPad_5", "SRLUA5_4");
-	 JToggleButton tglbtnNumpad_6 = new MyButton(this, "NumPad_6", "SRLUA6_4");
-	 JToggleButton tglbtnNumpad_1 = new MyButton(this, "NumPad_1", "SRLUA1_4");
-	 JToggleButton tglbtnNumpad_2 = new MyButton(this, "NumPad_2", "SRLUA2_4");
-	 JToggleButton tglbtnNumpad_3 = new MyButton(this, "NumPad_3", "XRLUA4_4");
-	 JToggleButton tglbtnNumpad_0 = new MyButton(this, "NumPad_0", "SRLUC5_5");
-	 JToggleButton tglbtnNumpaddecimal = new MyButton(this, "NumPadDecimal", "SRLUA6_5");
-	 JToggleButton tglbtnNumpadplus = new MyButton(this, "NumPadPlus", "XRLUF4_3");
-	 JToggleButton tglbtnNumpadenter = new MyButton(this, "NumPadEnter", "XRLUF1_4");
+	 MyButton tglbtnNum = new MyButton(this, "Num", "SRLUA4_3");
+	 MyButton tglbtnNumpaddivide = new MyButton(this, "NumPadDivide", "SRLUA5_3");
+	 MyButton tglbtnNumpadmultiply = new MyButton(this, "NumPadMultiply", "SRLUA6_3");
+	 MyButton tglbtnNumpadminus = new MyButton(this, "NumPadMinus", "XRLUA1_2");
+	 MyButton tglbtnNumpad_7 = new MyButton(this, "NumPad_7", "XRLUA1_3");
+	 MyButton tglbtnNumpad_8 = new MyButton(this, "NumPad_8", "SRLUA1_3");
+	 MyButton tglbtnNumpad_9 = new MyButton(this, "NumPad_9", "SRLUA2_3");
+	 MyButton tglbtnNumpad_4 = new MyButton(this, "NumPad_4", "SRLUA4_4");
+	 MyButton tglbtnNumpad_5 = new MyButton(this, "NumPad_5", "SRLUA5_4");
+	 MyButton tglbtnNumpad_6 = new MyButton(this, "NumPad_6", "SRLUA6_4");
+	 MyButton tglbtnNumpad_1 = new MyButton(this, "NumPad_1", "SRLUA1_4");
+	 MyButton tglbtnNumpad_2 = new MyButton(this, "NumPad_2", "SRLUA2_4");
+	 MyButton tglbtnNumpad_3 = new MyButton(this, "NumPad_3", "XRLUA4_4");
+	 MyButton tglbtnNumpad_0 = new MyButton(this, "NumPad_0", "SRLUC5_5");
+	 MyButton tglbtnNumpaddecimal = new MyButton(this, "NumPadDecimal", "SRLUA6_5");
+	 MyButton tglbtnNumpadplus = new MyButton(this, "NumPadPlus", "XRLUF4_3");
+	 MyButton tglbtnNumpadenter = new MyButton(this, "NumPadEnter", "XRLUF1_4");
 	
 	/*
 	 * Without Fn key
@@ -194,6 +196,7 @@ public class KeyboardPiano {
 	public static final int VK_ENTER = 13;
 
 	public static final int VK_SHIFT_LEFT = 160;
+	public static final int SHIFT_LEFT_SCAN_CODE = 42;
 	public static final int VK_Z = 90;
 	public static final int VK_X = 88;
 	public static final int VK_C = 67;
@@ -205,6 +208,7 @@ public class KeyboardPiano {
 	public static final int VK_PERIOD = 190;
 	public static final int VK_SLASH = 191;
 	public static final int VK_SHIFT_RIGHT = 161;
+	public static final int SHIFT_RIGHT_SCAN_CODE = 54;
 
 	public static final int VK_CTRL_LEFT = 162;
 	public static final int VK_WIN_LEFT = 91;
@@ -238,8 +242,8 @@ public class KeyboardPiano {
 	public static final int VK_NUMPAD_8 = 104;
 	public static final int VK_NUMPAD_9 = 105;
 	public static final int VK_NUMPAD_4 = 100;
-	public static final int VK_NUMPAD_5 = 101;
-	public static final int VK_NUMPAD_5_FLAG = 12; //0xc
+	public static final int VK_NUMPAD_5_A = 101;
+	public static final int VK_NUMPAD_5_B = 12; //0xc
 	public static final int VK_NUMPAD_6 = 102;
 	public static final int VK_NUMPAD_1 = 97;
 	public static final int VK_NUMPAD_2 = 98;
@@ -250,12 +254,10 @@ public class KeyboardPiano {
 
 	public static final int VK_FN = -1; //which is never got
 	
-	public static final int TYPE_OTHERS_BUTTON_UP = 257;
-	public static final int TYPE_OTHERS_BUTTON_DOWN = 256;
-	public static final int TYPE_ALT_UPDATE_BUTTON_UP = 261;
-	public static final int TYPE_ALT_UPDATE_BUTTON_DOWN = 260;
-	public static final int ALT_UP = 257;
-	public static final int ALT_DOWN = 260;
+	public static final int KEY_PRESS_A = 260;
+	public static final int KEY_PRESS_B = 256;
+	public static final int KEY_RELEASE_A = 257;
+	public static final int KEY_RELEASE_B = 261;
 
 	public static final char L = 'L';
 	public static final char R = 'R';
@@ -266,8 +268,10 @@ public class KeyboardPiano {
 	public KeyboardPiano() {
 		new MainFrame(this).initialize(frmKeyboardpiano);
 		new MusicPlayer(getWavPath("START")).start();
-		new Thread(new KeyboardHook(this)).start();
+		keyboardHook = new KeyboardHook(this);
 	}
+	
+	private static KeyboardPiano window = null;
 	
 	/**
 	 * Launch the application.
@@ -276,13 +280,37 @@ public class KeyboardPiano {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					KeyboardPiano window = new KeyboardPiano();
+					window = new KeyboardPiano();
 					window.frmKeyboardpiano.setVisible(true);
+					WindowFocusAdapter wfa = window.new WindowFocusAdapter();
+					window.frmKeyboardpiano.addWindowFocusListener(wfa);
 				} catch (Exception e) {
 					e.printStackTrace();
-				}
+				} 
 			}
 		});
+	}
+	
+	private class WindowFocusAdapter implements WindowFocusListener {
+
+		@Override
+		public void windowGainedFocus(WindowEvent e) {
+			// TODO Auto-generated method stub
+			if(keyboardHook != null && !keyboardHook.isFocused && 
+					window.frmKeyboardpiano.isFocused()) {
+				keyboardHook.setHookOn();
+			}
+		}
+
+		@Override
+		public void windowLostFocus(WindowEvent e) {
+			// TODO Auto-generated method stub
+			if(keyboardHook != null && keyboardHook.isFocused &&
+					!window.frmKeyboardpiano.isFocused()) {
+				keyboardHook.setHookOff();
+			}
+		}
+
 	}
 	
 	/*
