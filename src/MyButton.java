@@ -215,9 +215,9 @@ public class MyButton extends JToggleButton {
 	
 	private class MouseMonitor extends MouseAdapter {
 		
-		JToggleButton button = null;
+		MyButton button = null;
 		
-		MouseMonitor(JToggleButton button) {
+		MouseMonitor(MyButton button) {
 			this.button = button;
 		}
 		

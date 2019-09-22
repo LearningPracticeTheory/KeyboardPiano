@@ -1,5 +1,3 @@
-import javax.swing.JToggleButton;
-
 import com.sun.jna.platform.win32.Kernel32;
 import com.sun.jna.platform.win32.User32;
 import com.sun.jna.platform.win32.WinDef.HMODULE;
@@ -12,23 +10,23 @@ import com.sun.jna.platform.win32.WinUser.LowLevelKeyboardProc;
 
 public class KeyboardHook {
 
-	KeyboardPiano kp;
+	private KeyboardPiano kp;
 	private HHOOK hhk = null;
 	private LowLevelKeyboardProc keyboardProc = new KeyboardProc();
 	
-	private static final int FLAG_DOWN = 1;
-	private static final int FLAG_UP = FLAG_DOWN + 128;
-	private static final int FLAG_NUMPAD_DOWN = 0;
-	private static final int FLAG_NUMPAD_UP = FLAG_NUMPAD_DOWN + 128;
-	/*
-	 * after Alt pressed, then the Enter's & NumpadEnter's flags change 
-	 */
-	private static final int FLAG_ALT_NUMPAD_ENTER_DOWN = 32;
-	private static final int FLAG_ALT_NUMPAD_ENTER_UP = FLAG_ALT_NUMPAD_ENTER_DOWN + 128;
-	private static final int FLAG_ALT_ENTER_DOWN = 33;
-	private static final int FLAG_ALT_ENTER_UP = FLAG_ALT_ENTER_DOWN + 128;
+	private static final int INCREASE = 128;
 	
-	static HookThread hookThread = null;
+	private static final int FLAG_KEY_PRESS_A = 1;
+	private static final int FLAG_KEY_PRESS_B = 33;
+	private static final int FLAG_KEY_RELEASE_A = FLAG_KEY_PRESS_A + INCREASE;
+	private static final int FLAG_KEY_RELEASE_B = FLAG_KEY_PRESS_B + INCREASE;
+	
+	private static final int FLAG_NUMPAD_KEY_PRESS_A = 0;
+	private static final int FLAG_NUMPAD_KEY_PRESS_B = 32;
+	private static final int FLAG_NUMPAD_KEY_RELEASE_A = FLAG_NUMPAD_KEY_PRESS_A + INCREASE;
+	private static final int FLAG_NUMPAD_KEY_RELEASE_B = FLAG_NUMPAD_KEY_PRESS_B + INCREASE;
+	
+	private static HookThread hookThread = null;
 	
 	public KeyboardHook(KeyboardPiano kp) {
 		this.kp = kp;
@@ -36,8 +34,6 @@ public class KeyboardHook {
 
 	private class KeyboardProc implements LowLevelKeyboardProc {
 
-		private int flags = 0;
-		
 		/*
 		 * catch vkCode & flags to identify different key type
 		 */
@@ -46,8 +42,10 @@ public class KeyboardHook {
 			if(code >= 0) {
 				int key = event.vkCode;
 				int type = Integer.parseInt(wParam.toString());
-				flags = event.flags;
-				switchKey(key, type);
+				int flags = event.flags;
+				int scan = event.scanCode;
+
+				switchKey(key, type, flags, scan);
 				/*
 				 * What about shield shortcut keys??????????
 				 */
@@ -62,7 +60,7 @@ public class KeyboardHook {
 		/*
 		 * handle all kind of keys
 		 */
-		public void switchKey(int key, int type) {
+		public void switchKey(int key, int type, int flags, int scan) {
 			switch(key) {
 			case KeyboardPiano.VK_ESC :
 				select(kp.tglbtnEsc, type);
@@ -227,7 +225,10 @@ public class KeyboardHook {
 				break;
 
 			case KeyboardPiano.VK_SHIFT_LEFT :
-				select(kp.tglbtnShiftleft, type);
+				/*
+				 * replace by scanCode, instead of vkCode
+				 */
+//				select(kp.tglbtnShiftleft, type);
 				break;
 			case KeyboardPiano.VK_Z :
 				select(kp.tglbtnZ, type);
@@ -260,7 +261,10 @@ public class KeyboardHook {
 				select(kp.tglbtnSlash, type);
 				break;
 			case KeyboardPiano.VK_SHIFT_RIGHT :
-				select(kp.tglbtnShiftright, type);
+				/*
+				 * replace by scanCode, instead of vkCode
+				 */
+//				select(kp.tglbtnShiftright, type);
 				break;
 				
 			case KeyboardPiano.VK_CTRL_LEFT :
@@ -269,8 +273,14 @@ public class KeyboardHook {
 			case KeyboardPiano.VK_WIN_LEFT :
 				select(kp.tglbtnWinleft, type);
 				break;
+			case KeyboardPiano.VK_ALT_LEFT :
+				select(kp.tglbtnAltleft, type);
+				break;
 			case KeyboardPiano.VK_SPACE :
 				select(kp.tglbtnSpace, type);
+				break;
+			case KeyboardPiano.VK_ALT_RIGHT :
+				select(kp.tglbtnAltright, type);
 				break;
 			case KeyboardPiano.VK_WIN_RIGHT :
 				select(kp.tglbtnWinright, type);
@@ -313,8 +323,8 @@ public class KeyboardHook {
 			case KeyboardPiano.VK_NUMPAD_4 :
 				select(kp.tglbtnNumpad_4, type);
 				break;
-			case KeyboardPiano.VK_NUMPAD_5 :
-			case KeyboardPiano.VK_NUMPAD_5_FLAG:
+			case KeyboardPiano.VK_NUMPAD_5_A :
+			case KeyboardPiano.VK_NUMPAD_5_B :
 				select(kp.tglbtnNumpad_5, type);
 				break;
 			case KeyboardPiano.VK_NUMPAD_6 :
@@ -340,93 +350,88 @@ public class KeyboardHook {
 				break;
 			
 			/*
-			 * special case
+			 * special cases
 			 */
-			case KeyboardPiano.VK_FN : //-1
-				select(kp.tglbtnFn, type);
-				break;
-			case KeyboardPiano.VK_ALT_LEFT :
-				select(kp.tglbtnAltleft, type);
-				break;
-			case KeyboardPiano.VK_ALT_RIGHT :
-				select(kp.tglbtnAltright, type);
+			case KeyboardPiano.VK_FN : //-1, it's 93 on the laptop
+				select(kp.tglbtnFn, type); //no idea to catch it on a keyboard
 				break;
 				
 			case KeyboardPiano.VK_INSERT :
-				flagCase(kp.tglbtnIns, kp.tglbtnNumpad_0);
+				flagCase(kp.tglbtnIns, kp.tglbtnNumpad_0, flags);
 				break;
 			case KeyboardPiano.VK_HOME :
-				flagCase(kp.tglbtnHome, kp.tglbtnNumpad_7);
+				flagCase(kp.tglbtnHome, kp.tglbtnNumpad_7, flags);
 				break;
 			case KeyboardPiano.VK_PAGE_UP :
-				flagCase(kp.tglbtnPgup, kp.tglbtnNumpad_9);
+				flagCase(kp.tglbtnPgup, kp.tglbtnNumpad_9, flags);
 				break;
 			case KeyboardPiano.VK_DELETE :
-				flagCase(kp.tglbtnDel, kp.tglbtnNumpaddecimal);
+				flagCase(kp.tglbtnDel, kp.tglbtnNumpaddecimal, flags);
 				break;
 			case KeyboardPiano.VK_END :
-				flagCase(kp.tglbtnEnd, kp.tglbtnNumpad_1);
+				flagCase(kp.tglbtnEnd, kp.tglbtnNumpad_1, flags);
 				break;
 			case KeyboardPiano.VK_PAGE_DOWN :
-				flagCase(kp.tglbtnPgdn, kp.tglbtnNumpad_3);
+				flagCase(kp.tglbtnPgdn, kp.tglbtnNumpad_3, flags);
 				break;
 				
 			case KeyboardPiano.VK_UP :
-				flagCase(kp.tglbtnUp, kp.tglbtnNumpad_8);
+				flagCase(kp.tglbtnUp, kp.tglbtnNumpad_8, flags);
 				break;
 			case KeyboardPiano.VK_LEFT :
-				flagCase(kp.tglbtnLeft, kp.tglbtnNumpad_4);
+				flagCase(kp.tglbtnLeft, kp.tglbtnNumpad_4, flags);
 				break;
 			case KeyboardPiano.VK_DOWN :
-				flagCase(kp.tglbtnDown, kp.tglbtnNumpad_2);
+				flagCase(kp.tglbtnDown, kp.tglbtnNumpad_2, flags);
 				break;
 			case KeyboardPiano.VK_RIGHT :
-				flagCase(kp.tglbtnRight, kp.tglbtnNumpad_6);
+				flagCase(kp.tglbtnRight, kp.tglbtnNumpad_6, flags);
 				break;
 			
-			case KeyboardPiano.VK_ENTER : //two case
-				if(flags == FLAG_NUMPAD_UP || flags == FLAG_ALT_NUMPAD_ENTER_UP) {
-					kp.tglbtnEnter.setSelected(false);
-				} else if(flags == FLAG_UP || flags == FLAG_ALT_ENTER_UP) {
-					kp.tglbtnNumpadenter.setSelected(false);
-				} 
-				if(flags == FLAG_NUMPAD_DOWN || flags == FLAG_ALT_NUMPAD_ENTER_DOWN) {
-					buttonSelected(kp.tglbtnEnter);
-				} else if(flags == FLAG_DOWN || flags == FLAG_ALT_ENTER_DOWN) {
-					buttonSelected(kp.tglbtnNumpadenter);
-				}
+			case KeyboardPiano.VK_ENTER :
+				flagCase(kp.tglbtnNumpadenter, kp.tglbtnEnter, flags);
 				break;
+			}
+			
+			/*
+			 * Identify L & R shift by scanCode
+			 */
+			if(scan == KeyboardPiano.SHIFT_LEFT_SCAN_CODE) {
+				select(kp.tglbtnShiftleft, type);
+			} else if(scan == KeyboardPiano.SHIFT_RIGHT_SCAN_CODE) {
+				select(kp.tglbtnShiftright, type);
 			}
 			
 		}
 		
-		private void flagCase(JToggleButton button, JToggleButton numpadButton) {
-			if(flags == FLAG_NUMPAD_DOWN || flags == FLAG_ALT_NUMPAD_ENTER_DOWN) {
-				buttonSelected(numpadButton);
-			} else if(flags == FLAG_DOWN || flags == FLAG_ALT_ENTER_DOWN) {
-				buttonSelected(button);
-			} else if(flags == FLAG_ALT_ENTER_UP || flags == FLAG_UP) {
-				button.setSelected(false);
-			} else if(flags == FLAG_ALT_NUMPAD_ENTER_UP || flags == FLAG_NUMPAD_UP) {
+		/*
+		 * Same vkCode & type, but different flags
+		 */
+		private void flagCase(MyButton button, MyButton numpadButton, int flags) {
+			if(flags == FLAG_NUMPAD_KEY_RELEASE_A || flags == FLAG_NUMPAD_KEY_RELEASE_B) {
 				numpadButton.setSelected(false);
+			} else if(flags == FLAG_KEY_RELEASE_A || flags == FLAG_KEY_RELEASE_B) {
+				button.setSelected(false);
+			} else if(flags == FLAG_NUMPAD_KEY_PRESS_A || flags == FLAG_NUMPAD_KEY_PRESS_B) {
+				buttonSelected(numpadButton);
+			} else if(flags == FLAG_KEY_PRESS_A || flags == FLAG_KEY_PRESS_B) {
+				buttonSelected(button);
 			}
 		}
 
-		private void buttonSelected(JToggleButton button) {
+		private void buttonSelected(MyButton button) {
  			if(button.isSelected()) {
  				return;
  			}
  			button.setSelected(true);
 		}
 
-		public void select(JToggleButton jtb, int type) {
-			if(type == KeyboardPiano.ALT_UP
-					|| type == KeyboardPiano.TYPE_ALT_UPDATE_BUTTON_UP 
-					|| type == KeyboardPiano.TYPE_OTHERS_BUTTON_UP) {
+		public void select(MyButton jtb, int type) {
+			if(type == KeyboardPiano.KEY_RELEASE_A
+					|| type == KeyboardPiano.KEY_RELEASE_B) {
 				jtb.setSelected(false);
-			} else if( type == KeyboardPiano.ALT_DOWN
-					|| type == KeyboardPiano.TYPE_ALT_UPDATE_BUTTON_DOWN
-					|| type == KeyboardPiano.TYPE_OTHERS_BUTTON_DOWN) {
+			} else if( type == KeyboardPiano.KEY_PRESS_A
+					|| type == KeyboardPiano.KEY_PRESS_B) {
 				buttonSelected(jtb);
 			}
 		}

@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -22,7 +24,21 @@ public class MainFrame {
 		frmKeyboardpiano.setTitle("KeyboardPiano");
 		frmKeyboardpiano.setSize(1086, 782);
 		frmKeyboardpiano.setResizable(false);
-		frmKeyboardpiano.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		frmKeyboardpiano.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		frmKeyboardpiano.addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				// TODO Auto-generated method stub
+				kp.keyboardHook.setHookOff();
+				kp.cachedThreadPool.shutdown();
+				super.windowClosing(e);
+				System.exit(0);
+			}
+			
+		});
+		
 		frmKeyboardpiano.setLocationRelativeTo(null);
 		frmKeyboardpiano.getContentPane().setLayout(new BorderLayout(0, 0));
 		
