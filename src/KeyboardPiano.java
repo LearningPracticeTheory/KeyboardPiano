@@ -1,5 +1,7 @@
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowFocusListener;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -10,6 +12,7 @@ import javax.swing.JToggleButton;
 public class KeyboardPiano {
 
 	ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+	KeyboardHook keyboardHook = null;
 	
 	 JFrame frmKeyboardpiano = new JFrame();
 	 JTextField textField;
@@ -266,8 +269,10 @@ public class KeyboardPiano {
 	public KeyboardPiano() {
 		new MainFrame(this).initialize(frmKeyboardpiano);
 		new MusicPlayer(getWavPath("START")).start();
-		new Thread(new KeyboardHook(this)).start();
+		keyboardHook = new KeyboardHook(this);
 	}
+	
+	private static KeyboardPiano window = null;
 	
 	/**
 	 * Launch the application.
@@ -276,13 +281,37 @@ public class KeyboardPiano {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					KeyboardPiano window = new KeyboardPiano();
+					window = new KeyboardPiano();
 					window.frmKeyboardpiano.setVisible(true);
+					WindowFocusAdapter wfa = window.new WindowFocusAdapter();
+					window.frmKeyboardpiano.addWindowFocusListener(wfa);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
+	}
+	
+	private class WindowFocusAdapter implements WindowFocusListener {
+
+		@Override
+		public void windowGainedFocus(WindowEvent e) {
+			// TODO Auto-generated method stub
+			if(keyboardHook != null && !keyboardHook.isFocused && 
+					window.frmKeyboardpiano.isFocused()) {
+				keyboardHook.setHookOn();
+			}
+		}
+
+		@Override
+		public void windowLostFocus(WindowEvent e) {
+			// TODO Auto-generated method stub
+			if(keyboardHook != null && keyboardHook.isFocused &&
+					!window.frmKeyboardpiano.isFocused()) {
+				keyboardHook.setHookOff();
+			}
+		}
+
 	}
 	
 	/*
