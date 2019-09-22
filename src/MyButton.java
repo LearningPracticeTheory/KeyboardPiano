@@ -158,7 +158,7 @@ public class MyButton extends JToggleButton {
 			/*
 			 * play music once
 			 */
-//			new Thread(new MusicPlayer(getType(), wavPath)).start();
+			new Thread(new MusicPlayer(getType(), wavPath)).start();
 		} else { //default is Up
 			g2d.drawImage(imageUp.getImage(), 1, 1, null);
 		}
