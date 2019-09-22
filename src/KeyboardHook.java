@@ -10,7 +10,7 @@ import com.sun.jna.platform.win32.WinUser.HHOOK;
 import com.sun.jna.platform.win32.WinUser.KBDLLHOOKSTRUCT;
 import com.sun.jna.platform.win32.WinUser.LowLevelKeyboardProc;
 
-public class KeyboardHook implements Runnable {
+public class KeyboardHook {
 
 	KeyboardPiano kp;
 	private HHOOK hhk = null;
@@ -27,6 +27,8 @@ public class KeyboardHook implements Runnable {
 	private static final int FLAG_ALT_NUMPAD_ENTER_UP = FLAG_ALT_NUMPAD_ENTER_DOWN + 128;
 	private static final int FLAG_ALT_ENTER_DOWN = 33;
 	private static final int FLAG_ALT_ENTER_UP = FLAG_ALT_ENTER_DOWN + 128;
+	
+	static HookThread hookThread = null;
 	
 	public KeyboardHook(KeyboardPiano kp) {
 		this.kp = kp;
@@ -46,8 +48,14 @@ public class KeyboardHook implements Runnable {
 				int type = Integer.parseInt(wParam.toString());
 				flags = event.flags;
 				switchKey(key, type);
+				/*
+				 * What about shield shortcut keys??????????
+				 */
 				return new LRESULT(1); //KIA all keys
 			}
+			/*
+			 * calling callback method, that's how it loop
+			 */
 			return User32.INSTANCE.CallNextHookEx(hhk, code, wParam, null);
 		}
 		
@@ -424,15 +432,42 @@ public class KeyboardHook implements Runnable {
 		}
 		
 	}
-
-	@Override
-	public void run() {
-		
-		HMODULE hMod = Kernel32.INSTANCE.GetModuleHandle(null);
-		hhk = User32.INSTANCE.SetWindowsHookEx(User32.WH_KEYBOARD_LL, keyboardProc, hMod, 0);
+	
+	public boolean isFocused = false;
+	
+	private void setHookOnInner() {
+		if(hhk == null) {
+			HMODULE hMod = Kernel32.INSTANCE.GetModuleHandle(null);
+			hhk = User32.INSTANCE.SetWindowsHookEx(User32.WH_KEYBOARD_LL, keyboardProc, hMod, 0);
+		} else {
+			return;
+		}
+		isFocused = true;
 		WinUser.MSG msg = new WinUser.MSG();
-		while ((User32.INSTANCE.GetMessage(msg, null, 0, 0)) != 0) { }
-		
+		/*
+		 * GetMessage is a blocking thread, it calls callback?
+		 */
+		User32.INSTANCE.GetMessage(msg, null, 0, 0);
+	}
+	
+	public void setHookOn(){
+		hookThread = new HookThread();
+		hookThread.start();
+	}
+	
+	public void setHookOff(){
+		synchronized(this) {
+			User32.INSTANCE.UnhookWindowsHookEx(hhk);
+			hhk = null;
+			isFocused = false;
+		}
+	}
+	
+	private class HookThread extends Thread {
+		@Override
+		public void run() {
+			setHookOnInner();
+		}
 	}
 
 }
