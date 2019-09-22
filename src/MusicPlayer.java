@@ -42,6 +42,7 @@ public class MusicPlayer extends Thread {
 			e1.printStackTrace();
 		}
 		
+		
 		try {
 			audioInputStream = AudioSystem.getAudioInputStream(buffer);
 			clip = AudioSystem.getClip();
@@ -53,6 +54,7 @@ public class MusicPlayer extends Thread {
 		} catch (LineUnavailableException e) {
 			e.printStackTrace();
 		}  
+		
 		
 		FloatControl gainControl = 
 				(FloatControl)clip.getControl(FloatControl.Type.MASTER_GAIN);
@@ -69,20 +71,19 @@ public class MusicPlayer extends Thread {
 		 * it seems that it doesn't work well
 		 * CPU usage will be like 30% while multiple type keys
 		 */
-		/*
+		
 		try {
-//			Thread.sleep(3000);
-			
-			if(!this.isInterrupted()) {
-			}
-			
-			this.interrupt();
-//			this.join();
+			Thread.sleep(6000);
+			audioInputStream.close();
+			buffer.close();
+			clip.close();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		*/
+		
 	}
 	
 }
