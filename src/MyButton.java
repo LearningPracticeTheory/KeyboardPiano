@@ -63,52 +63,83 @@ public class MyButton extends JToggleButton {
         setContentAreaFilled(false);
         
 		this.kp = kp;
-		setImage(name);
+		
+		setImageAndWavByName(name);
+		
         this.setHorizontalTextPosition(SwingConstants.CENTER); //Text displays on center
         this.setBorderPainted(false); //do NOT paint the border of the button
 
         this.addMouseListener(new MouseMonitor(this));
 	}
 	
-	public void setImage(String name) { //UpName
+	public void setImageAndWavByName(String name) { //UpName
 		imageName = name;
 		imageUpPath = getPath(name);
 		imageUp = new ImageIcon(imageUpPath);
 		imageDownPath = getPath(getImageDownName(name));
 		wavPath = getWavPath(name);
 		imageDown = new ImageIcon(imageDownPath);
+		
+		modifyImageByType(imageName.charAt(TYPE_INDEX));
 	}
 	
-	private void graphicsImageSet(Graphics2D g2d, int type, int widthMinus, int heightMinus) {
+	private void setImageByType(int type, int widthMinus, int heightMinus) {
 		imageUp.setImage(imageUp.getImage().getScaledInstance(type-widthMinus, HEIGHT-heightMinus, Image.SCALE_DEFAULT));
     	imageDown.setImage(imageDown.getImage().getScaledInstance(type-widthMinus, HEIGHT-heightMinus, Image.SCALE_DEFAULT));
-        g2d.fillRoundRect(0, 0, type, HEIGHT, ARC_WIDTH, ARC_HEIGHT); //make Rectangle more beautiful
 	}
 	
-	private void switchCase(Graphics2D g2d, int type) {
+	private void modifyImageByType(int type) { //char type actually
 		switch(type) {
 		case A :
-			graphicsImageSet(g2d, A_TYPE, 2, 2);
+			setImageByType(A_TYPE, 2, 2);
 			break;
 		case B :
-			graphicsImageSet(g2d, B_TYPE, 3, 2);
+			setImageByType(B_TYPE, 3, 2);
 			break;
 		case C :
-			graphicsImageSet(g2d, C_TYPE, 4, 2);
+			setImageByType(C_TYPE, 4, 2);
 			break;
 		case D :
-			graphicsImageSet(g2d, D_TYPE, 3, 2);
+			setImageByType(D_TYPE, 3, 2);
 			break;
 		case E :
-			graphicsImageSet(g2d, E_TYPE, 6, 2);
+			setImageByType(E_TYPE, 6, 2);
 			break;
 		case F :
+			/*
+			 * Numpad_+ & Numpad_Enter are just a bit different
+			 */
 			imageUp.setImage(imageUp.getImage().getScaledInstance(WIDTH-2, SPECIAL_HEIGHT-2, Image.SCALE_DEFAULT));
         	imageDown.setImage(imageDown.getImage().getScaledInstance(WIDTH-2, SPECIAL_HEIGHT-2, Image.SCALE_DEFAULT));
-	        g2d.fillRoundRect(0, 0, WIDTH, SPECIAL_HEIGHT, ARC_WIDTH, ARC_HEIGHT);
 			break;
 		}
 		
+	}
+	
+	private void fillRectByType(Graphics2D g2d, int type) { //char actually
+		switch(type) {
+		case A :
+			g2d.fillRoundRect(0, 0, A_TYPE, HEIGHT, ARC_WIDTH, ARC_HEIGHT); //make Rectangle more beautiful
+			break;
+		case B :
+			g2d.fillRoundRect(0, 0, B_TYPE, HEIGHT, ARC_WIDTH, ARC_HEIGHT);
+			break;
+		case C :
+			g2d.fillRoundRect(0, 0, C_TYPE, HEIGHT, ARC_WIDTH, ARC_HEIGHT);
+			break;
+		case D :
+			g2d.fillRoundRect(0, 0, D_TYPE, HEIGHT, ARC_WIDTH, ARC_HEIGHT);
+			break;
+		case E :
+			g2d.fillRoundRect(0, 0, E_TYPE, HEIGHT, ARC_WIDTH, ARC_HEIGHT);
+			break;
+		case F :
+			/*
+			 * Numpad_+ & Numpad_Enter are just a bit different
+			 */
+			g2d.fillRoundRect(0, 0, WIDTH, SPECIAL_HEIGHT, ARC_WIDTH, ARC_HEIGHT);
+			break;
+		}
 	}
 	
 	@Override
@@ -119,15 +150,15 @@ public class MyButton extends JToggleButton {
                 RenderingHints.VALUE_ANTIALIAS_ON);
 
         g2d.setColor(Color.GRAY);
-
-        switchCase(g2d, imageName.charAt(TYPE_INDEX));
+        
+        fillRectByType(g2d, imageName.charAt(TYPE_INDEX));
         
 		if(this.isSelected()) {
 			g2d.drawImage(imageDown.getImage(), 1, 1, null);
 			/*
 			 * play music once
 			 */
-			new Thread(new MusicPlayer(getType(), wavPath)).start();
+			kp.cachedThreadPool.execute(new MusicPlayer(getType(), wavPath));
 		} else { //default is Up
 			g2d.drawImage(imageUp.getImage(), 1, 1, null);
 		}
