@@ -34,7 +34,7 @@ public class MusicPlayer extends Thread {
 		if(musicPath == null) {
 			return;
 		}
-		if(musicType == MyButton.N) {
+		if(musicType == MyButton.SIDE_N) { //left or right or N
 			return;
 		}
 		
