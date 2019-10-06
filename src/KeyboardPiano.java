@@ -3,8 +3,6 @@ import java.awt.EventQueue;
 import java.awt.Image;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -21,122 +19,122 @@ public class KeyboardPiano {
 	 JTextField textField;
 	 JTextField textField_1;
 	 Color backGround = new Color(230, 231, 235);
-	 MyButton tglbtnEsc = new MyButton(this, "Esc", "NNRNA_Esc");
-	 MyButton tglbtnF_1 = new MyButton(this, "F1", "NNRNA_F1");
-	 MyButton tglbtnF_2 = new MyButton(this, "F2", "NNRNA_F2");
-	 MyButton tglbtnF_3 = new MyButton(this, "F3", "NNRNA_F3");
-	 MyButton tglbtnF_4 = new MyButton(this, "F4", "NNRNA_F4");
-	 MyButton tglbtnF_5 = new MyButton(this, "F5", "NNRNA_F5");
-	 MyButton tglbtnF_6 = new MyButton(this, "F6", "NNRNA_F6");
-	 MyButton tglbtnF_7 = new MyButton(this, "F7", "NNRNA_F7");
-	 MyButton tglbtnF_8 = new MyButton(this, "F8", "NNRNA_F8");
-	 MyButton tglbtnF_9 = new MyButton(this, "F9", "NNRNA_F9");
-	 MyButton tglbtnF_10 = new MyButton(this, "F10", "NNRNA_F10");
-	 MyButton tglbtnF_11 = new MyButton(this, "F11", "NNRNA_F11");
-	 MyButton tglbtnF_12 = new MyButton(this, "F12", "NNRNA_F12");
+	 MyButton tglbtnEsc = new MyButton(this, "Esc", "NNNAN_Esc");
+	 MyButton tglbtn_F1 = new MyButton(this, "F1", "NNNAN_F1");
+	 MyButton tglbtn_F2 = new MyButton(this, "F2", "NNNAN_F2");
+	 MyButton tglbtn_F3 = new MyButton(this, "F3", "NNNAN_F3");
+	 MyButton tglbtn_F4 = new MyButton(this, "F4", "NNNAN_F4");
+	 MyButton tglbtn_F5 = new MyButton(this, "F5", "NNNAN_F5");
+	 MyButton tglbtn_F6 = new MyButton(this, "F6", "NNNAN_F6");
+	 MyButton tglbtn_F7 = new MyButton(this, "F7", "NNNAN_F7");
+	 MyButton tglbtn_F8 = new MyButton(this, "F8", "NNNAN_F8");
+	 MyButton tglbtn_F9 = new MyButton(this, "F9", "NNNAN_F9");
+	 MyButton tglbtn_F10 = new MyButton(this, "F10", "NNNAN_F10");
+	 MyButton tglbtn_F11 = new MyButton(this, "F11", "NNNAN_F11");
+	 MyButton tglbtn_F12 = new MyButton(this, "F12", "NNNAN_F12");
 	
-	 MyButton tglbtnBackquote = new MyButton(this, "BackQuote", "NNRNA_BackQuote");
-	 MyButton tglbtn_1 = new MyButton(this, "1", "SLWUA1_3");
-	 MyButton tglbtn_2 = new MyButton(this, "2", "SLWUA2_3");
-	 MyButton tglbtn_3 = new MyButton(this, "3", "XLWUA4_3");
-	 MyButton tglbtn_4 = new MyButton(this, "4", "SLWUA4_3");
-	 MyButton tglbtn_5 = new MyButton(this, "5", "SLWUA5_3");
-	 MyButton tglbtn_6 = new MyButton(this, "6", "SLWUA6_3");
-	 MyButton tglbtn_7 = new MyButton(this, "7", "XLWUA1_2");
-	 MyButton tglbtn_8 = new MyButton(this, "8", "SLWUA1_2");
-	 MyButton tglbtn_9 = new MyButton(this, "9", "SLWUA2_2");
-	 MyButton tglbtn_0 = new MyButton(this, "0", "XLWUA4_2");
-	 MyButton tglbtnMinus = new MyButton(this, "Minus", "SLWUA4_2"); //-
-	 MyButton tglbtnEquals = new MyButton(this, "Equals", "SLWUA5_2"); //=
-	 MyButton tglbtnBackspace = new MyButton(this, "BackSpace", "NNRNC_Backspace");
+	 MyButton tglbtnBackquote = new MyButton(this, "BackQuote", "NNNAN_BackQuote");
+	 MyButton tglbtn_1 = new MyButton(this, "1", "LWUAB_5");
+	 MyButton tglbtn_2 = new MyButton(this, "2", "LWUAD_5");
+	 MyButton tglbtn_3 = new MyButton(this, "3", "LWUAF_5");
+	 MyButton tglbtn_4 = new MyButton(this, "4", "LWUAG_5");
+	 MyButton tglbtn_5 = new MyButton(this, "5", "LWUAI_5");
+	 MyButton tglbtn_6 = new MyButton(this, "6", "LWUAK_5");
+	 MyButton tglbtn_7 = new MyButton(this, "7", "LWUAA_6");
+	 MyButton tglbtn_8 = new MyButton(this, "8", "LWUAB_6");
+	 MyButton tglbtn_9 = new MyButton(this, "9", "LWUAD_6");
+	 MyButton tglbtn_0 = new MyButton(this, "0", "LWUAF_6");
+	 MyButton tglbtnMinus = new MyButton(this, "Minus", "LWUAG_6"); //-
+	 MyButton tglbtnEquals = new MyButton(this, "Equals", "LWUAI_6"); //=
+	 MyButton tglbtnBackspace = new MyButton(this, "BackSpace", "NNNCN_BackSpace");
 	
-	 MyButton tglbtnTab = new MyButton(this, "Tab", "NNRNB_Tab");
-	 MyButton tglbtnQ = new MyButton(this, "Q", "SLWUA1_4" );
-	 MyButton tglbtnW = new MyButton(this, "W", "SLWUA2_4");
-	 MyButton tglbtnE = new MyButton(this, "E", "XLWUA4_4");
-	 MyButton tglbtnR = new MyButton(this, "R", "SLWUA4_4");
-	 MyButton tglbtnT = new MyButton(this, "T", "SLWUA5_4");
-	 MyButton tglbtnY = new MyButton(this, "Y", "SLWUA6_4");
-	 MyButton tglbtnU = new MyButton(this, "U", "XLWUA1_3");
-	 MyButton tglbtnI = new MyButton(this, "I", "SLWUA1_3");
-	 MyButton tglbtnO = new MyButton(this, "O", "SLWUA2_3");
-	 MyButton tglbtnP = new MyButton(this, "P", "XLWUA4_3");
-	 MyButton tglbtnOpenbracket = new MyButton(this, "OpenBracket", "SLWUA4_3"); //[
-	 MyButton tglbtnClosebracket = new MyButton(this, "CloseBracket", "SLWUA5_3"); //]  
-	 MyButton tglbtnBackslash = new MyButton(this, "BackSlash", "SLWUB6_3"); //\
+	 MyButton tglbtnTab = new MyButton(this, "Tab", "NNNBN_Tab");
+	 MyButton tglbtnQ = new MyButton(this, "Q", "LWUAB_4");
+	 MyButton tglbtnW = new MyButton(this, "W", "LWUAD_4");
+	 MyButton tglbtnE = new MyButton(this, "E", "LWUAF_4");
+	 MyButton tglbtnR = new MyButton(this, "R", "LWUAG_4");
+	 MyButton tglbtnT = new MyButton(this, "T", "LWUAI_4");
+	 MyButton tglbtnY = new MyButton(this, "Y", "LWUAK_4");
+	 MyButton tglbtnU = new MyButton(this, "U", "LWUAA_5");
+	 MyButton tglbtnI = new MyButton(this, "I", "LWUAB_5");
+	 MyButton tglbtnO = new MyButton(this, "O", "LWUAD_5");
+	 MyButton tglbtnP = new MyButton(this, "P", "LWUAF_5");
+	 MyButton tglbtnOpenbracket = new MyButton(this, "OpenBracket", "LWUAG_5"); //[
+	 MyButton tglbtnClosebracket = new MyButton(this, "CloseBracket", "LWUAI_5"); //]
+	 MyButton tglbtnBackslash = new MyButton(this, "BackSlash", "LWUBK_5"); //\
 	
-	 MyButton tglbtnCaps = new MyButton(this, "Caps", "NNRNC_Caps");
-	 MyButton tglbtnA = new MyButton(this, "A", "SLWUA1_5");
-	 MyButton tglbtnS = new MyButton(this, "S", "SLWUA2_5");
-	 MyButton tglbtnD = new MyButton(this, "D", "XLWUA4_5");
-	 MyButton tglbtnF = new MyButton(this, "F", "SLWUA4_5");
-	 MyButton tglbtnG = new MyButton(this, "G", "SLWUA5_5");
-	 MyButton tglbtnH = new MyButton(this, "H", "SLWUA6_5");
-	 MyButton tglbtnJ = new MyButton(this, "J", "XLWUA1_4");
-	 MyButton tglbtnK = new MyButton(this, "K", "SLWUA1_4");
-	 MyButton tglbtnL = new MyButton(this, "L", "SLWUA2_4");
-	 MyButton tglbtnSemicolon = new MyButton(this, "Semicolon", "XLWUA4_4"); //;
-	 MyButton tglbtnQuote = new MyButton(this, "Quote", "SLWUA4_4"); //'
-	 MyButton tglbtnEnter = new MyButton(this, "Enter", "NNRNC_Enter");
+	 MyButton tglbtnCaps = new MyButton(this, "Caps", "NNNCN_Caps");
+	 MyButton tglbtnA = new MyButton(this, "A", "LWUAB_3");
+	 MyButton tglbtnS = new MyButton(this, "S", "LWUAD_3");
+	 MyButton tglbtnD = new MyButton(this, "D", "LWUAF_3");
+	 MyButton tglbtnF = new MyButton(this, "F", "LWUAG_3");
+	 MyButton tglbtnG = new MyButton(this, "G", "LWUAI_3");
+	 MyButton tglbtnH = new MyButton(this, "H", "LWUAK_3");
+	 MyButton tglbtnJ = new MyButton(this, "J", "LWUAA_4");
+	 MyButton tglbtnK = new MyButton(this, "K", "LWUAB_4");
+	 MyButton tglbtnL = new MyButton(this, "L", "LWUAD_4");
+	 MyButton tglbtnSemicolon = new MyButton(this, "Semicolon", "LWUAF_4"); //;
+	 MyButton tglbtnQuote = new MyButton(this, "Quote", "LWUAG_4"); //'
+	 MyButton tglbtnEnter = new MyButton(this, "Enter", "NNNCN_Enter");
 	
-	 MyButton tglbtnShiftleft = new MyButton(this, "ShiftLeft", "XLWUD1_6");
-	 MyButton tglbtnZ = new MyButton(this, "Z", "SLWUA1_6");
-	 MyButton tglbtnX = new MyButton(this, "X", "SLWUA2_6");
-	 MyButton tglbtnC = new MyButton(this, "C", "XLWUA4_6");
-	 MyButton tglbtnV = new MyButton(this, "V", "SLWUA4_6");
-	 MyButton tglbtnB = new MyButton(this, "B", "SLWUA5_6");
-	 MyButton tglbtnN = new MyButton(this, "N", "SLWUA6_6");
-	 MyButton tglbtnM = new MyButton(this, "M", "XLWUA1_5");
-	 MyButton tglbtnComma = new MyButton(this, "Comma", "SLWUA1_5"); //,
-	 MyButton tglbtnPeriod = new MyButton(this, "Period", "SLWUA2_5"); //.
-	 MyButton tglbtnSlash = new MyButton(this, "Slash", "XLWUA4_5"); ///
-	 MyButton tglbtnShiftright = new MyButton(this, "ShiftRight", "NNRND_Shift");
+	 MyButton tglbtnShiftleft = new MyButton(this, "ShiftLeft", "LWUDA_2");
+	 MyButton tglbtnZ = new MyButton(this, "Z", "LWUAB_2");
+	 MyButton tglbtnX = new MyButton(this, "X", "LWUAD_2");
+	 MyButton tglbtnC = new MyButton(this, "C", "LWUAF_2");
+	 MyButton tglbtnV = new MyButton(this, "V", "LWUAG_2");
+	 MyButton tglbtnB = new MyButton(this, "B", "LWUAI_2");
+	 MyButton tglbtnN = new MyButton(this, "N", "LWUAK_2");
+	 MyButton tglbtnM = new MyButton(this, "M", "LWUAA_3");
+	 MyButton tglbtnComma = new MyButton(this, "Comma", "LWUAB_3"); //,
+	 MyButton tglbtnPeriod = new MyButton(this, "Period", "LWUAD_3"); //.
+	 MyButton tglbtnSlash = new MyButton(this, "Slash", "LWUAF_3"); ///
+	 MyButton tglbtnShiftright = new MyButton(this, "ShiftRight", "NNNDN_ShiftRight");
 	
-	 MyButton tglbtnCtrlleft = new MyButton(this, "CtrlLeft", "NNRNB_Ctrl");
-	 MyButton tglbtnWinleft = new MyButton(this, "WinLeft", "NNRNA_Win");
-	 MyButton tglbtnAltleft = new MyButton(this, "AltLeft", "SLWUA6_6");
-	 MyButton tglbtnSpace = new MyButton(this, "Space", "NNRNE_Space");
-	 MyButton tglbtnCtrlright = new MyButton(this, "CtrlRight", "NNRNB_Ctrl");
+	 MyButton tglbtnCtrlleft = new MyButton(this, "CtrlLeft", "NNNBN_CtrlLeft");
+	 MyButton tglbtnWinleft = new MyButton(this, "WinLeft", "NNNAN_WinLeft");
+	 MyButton tglbtnAltleft = new MyButton(this, "AltLeft", "LWUAK_1");
+	 MyButton tglbtnSpace = new MyButton(this, "Space", "NNNEN_Space");
+	 MyButton tglbtnCtrlright = new MyButton(this, "CtrlRight", "NNNBN_CtrlRight");
 	
 	/*
 	 * Can not catch Fn anyway, whether use KeyEvent/vkCode
 	 */
-	 MyButton tglbtnFn = new MyButton(this, "Fn", "NNRNA_Fn");
+	 MyButton tglbtnFn = new MyButton(this, "Fn", "NNNAN_Fn");
 	
-	 MyButton tglbtnWinright = new MyButton(this, "WinRight", "NNRNA_Win");
-	 MyButton tglbtnAltright = new MyButton(this, "AltRight", "NNRNA_Alt");
+	 MyButton tglbtnWinright = new MyButton(this, "WinRight", "NNNAN_WinRight");
+	 MyButton tglbtnAltright = new MyButton(this, "AltRight", "NNNAN_AltRight");
 	
-	 MyButton tglbtnPrtsc = new MyButton(this, "PrtSc", "NNRNA_Play");
-	 MyButton tglbtnScrlk = new MyButton(this, "ScrLk", "NNRNA_Rec");
-	 MyButton tglbtnPause = new MyButton(this, "Pause", "NNRNA_Stop");
-	 MyButton tglbtnIns = new MyButton(this, "Ins", "SRLUA4_2");
-	 MyButton tglbtnHome = new MyButton(this, "Home", "SRLUA5_2");
-	 MyButton tglbtnPgup = new MyButton(this, "PgUp", "SRLUA6_2");
-	 MyButton tglbtnDel = new MyButton(this, "Del", "SRLUA1_2");
-	 MyButton tglbtnEnd = new MyButton(this, "End", "SRLUA2_2");
-	 MyButton tglbtnPgdn = new MyButton(this, "PgDn", "XRLUA4_2");
-	 MyButton tglbtnUp = new MyButton(this, "Up", "SRLUA4_5");
-	 MyButton tglbtnLeft = new MyButton(this, "Left", "SRLUA1_5");
-	 MyButton tglbtnDown = new MyButton(this, "Down", "SRLUA2_5");
-	 MyButton tglbtnRight = new MyButton(this, "Right", "XRLUA4_5");	
+	 MyButton tglbtnPrtsc = new MyButton(this, "PrtSc", "NNNAN_PrtSc");
+	 MyButton tglbtnScrlk = new MyButton(this, "ScrLk", "NNNAN_ScrLk");
+	 MyButton tglbtnPause = new MyButton(this, "Pause", "NNNAN_Pause");
+	 MyButton tglbtnIns = new MyButton(this, "Ins", "RLUAG_6");
+	 MyButton tglbtnHome = new MyButton(this, "Home", "RLUAI_6");
+	 MyButton tglbtnPgup = new MyButton(this, "PgUp", "RLUAK_6");
+	 MyButton tglbtnDel = new MyButton(this, "Del", "RLUAB_6");
+	 MyButton tglbtnEnd = new MyButton(this, "End", "RLUAD_6");
+	 MyButton tglbtnPgdn = new MyButton(this, "PgDn", "RLUAF_6");
+	 MyButton tglbtnUp = new MyButton(this, "Up", "RLUAG_3");
+	 MyButton tglbtnLeft = new MyButton(this, "Left", "RLUAB_3");
+	 MyButton tglbtnDown = new MyButton(this, "Down", "RLUAD_3");
+	 MyButton tglbtnRight = new MyButton(this, "Right", "RLUAF_3");	
 	
-	 MyButton tglbtnNum = new MyButton(this, "Num", "SRLUA4_3");
-	 MyButton tglbtnNumpaddivide = new MyButton(this, "NumPadDivide", "SRLUA5_3");
-	 MyButton tglbtnNumpadmultiply = new MyButton(this, "NumPadMultiply", "SRLUA6_3");
-	 MyButton tglbtnNumpadminus = new MyButton(this, "NumPadMinus", "XRLUA1_2");
-	 MyButton tglbtnNumpad_7 = new MyButton(this, "NumPad_7", "XRLUA1_3");
-	 MyButton tglbtnNumpad_8 = new MyButton(this, "NumPad_8", "SRLUA1_3");
-	 MyButton tglbtnNumpad_9 = new MyButton(this, "NumPad_9", "SRLUA2_3");
-	 MyButton tglbtnNumpad_4 = new MyButton(this, "NumPad_4", "SRLUA4_4");
-	 MyButton tglbtnNumpad_5 = new MyButton(this, "NumPad_5", "SRLUA5_4");
-	 MyButton tglbtnNumpad_6 = new MyButton(this, "NumPad_6", "SRLUA6_4");
-	 MyButton tglbtnNumpad_1 = new MyButton(this, "NumPad_1", "SRLUA1_4");
-	 MyButton tglbtnNumpad_2 = new MyButton(this, "NumPad_2", "SRLUA2_4");
-	 MyButton tglbtnNumpad_3 = new MyButton(this, "NumPad_3", "XRLUA4_4");
-	 MyButton tglbtnNumpad_0 = new MyButton(this, "NumPad_0", "SRLUC5_5");
-	 MyButton tglbtnNumpaddecimal = new MyButton(this, "NumPadDecimal", "SRLUA6_5");
-	 MyButton tglbtnNumpadplus = new MyButton(this, "NumPadPlus", "XRLUF4_3");
-	 MyButton tglbtnNumpadenter = new MyButton(this, "NumPadEnter", "XRLUF1_4");
+	 MyButton tglbtnNum = new MyButton(this, "Num", "RLUAG_5");
+	 MyButton tglbtnNumpaddivide = new MyButton(this, "NumPadDivide", "RLUAI_5");
+	 MyButton tglbtnNumpadmultiply = new MyButton(this, "NumPadMultiply", "RLUAK_5");
+	 MyButton tglbtnNumpadminus = new MyButton(this, "NumPadMinus", "RLUAA_6");
+	 MyButton tglbtnNumpad_7 = new MyButton(this, "NumPad_7", "RLUAA_5");
+	 MyButton tglbtnNumpad_8 = new MyButton(this, "NumPad_8", "RLUAB_5");
+	 MyButton tglbtnNumpad_9 = new MyButton(this, "NumPad_9", "RLUAD_5");
+	 MyButton tglbtnNumpad_4 = new MyButton(this, "NumPad_4", "RLUAG_4");
+	 MyButton tglbtnNumpad_5 = new MyButton(this, "NumPad_5", "RLUAI_4");
+	 MyButton tglbtnNumpad_6 = new MyButton(this, "NumPad_6", "RLUAK_4");
+	 MyButton tglbtnNumpad_1 = new MyButton(this, "NumPad_1", "RLUAB_4");
+	 MyButton tglbtnNumpad_2 = new MyButton(this, "NumPad_2", "RLUAD_4");
+	 MyButton tglbtnNumpad_3 = new MyButton(this, "NumPad_3", "RLUAF_4");
+	 MyButton tglbtnNumpad_0 = new MyButton(this, "NumPad_0", "RLUCI_3");
+	 MyButton tglbtnNumpaddecimal = new MyButton(this, "NumPadDecimal", "RLUAK_3");
+	 MyButton tglbtnNumpadplus = new MyButton(this, "NumPadPlus", "RLUFF_5");
+	 MyButton tglbtnNumpadenter = new MyButton(this, "NumPadEnter", "RLUFA_4");
 	
 	/*
 	 * Without Fn key
@@ -266,189 +264,29 @@ public class KeyboardPiano {
 	public static final char L = 'L';
 	public static final char R = 'R';
 	
-//	public static List<MyButton> buttons = null;
-	
 	public MyButton selectedButton = null;
-	
 	public PopupWindowManage popupWindowManager = null;
+	public static ImageIcon selectIcon = 
+			new ImageIcon(PropertiesManage.getImgProperty("select"));
+	public static ImageIcon unselectIcon = 
+			new ImageIcon(PropertiesManage.getImgProperty("unselect"));
 	
 	private static final int ICON_LENGTH = 20;
-	
-	public static ImageIcon selectIcon = new ImageIcon("img2.png");
-	public static ImageIcon unselectIcon = new ImageIcon("img3.png");
 	
 	/**
 	 * Create the application.
 	 */
 	public KeyboardPiano() {
 		new MainFrame(this).initialize(frmKeyboardpiano);
-		new MusicPlayer(getWavPath("START")).start();
+		new MusicPlayer(getWavPath("start")).start();
 		keyboardHook = new KeyboardHook(this);
-//		buttons = getButtons();
-//		addPopupWindowForButtons(buttons);
 		
 		selectIcon.setImage(selectIcon.getImage().getScaledInstance(ICON_LENGTH, ICON_LENGTH, Image.SCALE_DEFAULT));
 		unselectIcon.setImage(unselectIcon.getImage().getScaledInstance(ICON_LENGTH, ICON_LENGTH, Image.SCALE_DEFAULT));
 		
 		popupWindowManager = new PopupWindowManage(this);
-		
-		/*
-		 * add before shows, how to display items after the mouse event?
-		 */
-		/*
-		tglbtnSlash.popupWindow = new PopupWindow(tglbtnSlash, this); 
-		tglbtnEsc.popupWindow = new PopupWindow(tglbtnEsc, this);
-		*/
-//		addPopupWindow();
-		/*
-		for(int i = 0; i < mnNewMenu_PitchOctave.getItemCount(); i++) {
-			mnNewMenu_PitchOctave.getItem(i).addMouseListener(mouseMonitor);
-		}
-		*/
-		/*
-		buttons = getButtons();
-		for(int i = 0; i < buttons.size(); i++) {
-			String name = "NNN" + 
-					buttons.get(i).getName().charAt(MyButton.TYPE_INDEX) + "N_" +  
-					buttons.get(i).getText();
-			System.out.println(name);
-		}
-		*/
 	}
 
-	private void addPopupWindowForButtons(List<MyButton> buttons) {
-//		for(MyButton button : buttons) {
-		for(int i = 0; i < buttons.size(); i++) {
-			MyButton button = buttons.get(i);
-			button.popupWindow = new PopupWindow(button, this);
-		}
-	}
-	
-	/*
-	 * add buttons one by one
-	 */
-	private List<MyButton> getButtons() {
-		List<MyButton> buttons = new ArrayList<>();
-		 buttons.add(tglbtnEsc); 
-		 buttons.add(tglbtnF_1); 
-		 buttons.add(tglbtnF_2); 
-		 buttons.add(tglbtnF_3); 
-		 buttons.add(tglbtnF_4); 
-		 buttons.add(tglbtnF_5); 
-		 buttons.add(tglbtnF_6); 
-		 buttons.add(tglbtnF_7); 
-		 buttons.add(tglbtnF_8); 
-		 buttons.add(tglbtnF_9); 
-		 buttons.add(tglbtnF_10); 
-		 buttons.add(tglbtnF_11); 
-		 buttons.add(tglbtnF_12); 
-		
-		 buttons.add(tglbtnBackquote); 
-		 buttons.add(tglbtn_1); 
-		 buttons.add(tglbtn_2); 
-		 buttons.add(tglbtn_3); 
-		 buttons.add(tglbtn_4); 
-		 buttons.add(tglbtn_5); 
-		 buttons.add(tglbtn_6); 
-		 buttons.add(tglbtn_7); 
-		 buttons.add(tglbtn_8); 
-		 buttons.add(tglbtn_9); 
-		 buttons.add(tglbtn_0); 
-		 buttons.add(tglbtnMinus); 
-		 buttons.add(tglbtnEquals); 
-		 buttons.add(tglbtnBackspace); 
-		
-		 buttons.add(tglbtnTab); 
-		 buttons.add(tglbtnQ); 
-		 buttons.add(tglbtnW); 
-		 buttons.add(tglbtnE); 
-		 buttons.add(tglbtnR); 
-		 buttons.add(tglbtnT); 
-		 buttons.add(tglbtnY); 
-		 buttons.add(tglbtnU); 
-		 buttons.add(tglbtnI); 
-		 buttons.add(tglbtnO); 
-		 buttons.add(tglbtnP); 
-		 buttons.add(tglbtnClosebracket); 
-		 buttons.add(tglbtnOpenbracket); 
-		 buttons.add(tglbtnBackslash); 
-		
-		 buttons.add(tglbtnCaps); 
-		 buttons.add(tglbtnA); 
-		 buttons.add(tglbtnS); 
-		 buttons.add(tglbtnD); 
-		 buttons.add(tglbtnF); 
-		 buttons.add(tglbtnG); 
-		 buttons.add(tglbtnH); 
-		 buttons.add(tglbtnJ); 
-		 buttons.add(tglbtnK); 
-		 buttons.add(tglbtnL); 
-		 buttons.add(tglbtnSemicolon); 
-		 buttons.add(tglbtnQuote); 
-		 buttons.add(tglbtnEnter); 
-		
-		 buttons.add(tglbtnShiftleft); 
-		 buttons.add(tglbtnZ); 
-		 buttons.add(tglbtnX); 
-		 buttons.add(tglbtnC); 
-		 buttons.add(tglbtnV); 
-		 buttons.add(tglbtnB); 
-		 buttons.add(tglbtnN); 
-		 buttons.add(tglbtnM); 
-		 buttons.add(tglbtnComma); 
-		 buttons.add(tglbtnPeriod); 
-		 buttons.add(tglbtnSlash); 
-		 buttons.add(tglbtnShiftright); 
-		
-		 buttons.add(tglbtnCtrlleft); 
-		 buttons.add(tglbtnWinleft); 
-		 buttons.add(tglbtnAltleft); 
-		 buttons.add(tglbtnSpace); 
-		 buttons.add(tglbtnCtrlright); 
-		
-		/*
-		 * Can not catch Fn anyway, whether use KeyEvent/vkCode
-		 */
-		 buttons.add(tglbtnFn); 
-		
-		 buttons.add(tglbtnWinright); 
-		 buttons.add(tglbtnAltright); 
-		
-		 buttons.add(tglbtnPrtsc); 
-		 buttons.add(tglbtnScrlk); 
-		 buttons.add(tglbtnPause); 
-		 buttons.add(tglbtnIns); 
-		 buttons.add(tglbtnHome); 
-		 buttons.add(tglbtnPgup); 
-		 buttons.add(tglbtnDel); 
-		 buttons.add(tglbtnEnd); 
-		 buttons.add(tglbtnPgdn); 
-		 buttons.add(tglbtnUp); 
-		 buttons.add(tglbtnLeft); 
-		 buttons.add(tglbtnDown); 
-		 buttons.add(tglbtnRight); 
-		
-		 buttons.add(tglbtnNum); 
-		 buttons.add(tglbtnNumpaddivide); 
-		 buttons.add(tglbtnNumpadmultiply); 
-		 buttons.add(tglbtnNumpadminus); 
-		 buttons.add(tglbtnNumpad_7); 
-		 buttons.add(tglbtnNumpad_8); 
-		 buttons.add(tglbtnNumpad_9); 
-		 buttons.add(tglbtnNumpad_4); 
-		 buttons.add(tglbtnNumpad_5); 
-		 buttons.add(tglbtnNumpad_6); 
-		 buttons.add(tglbtnNumpad_1); 
-		 buttons.add(tglbtnNumpad_2); 
-		 buttons.add(tglbtnNumpad_3); 
-		 buttons.add(tglbtnNumpad_0); 
-		 buttons.add(tglbtnNumpaddecimal); 
-		 buttons.add(tglbtnNumpadplus); 
-		 buttons.add(tglbtnNumpadenter);
-		 
-		 return buttons;
-	}
-	
 	private static KeyboardPiano window = null;
 	
 	/**
@@ -473,7 +311,6 @@ public class KeyboardPiano {
 
 		@Override
 		public void windowGainedFocus(WindowEvent e) {
-			// TODO Auto-generated method stub
 			if(keyboardHook != null && !keyboardHook.isFocused && 
 					window.frmKeyboardpiano.isFocused()) {
 				keyboardHook.setHookOn();
@@ -482,7 +319,6 @@ public class KeyboardPiano {
 
 		@Override
 		public void windowLostFocus(WindowEvent e) {
-			// TODO Auto-generated method stub
 			if(keyboardHook != null && keyboardHook.isFocused &&
 					!window.frmKeyboardpiano.isFocused()) {
 				keyboardHook.setHookOff();
@@ -494,8 +330,8 @@ public class KeyboardPiano {
 	/*
 	 * get path of picture from the key
 	 */
-	public String getPicPath(String key) {
-		return PropertiesManage.getPicProperty(key);
+	public String getImgPath(String key) {
+		return PropertiesManage.getImgProperty(key);
 	}
 	
 	/*

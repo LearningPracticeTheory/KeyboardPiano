@@ -3,12 +3,12 @@ import java.util.Properties;
 
 public class PropertiesManage {
 
-	static Properties propPic = new Properties(); 
+	static Properties propImg = new Properties(); 
 	static Properties propWav = new Properties();
 	
 	static {
 		try {
-			propPic.load(PropertiesManage.class.getClassLoader().getResourceAsStream("config\\pic.properties"));
+			propImg.load(PropertiesManage.class.getClassLoader().getResourceAsStream("config\\img.properties"));
 			propWav.load(PropertiesManage.class.getClassLoader().getResourceAsStream("config\\wav.properties"));
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -17,8 +17,8 @@ public class PropertiesManage {
 
 	private PropertiesManage() { }
 	
-	public static String getPicProperty(String key) {
-		return propPic.getProperty(key);
+	public static String getImgProperty(String key) {
+		return propImg.getProperty(key);
 	}
 	
 	public static String getWavProperty(String key) {
