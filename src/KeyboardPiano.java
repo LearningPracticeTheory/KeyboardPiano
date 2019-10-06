@@ -2,6 +2,8 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -262,6 +264,8 @@ public class KeyboardPiano {
 	public static final char L = 'L';
 	public static final char R = 'R';
 	
+	public static List<MyButton> buttons = null;
+	
 	/**
 	 * Create the application.
 	 */
@@ -269,6 +273,264 @@ public class KeyboardPiano {
 		new MainFrame(this).initialize(frmKeyboardpiano);
 		new MusicPlayer(getWavPath("START")).start();
 		keyboardHook = new KeyboardHook(this);
+//		buttons = getButtons();
+//		addPopupWindowForButtons(buttons);
+		
+		tglbtnSlash.popupWindow = new PopupWindow(tglbtnSlash); 
+		tglbtnEsc.popupWindow = new PopupWindow(tglbtnEsc); 
+		addPopupWindow();
+	}
+	
+	private void addPopupWindow() {
+		 tglbtnEsc.popupWindow = new PopupWindow(tglbtnEsc); 
+		 tglbtnF_1.popupWindow = new PopupWindow(tglbtnF_1); 
+		 tglbtnF_2.popupWindow = new PopupWindow(tglbtnF_2); 
+		 tglbtnF_3.popupWindow = new PopupWindow(tglbtnF_3); 
+		 tglbtnF_4.popupWindow = new PopupWindow(tglbtnF_4); 
+		 tglbtnF_5.popupWindow = new PopupWindow(tglbtnF_5); 
+		 tglbtnF_6.popupWindow = new PopupWindow(tglbtnF_6); 
+		 tglbtnF_7.popupWindow = new PopupWindow(tglbtnF_7); 
+		 tglbtnF_8.popupWindow = new PopupWindow(tglbtnF_8);
+		 tglbtnF_9.popupWindow = new PopupWindow(tglbtnF_9); 
+		 tglbtnF_10.popupWindow = new PopupWindow(tglbtnF_10); 
+		 tglbtnF_11.popupWindow = new PopupWindow(tglbtnF_11); 
+		 tglbtnF_12.popupWindow = new PopupWindow(tglbtnF_12); 
+		
+		 tglbtnBackquote.popupWindow = new PopupWindow(tglbtnBackquote); 
+		 tglbtn_1.popupWindow = new PopupWindow(tglbtn_1); 
+		 tglbtn_2.popupWindow = new PopupWindow(tglbtn_2); 
+		 tglbtn_3.popupWindow = new PopupWindow(tglbtn_3); 
+		 tglbtn_4.popupWindow = new PopupWindow(tglbtn_4); 
+		 tglbtn_5.popupWindow = new PopupWindow(tglbtn_5); 
+		 tglbtn_6.popupWindow = new PopupWindow(tglbtn_6); 
+		 tglbtn_7.popupWindow = new PopupWindow(tglbtn_7); 
+		 tglbtn_8.popupWindow = new PopupWindow(tglbtn_8); 
+		 tglbtn_9.popupWindow = new PopupWindow(tglbtn_9); 
+		 tglbtn_0.popupWindow = new PopupWindow(tglbtn_0); 
+		 tglbtnMinus.popupWindow = new PopupWindow(tglbtnMinus); 
+		 tglbtnEquals.popupWindow = new PopupWindow(tglbtnEquals); 
+		 tglbtnBackspace.popupWindow = new PopupWindow(tglbtnBackspace); 
+		
+		 tglbtnTab.popupWindow = new PopupWindow(tglbtnTab); 
+		 tglbtnQ.popupWindow = new PopupWindow(tglbtnQ); 
+		 tglbtnW.popupWindow = new PopupWindow(tglbtnW); 
+		 tglbtnE.popupWindow = new PopupWindow(tglbtnE); 
+		 tglbtnR.popupWindow = new PopupWindow(tglbtnR); 
+		 tglbtnT.popupWindow = new PopupWindow(tglbtnT); 
+		 tglbtnY.popupWindow = new PopupWindow(tglbtnY); 
+		 tglbtnU.popupWindow = new PopupWindow(tglbtnU); 
+		 tglbtnI.popupWindow = new PopupWindow(tglbtnI); 
+		 tglbtnO.popupWindow = new PopupWindow(tglbtnO); 
+		 tglbtnP.popupWindow = new PopupWindow(tglbtnP); 
+		 tglbtnClosebracket.popupWindow = new PopupWindow(tglbtnClosebracket); 
+		 tglbtnOpenbracket.popupWindow = new PopupWindow(tglbtnOpenbracket); 
+		 tglbtnBackslash.popupWindow = new PopupWindow(tglbtnBackslash); 
+		
+		 tglbtnCaps.popupWindow = new PopupWindow(tglbtnCaps); 
+		 tglbtnA.popupWindow = new PopupWindow(tglbtnA); 
+		 tglbtnS.popupWindow = new PopupWindow(tglbtnS); 
+		 tglbtnD.popupWindow = new PopupWindow(tglbtnD); 
+		 tglbtnF.popupWindow = new PopupWindow(tglbtnF); 
+		 tglbtnG.popupWindow = new PopupWindow(tglbtnG); 
+		 tglbtnH.popupWindow = new PopupWindow(tglbtnH); 
+		 tglbtnJ.popupWindow = new PopupWindow(tglbtnJ); 
+		 tglbtnK.popupWindow = new PopupWindow(tglbtnK); 
+		 tglbtnL.popupWindow = new PopupWindow(tglbtnL); 
+		 tglbtnSemicolon.popupWindow = new PopupWindow(tglbtnSemicolon); 
+		 tglbtnQuote.popupWindow = new PopupWindow(tglbtnQuote); 
+		 tglbtnEnter.popupWindow = new PopupWindow(tglbtnEnter); 
+		
+		 tglbtnShiftleft.popupWindow = new PopupWindow(tglbtnShiftleft); 
+		 tglbtnZ.popupWindow = new PopupWindow(tglbtnZ); 
+		 tglbtnX.popupWindow = new PopupWindow(tglbtnX); 
+		 tglbtnC.popupWindow = new PopupWindow(tglbtnC); 
+		 tglbtnV.popupWindow = new PopupWindow(tglbtnV); 
+		 tglbtnB.popupWindow = new PopupWindow(tglbtnB); 
+		 tglbtnN.popupWindow = new PopupWindow(tglbtnN); 
+		 tglbtnM.popupWindow = new PopupWindow(tglbtnM); 
+		 tglbtnComma.popupWindow = new PopupWindow(tglbtnComma); 
+		 tglbtnPeriod.popupWindow = new PopupWindow(tglbtnPeriod); 
+		 tglbtnSlash.popupWindow = new PopupWindow(tglbtnSlash); 
+		 tglbtnShiftright.popupWindow = new PopupWindow(tglbtnShiftright); 
+		
+		 tglbtnCtrlleft.popupWindow = new PopupWindow(tglbtnCtrlleft); 
+		 tglbtnWinleft.popupWindow = new PopupWindow(tglbtnWinleft); 
+		 tglbtnAltleft.popupWindow = new PopupWindow(tglbtnAltleft); 
+		 tglbtnSpace.popupWindow = new PopupWindow(tglbtnSpace); 
+		 tglbtnCtrlright.popupWindow = new PopupWindow(tglbtnCtrlright); 
+		
+		/*
+		 * Can not catch Fn anyway, whether use KeyEvent/vkCode
+		 */
+		 tglbtnFn.popupWindow = new PopupWindow(tglbtnFn); 
+		
+		 tglbtnWinright.popupWindow = new PopupWindow(tglbtnWinright); 
+		 tglbtnAltright.popupWindow = new PopupWindow(tglbtnAltright); 
+		
+		 tglbtnPrtsc.popupWindow = new PopupWindow(tglbtnPrtsc); 
+		 tglbtnScrlk.popupWindow = new PopupWindow(tglbtnScrlk); 
+		 tglbtnPause.popupWindow = new PopupWindow(tglbtnPause); 
+		 tglbtnIns.popupWindow = new PopupWindow(tglbtnIns); 
+		 tglbtnHome.popupWindow = new PopupWindow(tglbtnHome); 
+		 tglbtnPgup.popupWindow = new PopupWindow(tglbtnPgup); 
+		 tglbtnDel.popupWindow = new PopupWindow(tglbtnDel); 
+		 tglbtnEnd.popupWindow = new PopupWindow(tglbtnEnd); 
+		 tglbtnPgdn.popupWindow = new PopupWindow(tglbtnPgdn); 
+		 tglbtnUp.popupWindow = new PopupWindow(tglbtnUp); 
+		 tglbtnLeft.popupWindow = new PopupWindow(tglbtnLeft); 
+		 tglbtnDown.popupWindow = new PopupWindow(tglbtnDown); 
+		 tglbtnRight.popupWindow = new PopupWindow(tglbtnRight); 
+		
+		 tglbtnNum.popupWindow = new PopupWindow(tglbtnNum); 
+		 tglbtnNumpaddivide.popupWindow = new PopupWindow(tglbtnNumpaddivide); 
+		 tglbtnNumpadmultiply.popupWindow = new PopupWindow(tglbtnNumpadmultiply); 
+		 tglbtnNumpadminus.popupWindow = new PopupWindow(tglbtnNumpadminus); 
+		 tglbtnNumpad_7.popupWindow = new PopupWindow(tglbtnNumpad_7); 
+		 tglbtnNumpad_8.popupWindow = new PopupWindow(tglbtnNumpad_8); 
+		 tglbtnNumpad_9.popupWindow = new PopupWindow(tglbtnNumpad_9); 
+		 tglbtnNumpad_4.popupWindow = new PopupWindow(tglbtnNumpad_4); 
+		 tglbtnNumpad_5.popupWindow = new PopupWindow(tglbtnNumpad_5); 
+		 tglbtnNumpad_6.popupWindow = new PopupWindow(tglbtnNumpad_6); 
+		 tglbtnNumpad_1.popupWindow = new PopupWindow(tglbtnNumpad_1); 
+		 tglbtnNumpad_2.popupWindow = new PopupWindow(tglbtnNumpad_2); 
+		 tglbtnNumpad_3.popupWindow = new PopupWindow(tglbtnNumpad_3); 
+		 tglbtnNumpad_0.popupWindow = new PopupWindow(tglbtnNumpad_0); 
+		 tglbtnNumpaddecimal.popupWindow = new PopupWindow(tglbtnNumpaddecimal); 
+		 tglbtnNumpadplus.popupWindow = new PopupWindow(tglbtnNumpadplus); 
+		 tglbtnNumpadenter.popupWindow = new PopupWindow(tglbtnNumpadenter); 
+	}
+	
+	private void addPopupWindowForButtons(List<MyButton> buttons) {
+//		for(MyButton button : buttons) {
+		for(int i = 0; i < buttons.size(); i++) {
+			MyButton button = buttons.get(i);
+			button.popupWindow = new PopupWindow(button);
+		}
+	}
+	
+	/*
+	 * add buttons one by one
+	 */
+	private List<MyButton> getButtons() {
+		List<MyButton> buttons = new ArrayList<>();
+		 buttons.add(tglbtnEsc); 
+		 buttons.add(tglbtnF_1); 
+		 buttons.add(tglbtnF_2); 
+		 buttons.add(tglbtnF_3); 
+		 buttons.add(tglbtnF_4); 
+		 buttons.add(tglbtnF_5); 
+		 buttons.add(tglbtnF_6); 
+		 buttons.add(tglbtnF_7); 
+		 buttons.add(tglbtnF_8); 
+		 buttons.add(tglbtnF_9); 
+		 buttons.add(tglbtnF_10); 
+		 buttons.add(tglbtnF_11); 
+		 buttons.add(tglbtnF_12); 
+		
+		 buttons.add(tglbtnBackquote); 
+		 buttons.add(tglbtn_1); 
+		 buttons.add(tglbtn_2); 
+		 buttons.add(tglbtn_3); 
+		 buttons.add(tglbtn_4); 
+		 buttons.add(tglbtn_5); 
+		 buttons.add(tglbtn_6); 
+		 buttons.add(tglbtn_7); 
+		 buttons.add(tglbtn_8); 
+		 buttons.add(tglbtn_9); 
+		 buttons.add(tglbtn_0); 
+		 buttons.add(tglbtnMinus); 
+		 buttons.add(tglbtnEquals); 
+		 buttons.add(tglbtnBackspace); 
+		
+		 buttons.add(tglbtnTab); 
+		 buttons.add(tglbtnQ); 
+		 buttons.add(tglbtnW); 
+		 buttons.add(tglbtnE); 
+		 buttons.add(tglbtnR); 
+		 buttons.add(tglbtnT); 
+		 buttons.add(tglbtnY); 
+		 buttons.add(tglbtnU); 
+		 buttons.add(tglbtnI); 
+		 buttons.add(tglbtnO); 
+		 buttons.add(tglbtnP); 
+		 buttons.add(tglbtnClosebracket); 
+		 buttons.add(tglbtnOpenbracket); 
+		 buttons.add(tglbtnBackslash); 
+		
+		 buttons.add(tglbtnCaps); 
+		 buttons.add(tglbtnA); 
+		 buttons.add(tglbtnS); 
+		 buttons.add(tglbtnD); 
+		 buttons.add(tglbtnF); 
+		 buttons.add(tglbtnG); 
+		 buttons.add(tglbtnH); 
+		 buttons.add(tglbtnJ); 
+		 buttons.add(tglbtnK); 
+		 buttons.add(tglbtnL); 
+		 buttons.add(tglbtnSemicolon); 
+		 buttons.add(tglbtnQuote); 
+		 buttons.add(tglbtnEnter); 
+		
+		 buttons.add(tglbtnShiftleft); 
+		 buttons.add(tglbtnZ); 
+		 buttons.add(tglbtnX); 
+		 buttons.add(tglbtnC); 
+		 buttons.add(tglbtnV); 
+		 buttons.add(tglbtnB); 
+		 buttons.add(tglbtnN); 
+		 buttons.add(tglbtnM); 
+		 buttons.add(tglbtnComma); 
+		 buttons.add(tglbtnPeriod); 
+		 buttons.add(tglbtnSlash); 
+		 buttons.add(tglbtnShiftright); 
+		
+		 buttons.add(tglbtnCtrlleft); 
+		 buttons.add(tglbtnWinleft); 
+		 buttons.add(tglbtnAltleft); 
+		 buttons.add(tglbtnSpace); 
+		 buttons.add(tglbtnCtrlright); 
+		
+		/*
+		 * Can not catch Fn anyway, whether use KeyEvent/vkCode
+		 */
+		 buttons.add(tglbtnFn); 
+		
+		 buttons.add(tglbtnWinright); 
+		 buttons.add(tglbtnAltright); 
+		
+		 buttons.add(tglbtnPrtsc); 
+		 buttons.add(tglbtnScrlk); 
+		 buttons.add(tglbtnPause); 
+		 buttons.add(tglbtnIns); 
+		 buttons.add(tglbtnHome); 
+		 buttons.add(tglbtnPgup); 
+		 buttons.add(tglbtnDel); 
+		 buttons.add(tglbtnEnd); 
+		 buttons.add(tglbtnPgdn); 
+		 buttons.add(tglbtnUp); 
+		 buttons.add(tglbtnLeft); 
+		 buttons.add(tglbtnDown); 
+		 buttons.add(tglbtnRight); 
+		
+		 buttons.add(tglbtnNum); 
+		 buttons.add(tglbtnNumpaddivide); 
+		 buttons.add(tglbtnNumpadmultiply); 
+		 buttons.add(tglbtnNumpadminus); 
+		 buttons.add(tglbtnNumpad_7); 
+		 buttons.add(tglbtnNumpad_8); 
+		 buttons.add(tglbtnNumpad_9); 
+		 buttons.add(tglbtnNumpad_4); 
+		 buttons.add(tglbtnNumpad_5); 
+		 buttons.add(tglbtnNumpad_6); 
+		 buttons.add(tglbtnNumpad_1); 
+		 buttons.add(tglbtnNumpad_2); 
+		 buttons.add(tglbtnNumpad_3); 
+		 buttons.add(tglbtnNumpad_0); 
+		 buttons.add(tglbtnNumpaddecimal); 
+		 buttons.add(tglbtnNumpadplus); 
+		 buttons.add(tglbtnNumpadenter);
+		 
+		 return buttons;
 	}
 	
 	private static KeyboardPiano window = null;

@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
-import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
@@ -17,16 +16,23 @@ import javax.swing.JPopupMenu;
 public class PopupWindow {
 
 	private MyButton myButton;
+	public String buttonName = null; 
 
 	public PopupWindow(MyButton button) {
 		myButton = button;
+		buttonName = myButton.name;
+System.out.println("*{"+myButton.getName());
 		addPopUpMenu();
-		addActionListener();
+		initOctaves();
+		addActionListenerForItems();
 		selectIcon.setImage(selectIcon.getImage().getScaledInstance(ICON_LENGTH, ICON_LENGTH, Image.SCALE_DEFAULT));
 		unselectIcon.setImage(unselectIcon.getImage().getScaledInstance(ICON_LENGTH, ICON_LENGTH, Image.SCALE_DEFAULT));
 	}
 	
 	private void addPopup(Component component, final JPopupMenu popup) {
+		/*
+		 * button's mouse listener
+		 */
 		component.addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
 				if (e.isPopupTrigger()) {
@@ -47,9 +53,9 @@ public class PopupWindow {
 	
 	private static final int ICON_LENGTH = 20;
 	
-	ImageIcon selectIcon = new ImageIcon("img2.png");
-	ImageIcon unselectIcon = new ImageIcon("img3.png");
-	Font font = new Font(null, Font.BOLD, 16);
+	private static ImageIcon selectIcon = new ImageIcon("img2.png");
+	private static ImageIcon unselectIcon = new ImageIcon("img3.png");
+	private static Font font = new Font(null, Font.BOLD, 16);
 	
 	JMenu mnNewMenu_PitchOctave = new JMenu("Pitch/Octave");
 	JMenu mnNewMenu_X1 = new JMenu("1");
@@ -73,33 +79,207 @@ public class PopupWindow {
 	
 	/*
 	 * include JMenu & JMenuItem, cause JMenu extends JMenuItem
+	 * KIA
 	 */
-	List<JMenu> menus = new ArrayList<>();
+	private static List<JMenuItem> octaves = new ArrayList<>();
 	
 	ActionAdapter actionAdapter = new ActionAdapter();
 	
-	private void addActionListener() {
+	private void initOctaves() {
+		octaves.add(mntmNewMenuItem_8);
+		octaves.add(mntmNewMenuItem_7);
+		octaves.add(mntmNewMenuItem_6);
+		octaves.add(mntmNewMenuItem_5);
+		octaves.add(mntmNewMenuItem_4);
+		octaves.add(mntmNewMenuItem_3);
+		octaves.add(mntmNewMenuItem_2);
+		octaves.add(mntmNewMenuItem_1);
+		octaves.add(mntmNewMenuItem_0);
+	}
+	
+	private void addActionListenerForItems() {
 		mntmNewMenuItem_Clear.addActionListener(actionAdapter);
 		mntmNewMenuItem_LeftHand.addActionListener(actionAdapter);
 		mntmNewMenuItem_RightHand.addActionListener(actionAdapter);
+		
+		for(JMenuItem item : octaves) {
+			item.addActionListener(actionAdapter);
+		}
 	}
+	
+	private static JMenu pitchSelectItem = null;
+	private static char octaveSelectedValue = '0'; 
+	
+	/**
+	 * 
+	 * @param text the text of JMenu
+	 * @return
+	 */
+	private char getSharpValueByName(String text) {
+		if(text.length() == 1) {
+			return 'X';
+		} else if(text.length() == 2) {
+			return 'S';
+		}
+		return 'N';
+	}
+	
+	/**
+	 * use with sharp(); 
+	 * @param text the text of JMenu
+	 * @return
+	 */
+	private char getPitchValueByName(String text) { //JMenu.getName();
+		char pitch = '0';
+		if(text.equals(mnNewMenu_S1.getText()) || text.equals(mnNewMenu_S1.getText())) {
+			pitch = MyButton.PITCH_1;
+		} else if(text.equals(mnNewMenu_S2.getText()) || text.equals(mnNewMenu_S2.getText())) {
+			pitch = MyButton.PITCH_2;
+		} else if(text.equals(mnNewMenu_X3.getText())) {
+			pitch = MyButton.PITCH_3;
+		} else if(text.equals(mnNewMenu_S4.getText()) || text.equals(mnNewMenu_S4.getText())) {
+			pitch = MyButton.PITCH_4;
+		} else if(text.equals(mnNewMenu_S5.getText()) || text.equals(mnNewMenu_S5.getText())) {
+			pitch = MyButton.PITCH_5;
+		} else if(text.equals(mnNewMenu_S6.getText()) || text.equals(mnNewMenu_S6.getText())) {
+			pitch = MyButton.PITCH_6;
+		} else if(text.equals(mnNewMenu_X7.getText())) {
+			pitch = MyButton.PITCH_7;
+		}
+		return pitch;
+	}
+	
+	private String renameButtonBySharpPitchOctave(String name, 
+			char sharp, char pitch, char octave) {
+		String newName = replaceStringByIndex(name, MyButton.SHARP_INDEX, sharp);
+		newName = replaceStringByIndex(newName, MyButton.PITCH_INDEX, pitch);
+		newName = replaceStringByIndex(newName, MyButton.OCTAVE_INDEX, octave);
+		return newName;
+	}
+	
+	/*
+	 * call it three times
+	 */
+	private String replaceStringByIndex(String name, int index, char newChar) {
+		String head = name.substring(0, index);
+		head += newChar;
+		String tail = name.substring(index+1, name.length());
+		head += tail;
+		return head;
+	}
+	
+	/*
+	 * DON'T set Selection, just record the octave selected value
+	 * rename button
+	 */
+	
+	private static int countNum = 0;
 	
 	private class ActionAdapter implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			Object menuItem = e.getSource();
-			if(menuItem == mntmNewMenuItem_Clear) {
+			Object item = e.getSource();
+			unselectAllItems(mnNewMenu_PitchOctave);
+			unselectAllItems(octaves);
+			
+			if(item == mntmNewMenuItem_Clear) {
 //System.out.println("Clear");
 				clear(myButton.getName());
+			} else if(item.equals(mntmNewMenuItem_8)) {
+				/*
+				 * too many output?????????????????
+//				System.out.println("88888888888");
+				 */
+				
+				if(octaveSelectedValue != MyButton.OCTAVE_8) {
+					octaveSelectedValue = MyButton.OCTAVE_8;
+					System.out.println(pitchSelectItem == null);
+					System.out.println(pitchSelectItem.getText());
+//					System.out.println(myButton.name);
+					System.out.println(myButton.getName());
+					System.out.println(myButton.getText());
+//					System.out.println(pitchSelectItem.getName()); //NULL;
+					
+					String newName = renameButtonBySharpPitchOctave(
+							myButton.getName(), 
+							getSharpValueByName(pitchSelectItem.getText()), 
+							getPitchValueByName(pitchSelectItem.getText()), 
+							octaveSelectedValue);
+					System.out.println("Old Name = " + myButton.getName() +
+						" new Name = " + newName);
+					myButton.setName(newName);
+					myButton.setImageAndWavByName(newName);
+					myButton.repaint();
+				}
+				
+//				setSelectedByIcon(mntmNewMenuItem_8, true);
+			} else if(item.equals(mntmNewMenuItem_7)) {
+				
+				if(octaveSelectedValue != MyButton.OCTAVE_7) {
+					octaveSelectedValue = MyButton.OCTAVE_7;
+				}
+				
+//				setSelectedByIcon(mntmNewMenuItem_7, true);
+			} else if(item.equals(mntmNewMenuItem_6)) {
+				
+//				System.out.println(countNum++);
+				
+				if(octaveSelectedValue != MyButton.OCTAVE_6) {
+					octaveSelectedValue = MyButton.OCTAVE_6;
+					String newName = renameButtonBySharpPitchOctave(
+							myButton.getName(), 
+							getSharpValueByName(pitchSelectItem.getText()), 
+							getPitchValueByName(pitchSelectItem.getText()), 
+							octaveSelectedValue);
+					System.out.println("Old Name = " + myButton.getName() + " buttonName = " + buttonName +
+						" new Name = " + newName);
+					myButton.setName(newName);
+					myButton.setImageAndWavByName(newName);
+					myButton.repaint();
+					
+				}
+//				setSelectedByIcon(mntmNewMenuItem_6, true);
+			} else if(item.equals(mntmNewMenuItem_5)) {
+				if(octaveSelectedValue != MyButton.OCTAVE_5) {
+					octaveSelectedValue = MyButton.OCTAVE_5;
+				}
+				
+//				setSelectedByIcon(mntmNewMenuItem_5, true);
+			} else if(item.equals(mntmNewMenuItem_4)) {
+				if(octaveSelectedValue != MyButton.OCTAVE_4) {
+					octaveSelectedValue = MyButton.OCTAVE_4;
+				}
+//				setSelectedByIcon(mntmNewMenuItem_4, true);
+			} else if(item.equals(mntmNewMenuItem_3)) {
+				if(octaveSelectedValue != MyButton.OCTAVE_3) {
+					octaveSelectedValue = MyButton.OCTAVE_3;
+				}
+//				setSelectedByIcon(mntmNewMenuItem_3, true);
+			} else if(item.equals(mntmNewMenuItem_2)) {
+				if(octaveSelectedValue != MyButton.OCTAVE_2) {
+					octaveSelectedValue = MyButton.OCTAVE_2;
+				}
+//				setSelectedByIcon(mntmNewMenuItem_2, true);
+			} else if(item.equals(mntmNewMenuItem_1)) {
+				if(octaveSelectedValue != MyButton.OCTAVE_1) {
+					octaveSelectedValue = MyButton.OCTAVE_1;
+				}
+//				setSelectedByIcon(mntmNewMenuItem_1, true);
+			} else if(item.equals(mntmNewMenuItem_0)) {
+				if(octaveSelectedValue != MyButton.OCTAVE_0) {
+					octaveSelectedValue = MyButton.OCTAVE_0;
+				}
+//				setSelectedByIcon(mntmNewMenuItem_0, true);
 			}
-			/*
-			 * other components
-			 */
+			
+//			setSelectedByIcon(pitchSelectItem, true);
 		}
 		
 	}
+	
+	
 	
 	/*
 	 * there are only ones select
@@ -140,19 +320,22 @@ public class PopupWindow {
 		myButton.repaint();
 	}
 	
+	private static JMenuItem mntmNewMenuItem_8 = new JMenuItem("+4");
+	private static JMenuItem mntmNewMenuItem_7 = new JMenuItem("+3");
+	private static JMenuItem mntmNewMenuItem_6 = new JMenuItem("+2");
+	private static JMenuItem mntmNewMenuItem_5 = new JMenuItem("+1");
+	private static JMenuItem mntmNewMenuItem_4 = new JMenuItem("+0");
+	private static JMenuItem mntmNewMenuItem_3 = new JMenuItem("-1");
+	private static JMenuItem mntmNewMenuItem_2 = new JMenuItem("-2");
+	private static JMenuItem mntmNewMenuItem_1 = new JMenuItem("-3");
+	private static JMenuItem mntmNewMenuItem_0 = new JMenuItem("-4");
+
+	/**
+	 * 
+	 * @param menu the items in Pitch, instead of Octave
+	 */
 	private void addOctaves (JMenu menu) {
 		
-		JMenuItem mntmNewMenuItem_8 = new JMenuItem("+4");
-		JMenuItem mntmNewMenuItem_7 = new JMenuItem("+3");
-		JMenuItem mntmNewMenuItem_6 = new JMenuItem("+2");
-		JMenuItem mntmNewMenuItem_5 = new JMenuItem("+1");
-		JMenuItem mntmNewMenuItem_4 = new JMenuItem("+0");
-		JMenuItem mntmNewMenuItem_3 = new JMenuItem("-1");
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("-2");
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("-3");
-		JMenuItem mntmNewMenuItem_0 = new JMenuItem("-4");
-		
-		mntmNewMenuItem_8.setIcon(selectIcon);
 		menu.add(mntmNewMenuItem_8);
 		menu.add(mntmNewMenuItem_7);
 		menu.add(mntmNewMenuItem_6);
@@ -163,7 +346,15 @@ public class PopupWindow {
 		menu.add(mntmNewMenuItem_1);
 		menu.add(mntmNewMenuItem_0);
 		
-		unselectAllItems(menu);
+		unselectAllItems(menu); //add unselected icon
+		
+		char octave = octave(myButton.getName());
+		
+		if(isSelected(menu)) {
+			octaveCase(octave, menu, true);
+		} else {
+			octaveCase(octave, menu, false);
+		}
 		
 	}
 	
@@ -174,9 +365,11 @@ public class PopupWindow {
 	 * it's core method, public it can easily noticed it by color of outline window
 	 * if it's private, it can show out whether it's used or not
 	 */
+	static int count = 0;
 	public void setSelectedByName(String name) {
+		
 		if(name == null) {
-			System.out.println("NULL");
+			System.out.println("NULL " + count++);
 			return;
 		}
 		char sharp = sharp(name);
@@ -190,22 +383,23 @@ public class PopupWindow {
 		
 		sideCase(side);
 		pitchCase(pitch, sharp);
-		octaveCase(octave, findSelectedMenuOnPitch(mnNewMenu_PitchOctave));
+//		octaveCase(octave, findSelectedMenuOnPitch(mnNewMenu_PitchOctave), true);
+		
 	}
 	
-	private char sharp(String name) {
+	private static char sharp(String name) {
 		return name.charAt(MyButton.SHARP_INDEX);
 	}
 	
-	private char side(String name) {
+	private static char side(String name) {
 		return name.charAt(MyButton.SIDE_INDEX);
 	}
 	
-	private char pitch(String name) {
+	private static char pitch(String name) {
 		return name.charAt(MyButton.PITCH_INDEX);
 	}
 	
-	private char octave(String name) {
+	private static char octave(String name) {
 		return name.charAt(MyButton.OCTAVE_INDEX);
 	}
 	
@@ -213,11 +407,11 @@ public class PopupWindow {
 	 * Attention: octave value should be change, start from 1(+4), end at 9(-4)
 	 * reverse looks so weird and inconvenient
 	 */
-	private void octaveCase(char octave, JMenu menus) {
+	private void octaveCase(char octave, JMenu menus, boolean select) {
 		int intOctave = Integer.parseInt(String.valueOf(octave));
 //System.out.println(menus.getItemCount());
 //		menus.getItem(OCTAVE_SIZE-intOctave).setSelected(true);
-		setSelectedByIcon(menus.getItem(intOctave), true);
+		setSelectedByIcon(menus.getItem(intOctave), select);
 	}
 	
 	private JMenu findSelectedMenuOnPitch(JMenu menus) {
@@ -308,11 +502,18 @@ public class PopupWindow {
 		}
 	}
 	
-	private boolean isSelected(JMenuItem item) {
+	private static boolean isSelected(JMenuItem item) {
 		return item.getIcon().equals(selectIcon);
 	}
 	
 	private void setSelectedByIcon(JMenuItem item, boolean selected) {
+		/*
+		 * 5395 each time, what the heck?????????
+		 */
+		if(item == null) {
+//			System.out.println("ITEM NULL " + count++); 
+			return;
+		}
 		if(selected) {
 			item.setIcon(selectIcon);
 		} else {
@@ -326,12 +527,20 @@ public class PopupWindow {
 	 */
 	private void unselectAllItems(JMenu items) {
 		for(int i = 0; i < items.getItemCount(); i++) {
+//		for(int i = 2; i < items.getItemCount(); i++) {
 			setSelectedByIcon(items.getItem(i), false);
 		}
 	}
 	
+	private void unselectAllItems(List<JMenuItem> items) {
+		for(JMenuItem item : items) {
+			setSelectedByIcon(item, false);
+		}
+	}
+	
+	JPopupMenu popupMenu = new JPopupMenu();
+
 	private void addPopUpMenu() {
-		JPopupMenu popupMenu = new JPopupMenu();
 		addPopup(myButton, popupMenu);
 		
 		popupMenu.add(mnNewMenu_PitchOctave);
@@ -354,6 +563,7 @@ public class PopupWindow {
 		/*
 		 * KIA ???????????
 		 */
+		/*
 		menus.add(mnNewMenu_X1);
 		menus.add(mnNewMenu_S1);
 		menus.add(mnNewMenu_X2);
@@ -366,6 +576,7 @@ public class PopupWindow {
 		menus.add(mnNewMenu_X6);
 		menus.add(mnNewMenu_S6);
 		menus.add(mnNewMenu_X7);
+		*/
 		
 		/* replace by down
 		for(JMenu menu : menus) {
@@ -375,17 +586,36 @@ public class PopupWindow {
 		
 		unselectAllItems(mnNewMenu_PitchOctave);
 		
-		for(int i = 0; i < mnNewMenu_PitchOctave.getItemCount(); i++) {
+//		for(int i = 0; i < mnNewMenu_PitchOctave.getItemCount(); i++) {
+		/*
+		 * ignore 0 and 1 for test
+		 */
+		// KIA all, replace by MouseMonitor 
+		/*
+		for(int i = 2; i < mnNewMenu_PitchOctave.getItemCount(); i++) {
 			JMenu item = (JMenu)mnNewMenu_PitchOctave.getItem(i);
 //			System.out.println(item.getText());
 			addOctaves(item);
 		}
-		
-		/* same function as up
-		for(JMenu menu : menus) {
-			addOctaves(menu);
-		}
 		*/
+		/*************
+		 * Test here *
+		 *************/
+		
+		MouseMonitor mouseMonitor = new MouseMonitor();
+		
+		/*
+		 * add before shows, how to display items after the mouse event?
+		 */
+		
+		for(int i = 0; i < mnNewMenu_PitchOctave.getItemCount(); i++) {
+			mnNewMenu_PitchOctave.getItem(i).addMouseListener(mouseMonitor);
+		}
+		
+		/*************
+		 * Test here *
+		 *************/
+		
 		
 		popupMenu.add(mnNewMenu_Channel);
 		mnNewMenu_Channel.add(mntmNewMenuItem_LeftHand);
@@ -398,5 +628,77 @@ public class PopupWindow {
 		 */
 		popupMenu.add(mntmNewMenuItem_Clear);
 	}
+	
+	
+	private class MouseMonitor extends MouseAdapter {
 
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+//			super.mouseEntered(e);
+			Object source = e.getSource();
+			/*
+			 * set pitchSelectItem one by one
+			 */
+//			pitchSelectItem = (JMenu)source;
+//			System.out.println(pitchSelectItem.toString());
+			/*
+			 * replace by for loop
+			 */
+			if(source.equals(mnNewMenu_S1)) {
+//				mnNewMenu_S1.setSelected(true);
+//				System.out.println("Enter_S1");
+				addOctaves(mnNewMenu_S1);
+				pitchSelectItem = mnNewMenu_S1;
+			} else if(source.equals(mnNewMenu_X1)) {
+				addOctaves(mnNewMenu_X1);
+				pitchSelectItem = mnNewMenu_X1;
+			} else if(source.equals(mnNewMenu_X2)) {
+				addOctaves(mnNewMenu_X2);
+				pitchSelectItem = mnNewMenu_X2;
+			} else if(source.equals(mnNewMenu_S2)) {
+				addOctaves(mnNewMenu_S2);
+				pitchSelectItem = mnNewMenu_S2;
+			} else if(source.equals(mnNewMenu_X3)) {
+				addOctaves(mnNewMenu_X3);
+				pitchSelectItem = mnNewMenu_X3;
+			} else if(source.equals(mnNewMenu_X4)) {
+				addOctaves(mnNewMenu_X4);
+				pitchSelectItem = mnNewMenu_X4;
+			} else if(source.equals(mnNewMenu_S4)) {
+				addOctaves(mnNewMenu_S4);
+				pitchSelectItem = mnNewMenu_S4;
+			} else if(source.equals(mnNewMenu_X5)) {
+				addOctaves(mnNewMenu_X5);
+				pitchSelectItem = mnNewMenu_X5;
+			} else if(source.equals(mnNewMenu_S5)) {
+				addOctaves(mnNewMenu_S5);
+				pitchSelectItem = mnNewMenu_S5;
+			} else if(source.equals(mnNewMenu_X6)) {
+				addOctaves(mnNewMenu_X6);
+				pitchSelectItem = mnNewMenu_X6;
+			} else if(source.equals(mnNewMenu_S6)) {
+				addOctaves(mnNewMenu_S6);
+				pitchSelectItem = mnNewMenu_S6;
+			} else if(source.equals(mnNewMenu_X7)) {
+				addOctaves(mnNewMenu_X7);
+				pitchSelectItem = mnNewMenu_X7;
+			} 
+		}
+		/*
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+//			super.mouseExited(e);
+			if(e.getSource().equals(mnNewMenu_S1)) {
+//				mnNewMenu_S1.setSelected(false);
+				System.out.println("Out_S1");
+			} else if(e.getSource().equals(mnNewMenu_X1)) {
+//				mnNewMenu_S1.setSelected(false);
+				System.out.println("Out_X1");
+			}
+		}
+		*/
+	}
+	
 }

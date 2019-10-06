@@ -69,7 +69,7 @@ public class MyButton extends JToggleButton {
 	 * else the other case is 6
 	 */
 	private KeyboardPiano kp;
-	private String name = null;
+	public String name = null;
 	private String imageName = null; //default is U & N
 	private String imageUpPath = null;
 	private String imageDownPath = null;
@@ -78,7 +78,7 @@ public class MyButton extends JToggleButton {
 	private ImageIcon imageUp = null;
 	private ImageIcon imageDown = null;
 	
-	private static PopupWindow popupWindow = null; 
+	public PopupWindow popupWindow = null; 
 	
 	/**
 	 * 
@@ -100,11 +100,14 @@ public class MyButton extends JToggleButton {
 		
 		setImageAndWavByName(name);
 		
-		popupWindow = new PopupWindow(this);
+//		popupWindow = new PopupWindow(this);
 		
         this.setHorizontalTextPosition(SwingConstants.CENTER); //Text displays on center
         this.setBorderPainted(false); //do NOT paint the border of the button
 
+        /*
+         * too many mouse listener
+         */
         this.addMouseListener(new MouseMonitor(this));
 	}
 	
@@ -182,6 +185,21 @@ public class MyButton extends JToggleButton {
 	
 	@Override
 	protected void paintComponent(Graphics g) {
+		
+		/********
+		 * Test *
+		 ********/
+
+		/*
+		System.out.println(" 0 " + kp.tglbtn_0.getName());
+		System.out.println(" 1 " + kp.tglbtn_1.getName());
+		*/
+		
+		/********
+		 * Test *
+		 ********/
+		
+		
         Graphics2D g2d = (Graphics2D) g;
 
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
