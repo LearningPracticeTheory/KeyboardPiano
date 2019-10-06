@@ -182,7 +182,7 @@ public class PopupWindowManage {
 	public void clear(String name) {
 		char direction = direction(name);
 		
-		if(direction == MyButton.N) { //it's black already
+		if(direction == MyButton.DIRECTION_N) { //it's black already
 			return;
 		}
 		
@@ -198,11 +198,10 @@ public class PopupWindowManage {
 		
 		unselectAllItems(mnNewMenu_PitchOctave);
 		unselectAllItems(mnNewMenu_Channel);
-		/*
-		 * after updating all the black icons for each key
-		 * replace this temporary name then
-		 */
-		String newName = "NNRNA_Win";
+
+		String newName = "" + MyButton.SIDE_N + MyButton.COLOR_N + MyButton.DIRECTION_N +
+				type(kp.selectedButton.getName()) + MyButton.PITCH_N + MyButton.UNDERLINE + 
+				kp.selectedButton.getText();
 		
 		kp.selectedButton.setName(newName);
 		kp.selectedButton.setImageAndWavByName(newName);
@@ -260,10 +259,12 @@ public class PopupWindowManage {
 	}
 	
 	private void setSide(String name, char side) {
+		if(side(name) == MyButton.SIDE_N) {
+			return;
+		}
 		String newName = replaceStringByIndex(name, MyButton.SIDE_INDEX, side);
 		newName = replaceStringByIndex(newName, MyButton.COLOR_INDEX, 
 				KeyboardPiano.getColorOnDiffSide(name.charAt(MyButton.COLOR_INDEX)));
-//System.out.println("$% Old Name = " + kp.selectedButton.getName() + " new Name = " + newName);
 		kp.selectedButton.setName(newName);
 		kp.selectedButton.setImageAndWavByName(newName);
 		kp.selectedButton.repaint();
@@ -296,13 +297,23 @@ public class PopupWindowManage {
 		}
 	}
 	
-	private void resetButton() {
-		String newName = renameButtonByPitchOctave(
-				kp.selectedButton.getName(), 
-				getPitchValueByName(pitchSelectItem.getText()), 
-				octaveSelectedValue);
-		System.out.println("((( Old Name = " + kp.selectedButton.getName() +
-			" new Name = " + newName);
+	public void resetButton() {
+		String newName = null;
+		String oldName = kp.selectedButton.getName(); 
+		char pitch = getPitchValueByName(pitchSelectItem.getText());
+		char octave = octaveSelectedValue;
+		
+		if(side(oldName) == MyButton.SIDE_N) {
+			char side = MyButton.SIDE_L; //default L;
+			char color = MyButton.COLOR_W; 
+			char direction = MyButton.DIRECTION_U; 
+			char type = type(oldName);
+			newName = "" + side + color + direction + type + 
+					pitch + MyButton.UNDERLINE + octave;
+		} else {
+			newName = renameButtonByPitchOctave(oldName, pitch, octave);
+		}
+		
 		kp.selectedButton.setName(newName);
 		kp.selectedButton.setImageAndWavByName(newName);
 		kp.selectedButton.repaint();
@@ -358,13 +369,13 @@ public class PopupWindowManage {
 	}
 	
 	public void setSelectedByName(String name) {
-		
 		if(name == null) {
 			System.out.println("The name is empty");
 			return;
 		}
+		
 		char direction = direction(name);
-		if(direction == MyButton.N) {
+		if(direction == MyButton.DIRECTION_N) {
 			return;
 		}
 		
@@ -423,12 +434,12 @@ public class PopupWindowManage {
 	
 	private void sideCase(char side) {
 		switch(side) {
-		case MyButton.L :
+		case MyButton.SIDE_L :
 			if(!mntmNewMenuItem_LeftHand.isSelected()) {
 				setSelectedByIcon(mntmNewMenuItem_LeftHand, true);
 			}
 			break;
-		case MyButton.R :
+		case MyButton.SIDE_R :
 			if(!mntmNewMenuItem_RightHand.isSelected()) {
 				setSelectedByIcon(mntmNewMenuItem_RightHand, true);
 			}
@@ -437,6 +448,9 @@ public class PopupWindowManage {
 	}
 	
 	private void octaveCase(char octave, JMenu menus, boolean select) {
+		if(side(kp.selectedButton.getName()) == MyButton.SIDE_N) { //N case
+			return;
+		}
 		int intOctave = Integer.parseInt(String.valueOf(octave));
 		setSelectedByIcon(menus.getItem(MyButton.NUM_OCTAVES-intOctave), select);
 	}
@@ -447,6 +461,10 @@ public class PopupWindowManage {
 	
 	private static char side(String name) {
 		return name.charAt(MyButton.SIDE_INDEX);
+	}
+	
+	private static char type(String name) {
+		return name.charAt(MyButton.TYPE_INDEX);
 	}
 	
 	private static char pitch(String name) {
