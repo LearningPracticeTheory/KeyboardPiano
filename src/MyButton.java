@@ -24,6 +24,12 @@ public class MyButton extends JToggleButton {
 	public static final char S = 'S';
 	public static final char X = 'X';
 	
+	public static final char COLOR_W = 'W';
+	public static final char COLOR_G = 'G';
+	public static final char COLOR_L = 'L';
+	public static final char COLOR_B = 'B';
+	public static final char COLOR_N = 'N';
+	
 	private static final int A_TYPE = 42;
 	private static final int B_TYPE = 66;
 	private static final int C_TYPE = 90;
@@ -71,7 +77,7 @@ public class MyButton extends JToggleButton {
 	private KeyboardPiano kp;
 	public String name = null;
 	private String imageName = null; //default is U & N
-	private String imageUpPath = null;
+	public String imageUpPath = null;
 	private String imageDownPath = null;
 	private String wavPath = null;
 	
@@ -115,11 +121,14 @@ public class MyButton extends JToggleButton {
 	
 	public void setImageAndWavByName(String name) { //UpName
 		imageName = name;
+		name = name.trim();
 		imageUpPath = getPath(name);
 		imageUp = new ImageIcon(imageUpPath);
 		imageDownPath = getPath(getImageDownName(name));
 		wavPath = getWavPath(name);
 		imageDown = new ImageIcon(imageDownPath);
+		
+		System.out.println("* " + imageUpPath + "\n" + imageDownPath);
 		
 		modifyImageByType(imageName.charAt(TYPE_INDEX));
 	}
@@ -281,6 +290,8 @@ public class MyButton extends JToggleButton {
 		public void mousePressed(MouseEvent e) {
 			if(e.getButton() == MouseEvent.BUTTON1) {
 				button.setSelected(true);
+			} else if(e.getButton() == MouseEvent.BUTTON3) {
+				button.popupWindow = new PopupWindow(button, kp); 
 			}
 		}
 
