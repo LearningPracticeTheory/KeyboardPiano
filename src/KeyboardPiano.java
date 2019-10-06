@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Image;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
@@ -59,8 +61,8 @@ public class KeyboardPiano {
 	 MyButton tglbtnI = new MyButton(this, "I", "SLWUA1_3");
 	 MyButton tglbtnO = new MyButton(this, "O", "SLWUA2_3");
 	 MyButton tglbtnP = new MyButton(this, "P", "XLWUA4_3");
-	 MyButton tglbtnClosebracket = new MyButton(this, "CloseBracket", "SLWUA5_3"); //[  
-	 MyButton tglbtnOpenbracket = new MyButton(this, "OpenBracket", "SLWUA4_3"); //]
+	 MyButton tglbtnOpenbracket = new MyButton(this, "OpenBracket", "SLWUA4_3"); //[
+	 MyButton tglbtnClosebracket = new MyButton(this, "CloseBracket", "SLWUA5_3"); //]  
 	 MyButton tglbtnBackslash = new MyButton(this, "BackSlash", "SLWUB6_3"); //\
 	
 	 MyButton tglbtnCaps = new MyButton(this, "Caps", "NNRNC_Caps");
@@ -264,7 +266,16 @@ public class KeyboardPiano {
 	public static final char L = 'L';
 	public static final char R = 'R';
 	
-	public static List<MyButton> buttons = null;
+//	public static List<MyButton> buttons = null;
+	
+	public MyButton selectedButton = null;
+	
+	public PopupWindowManage popupWindowManager = null;
+	
+	private static final int ICON_LENGTH = 20;
+	
+	public static ImageIcon selectIcon = new ImageIcon("img2.png");
+	public static ImageIcon unselectIcon = new ImageIcon("img3.png");
 	
 	/**
 	 * Create the application.
@@ -276,135 +287,40 @@ public class KeyboardPiano {
 //		buttons = getButtons();
 //		addPopupWindowForButtons(buttons);
 		
-		tglbtnSlash.popupWindow = new PopupWindow(tglbtnSlash); 
-		tglbtnEsc.popupWindow = new PopupWindow(tglbtnEsc); 
-		addPopupWindow();
-	}
-	
-	private void addPopupWindow() {
-		 tglbtnEsc.popupWindow = new PopupWindow(tglbtnEsc); 
-		 tglbtnF_1.popupWindow = new PopupWindow(tglbtnF_1); 
-		 tglbtnF_2.popupWindow = new PopupWindow(tglbtnF_2); 
-		 tglbtnF_3.popupWindow = new PopupWindow(tglbtnF_3); 
-		 tglbtnF_4.popupWindow = new PopupWindow(tglbtnF_4); 
-		 tglbtnF_5.popupWindow = new PopupWindow(tglbtnF_5); 
-		 tglbtnF_6.popupWindow = new PopupWindow(tglbtnF_6); 
-		 tglbtnF_7.popupWindow = new PopupWindow(tglbtnF_7); 
-		 tglbtnF_8.popupWindow = new PopupWindow(tglbtnF_8);
-		 tglbtnF_9.popupWindow = new PopupWindow(tglbtnF_9); 
-		 tglbtnF_10.popupWindow = new PopupWindow(tglbtnF_10); 
-		 tglbtnF_11.popupWindow = new PopupWindow(tglbtnF_11); 
-		 tglbtnF_12.popupWindow = new PopupWindow(tglbtnF_12); 
+		selectIcon.setImage(selectIcon.getImage().getScaledInstance(ICON_LENGTH, ICON_LENGTH, Image.SCALE_DEFAULT));
+		unselectIcon.setImage(unselectIcon.getImage().getScaledInstance(ICON_LENGTH, ICON_LENGTH, Image.SCALE_DEFAULT));
 		
-		 tglbtnBackquote.popupWindow = new PopupWindow(tglbtnBackquote); 
-		 tglbtn_1.popupWindow = new PopupWindow(tglbtn_1); 
-		 tglbtn_2.popupWindow = new PopupWindow(tglbtn_2); 
-		 tglbtn_3.popupWindow = new PopupWindow(tglbtn_3); 
-		 tglbtn_4.popupWindow = new PopupWindow(tglbtn_4); 
-		 tglbtn_5.popupWindow = new PopupWindow(tglbtn_5); 
-		 tglbtn_6.popupWindow = new PopupWindow(tglbtn_6); 
-		 tglbtn_7.popupWindow = new PopupWindow(tglbtn_7); 
-		 tglbtn_8.popupWindow = new PopupWindow(tglbtn_8); 
-		 tglbtn_9.popupWindow = new PopupWindow(tglbtn_9); 
-		 tglbtn_0.popupWindow = new PopupWindow(tglbtn_0); 
-		 tglbtnMinus.popupWindow = new PopupWindow(tglbtnMinus); 
-		 tglbtnEquals.popupWindow = new PopupWindow(tglbtnEquals); 
-		 tglbtnBackspace.popupWindow = new PopupWindow(tglbtnBackspace); 
-		
-		 tglbtnTab.popupWindow = new PopupWindow(tglbtnTab); 
-		 tglbtnQ.popupWindow = new PopupWindow(tglbtnQ); 
-		 tglbtnW.popupWindow = new PopupWindow(tglbtnW); 
-		 tglbtnE.popupWindow = new PopupWindow(tglbtnE); 
-		 tglbtnR.popupWindow = new PopupWindow(tglbtnR); 
-		 tglbtnT.popupWindow = new PopupWindow(tglbtnT); 
-		 tglbtnY.popupWindow = new PopupWindow(tglbtnY); 
-		 tglbtnU.popupWindow = new PopupWindow(tglbtnU); 
-		 tglbtnI.popupWindow = new PopupWindow(tglbtnI); 
-		 tglbtnO.popupWindow = new PopupWindow(tglbtnO); 
-		 tglbtnP.popupWindow = new PopupWindow(tglbtnP); 
-		 tglbtnClosebracket.popupWindow = new PopupWindow(tglbtnClosebracket); 
-		 tglbtnOpenbracket.popupWindow = new PopupWindow(tglbtnOpenbracket); 
-		 tglbtnBackslash.popupWindow = new PopupWindow(tglbtnBackslash); 
-		
-		 tglbtnCaps.popupWindow = new PopupWindow(tglbtnCaps); 
-		 tglbtnA.popupWindow = new PopupWindow(tglbtnA); 
-		 tglbtnS.popupWindow = new PopupWindow(tglbtnS); 
-		 tglbtnD.popupWindow = new PopupWindow(tglbtnD); 
-		 tglbtnF.popupWindow = new PopupWindow(tglbtnF); 
-		 tglbtnG.popupWindow = new PopupWindow(tglbtnG); 
-		 tglbtnH.popupWindow = new PopupWindow(tglbtnH); 
-		 tglbtnJ.popupWindow = new PopupWindow(tglbtnJ); 
-		 tglbtnK.popupWindow = new PopupWindow(tglbtnK); 
-		 tglbtnL.popupWindow = new PopupWindow(tglbtnL); 
-		 tglbtnSemicolon.popupWindow = new PopupWindow(tglbtnSemicolon); 
-		 tglbtnQuote.popupWindow = new PopupWindow(tglbtnQuote); 
-		 tglbtnEnter.popupWindow = new PopupWindow(tglbtnEnter); 
-		
-		 tglbtnShiftleft.popupWindow = new PopupWindow(tglbtnShiftleft); 
-		 tglbtnZ.popupWindow = new PopupWindow(tglbtnZ); 
-		 tglbtnX.popupWindow = new PopupWindow(tglbtnX); 
-		 tglbtnC.popupWindow = new PopupWindow(tglbtnC); 
-		 tglbtnV.popupWindow = new PopupWindow(tglbtnV); 
-		 tglbtnB.popupWindow = new PopupWindow(tglbtnB); 
-		 tglbtnN.popupWindow = new PopupWindow(tglbtnN); 
-		 tglbtnM.popupWindow = new PopupWindow(tglbtnM); 
-		 tglbtnComma.popupWindow = new PopupWindow(tglbtnComma); 
-		 tglbtnPeriod.popupWindow = new PopupWindow(tglbtnPeriod); 
-		 tglbtnSlash.popupWindow = new PopupWindow(tglbtnSlash); 
-		 tglbtnShiftright.popupWindow = new PopupWindow(tglbtnShiftright); 
-		
-		 tglbtnCtrlleft.popupWindow = new PopupWindow(tglbtnCtrlleft); 
-		 tglbtnWinleft.popupWindow = new PopupWindow(tglbtnWinleft); 
-		 tglbtnAltleft.popupWindow = new PopupWindow(tglbtnAltleft); 
-		 tglbtnSpace.popupWindow = new PopupWindow(tglbtnSpace); 
-		 tglbtnCtrlright.popupWindow = new PopupWindow(tglbtnCtrlright); 
+		popupWindowManager = new PopupWindowManage(this);
 		
 		/*
-		 * Can not catch Fn anyway, whether use KeyEvent/vkCode
+		 * add before shows, how to display items after the mouse event?
 		 */
-		 tglbtnFn.popupWindow = new PopupWindow(tglbtnFn); 
-		
-		 tglbtnWinright.popupWindow = new PopupWindow(tglbtnWinright); 
-		 tglbtnAltright.popupWindow = new PopupWindow(tglbtnAltright); 
-		
-		 tglbtnPrtsc.popupWindow = new PopupWindow(tglbtnPrtsc); 
-		 tglbtnScrlk.popupWindow = new PopupWindow(tglbtnScrlk); 
-		 tglbtnPause.popupWindow = new PopupWindow(tglbtnPause); 
-		 tglbtnIns.popupWindow = new PopupWindow(tglbtnIns); 
-		 tglbtnHome.popupWindow = new PopupWindow(tglbtnHome); 
-		 tglbtnPgup.popupWindow = new PopupWindow(tglbtnPgup); 
-		 tglbtnDel.popupWindow = new PopupWindow(tglbtnDel); 
-		 tglbtnEnd.popupWindow = new PopupWindow(tglbtnEnd); 
-		 tglbtnPgdn.popupWindow = new PopupWindow(tglbtnPgdn); 
-		 tglbtnUp.popupWindow = new PopupWindow(tglbtnUp); 
-		 tglbtnLeft.popupWindow = new PopupWindow(tglbtnLeft); 
-		 tglbtnDown.popupWindow = new PopupWindow(tglbtnDown); 
-		 tglbtnRight.popupWindow = new PopupWindow(tglbtnRight); 
-		
-		 tglbtnNum.popupWindow = new PopupWindow(tglbtnNum); 
-		 tglbtnNumpaddivide.popupWindow = new PopupWindow(tglbtnNumpaddivide); 
-		 tglbtnNumpadmultiply.popupWindow = new PopupWindow(tglbtnNumpadmultiply); 
-		 tglbtnNumpadminus.popupWindow = new PopupWindow(tglbtnNumpadminus); 
-		 tglbtnNumpad_7.popupWindow = new PopupWindow(tglbtnNumpad_7); 
-		 tglbtnNumpad_8.popupWindow = new PopupWindow(tglbtnNumpad_8); 
-		 tglbtnNumpad_9.popupWindow = new PopupWindow(tglbtnNumpad_9); 
-		 tglbtnNumpad_4.popupWindow = new PopupWindow(tglbtnNumpad_4); 
-		 tglbtnNumpad_5.popupWindow = new PopupWindow(tglbtnNumpad_5); 
-		 tglbtnNumpad_6.popupWindow = new PopupWindow(tglbtnNumpad_6); 
-		 tglbtnNumpad_1.popupWindow = new PopupWindow(tglbtnNumpad_1); 
-		 tglbtnNumpad_2.popupWindow = new PopupWindow(tglbtnNumpad_2); 
-		 tglbtnNumpad_3.popupWindow = new PopupWindow(tglbtnNumpad_3); 
-		 tglbtnNumpad_0.popupWindow = new PopupWindow(tglbtnNumpad_0); 
-		 tglbtnNumpaddecimal.popupWindow = new PopupWindow(tglbtnNumpaddecimal); 
-		 tglbtnNumpadplus.popupWindow = new PopupWindow(tglbtnNumpadplus); 
-		 tglbtnNumpadenter.popupWindow = new PopupWindow(tglbtnNumpadenter); 
+		/*
+		tglbtnSlash.popupWindow = new PopupWindow(tglbtnSlash, this); 
+		tglbtnEsc.popupWindow = new PopupWindow(tglbtnEsc, this);
+		*/
+//		addPopupWindow();
+		/*
+		for(int i = 0; i < mnNewMenu_PitchOctave.getItemCount(); i++) {
+			mnNewMenu_PitchOctave.getItem(i).addMouseListener(mouseMonitor);
+		}
+		*/
+		/*
+		buttons = getButtons();
+		for(int i = 0; i < buttons.size(); i++) {
+			String name = "NNN" + 
+					buttons.get(i).getName().charAt(MyButton.TYPE_INDEX) + "N_" +  
+					buttons.get(i).getText();
+			System.out.println(name);
+		}
+		*/
 	}
-	
+
 	private void addPopupWindowForButtons(List<MyButton> buttons) {
 //		for(MyButton button : buttons) {
 		for(int i = 0; i < buttons.size(); i++) {
 			MyButton button = buttons.get(i);
-			button.popupWindow = new PopupWindow(button);
+			button.popupWindow = new PopupWindow(button, this);
 		}
 	}
 	
@@ -601,6 +517,26 @@ public class KeyboardPiano {
 			return type;
 		}
 		return null;
+	}
+	
+	public static final char getColorOnDiffSide(char type) {
+		Character theOtherType = null;
+		switch(type) {
+		case MyButton.COLOR_W :
+			theOtherType = MyButton.COLOR_L;
+			break;
+		case MyButton.COLOR_L :
+			theOtherType = MyButton.COLOR_W;
+			break;
+		case MyButton.COLOR_G :
+			theOtherType = MyButton.COLOR_B;
+			break;
+		case MyButton.COLOR_B :
+			theOtherType = MyButton.COLOR_G;
+			break;
+		}
+		System.out.println(theOtherType);
+		return theOtherType;
 	}
 	
 }
