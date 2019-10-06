@@ -13,14 +13,22 @@ import javax.swing.SwingConstants;
 public class MyButton extends JToggleButton {
 
 	private static final long serialVersionUID = 1L;
-	private static final int SHARP_INDEX = 0;
-	private static final int SIDE_INDEX = 1; 
-	private static final int COLOR_INDEX = 2;
-	private static final int DIRECTION_INDEX = 3;
-	private static final int TYPE_INDEX = 4;
-	private static final int PITCH_INDEX = 5; //pitch
-	private static final int OCTAVE_INDEX = 7;//octave
-	private static final char N = 'N';
+	public static final int SHARP_INDEX = 0;
+	public static final int SIDE_INDEX = 1; 
+	public static final int COLOR_INDEX = 2;
+	public static final int DIRECTION_INDEX = 3;
+	public static final int TYPE_INDEX = 4;
+	public static final int PITCH_INDEX = 5; //pitch
+	public static final int OCTAVE_INDEX = 7;//octave
+	public static final char N = 'N';
+	public static final char S = 'S';
+	public static final char X = 'X';
+	
+	public static final char COLOR_W = 'W';
+	public static final char COLOR_G = 'G';
+	public static final char COLOR_L = 'L';
+	public static final char COLOR_B = 'B';
+	public static final char COLOR_N = 'N';
 	
 	private static final int A_TYPE = 42;
 	private static final int B_TYPE = 66;
@@ -40,21 +48,53 @@ public class MyButton extends JToggleButton {
 	private static final int ARC_WIDTH = 10;
 	private static final int ARC_HEIGHT = 10;
 	
+	public static final char L = 'L';
+	public static final char R = 'R';
+	
+	public static final char PITCH_1 = '1'; //C
+	public static final char PITCH_2 = '2'; //D
+	public static final char PITCH_3 = '3'; //E
+	public static final char PITCH_4 = '4'; //F
+	public static final char PITCH_5 = '5'; //G
+	public static final char PITCH_6 = '6'; //A
+	public static final char PITCH_7 = '7'; //B
+	
+	public static final char OCTAVE_0 = '0'; // -4
+	public static final char OCTAVE_1 = '1'; // -3
+	public static final char OCTAVE_2 = '2'; // -2
+	public static final char OCTAVE_3 = '3'; // -1
+	public static final char OCTAVE_4 = '4'; // +0
+	public static final char OCTAVE_5 = '5'; // +1
+	public static final char OCTAVE_6 = '6'; // +2
+	public static final char OCTAVE_7 = '7'; // +3
+	public static final char OCTAVE_8 = '8'; // +4
+	
+	
 	/*
 	 * if the name start from "N", which means the index of "_" is 5
 	 * else the other case is 6
 	 */
 	private KeyboardPiano kp;
+	public String name = null;
 	private String imageName = null; //default is U & N
-	private String imageUpPath = null;
+	public String imageUpPath = null;
 	private String imageDownPath = null;
 	private String wavPath = null;
 	
 	private ImageIcon imageUp = null;
 	private ImageIcon imageDown = null;
 	
+	public PopupWindow popupWindow = null; 
+	
+	/**
+	 * 
+	 * @param kp KeyboardPiano, the main class
+	 * @param text the string displayed on the toggle button
+	 * @param name the attributes of button, includes sharp, side, color, etc
+	 */
 	MyButton(KeyboardPiano kp, String text, String name) {
 		super(text);
+		this.name = name;
         setOpaque(false);
         /*
          * the super class will paint the area of button
@@ -66,19 +106,29 @@ public class MyButton extends JToggleButton {
 		
 		setImageAndWavByName(name);
 		
+//		popupWindow = new PopupWindow(this);
+		
         this.setHorizontalTextPosition(SwingConstants.CENTER); //Text displays on center
         this.setBorderPainted(false); //do NOT paint the border of the button
 
+        /*
+         * too many mouse listener
+         */
         this.addMouseListener(new MouseMonitor(this));
 	}
 	
+
+	
 	public void setImageAndWavByName(String name) { //UpName
 		imageName = name;
+		name = name.trim();
 		imageUpPath = getPath(name);
 		imageUp = new ImageIcon(imageUpPath);
 		imageDownPath = getPath(getImageDownName(name));
 		wavPath = getWavPath(name);
 		imageDown = new ImageIcon(imageDownPath);
+		
+		System.out.println("* " + imageUpPath + "\n" + imageDownPath);
 		
 		modifyImageByType(imageName.charAt(TYPE_INDEX));
 	}
@@ -144,6 +194,21 @@ public class MyButton extends JToggleButton {
 	
 	@Override
 	protected void paintComponent(Graphics g) {
+		
+		/********
+		 * Test *
+		 ********/
+
+		/*
+		System.out.println(" 0 " + kp.tglbtn_0.getName());
+		System.out.println(" 1 " + kp.tglbtn_1.getName());
+		*/
+		
+		/********
+		 * Test *
+		 ********/
+		
+		
         Graphics2D g2d = (Graphics2D) g;
 
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
@@ -223,7 +288,11 @@ public class MyButton extends JToggleButton {
 		
 		@Override
 		public void mousePressed(MouseEvent e) {
-			button.setSelected(true);
+			if(e.getButton() == MouseEvent.BUTTON1) {
+				button.setSelected(true);
+			} else if(e.getButton() == MouseEvent.BUTTON3) {
+				button.popupWindow = new PopupWindow(button, kp); 
+			}
 		}
 
 		@Override
@@ -236,6 +305,14 @@ public class MyButton extends JToggleButton {
 			button.setSelected(false);
 		}
 		
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

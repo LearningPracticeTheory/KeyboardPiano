@@ -1,10 +1,14 @@
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Image;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
@@ -47,7 +51,7 @@ public class KeyboardPiano {
 	 MyButton tglbtnBackspace = new MyButton(this, "BackSpace", "NNRNC_Backspace");
 	
 	 MyButton tglbtnTab = new MyButton(this, "Tab", "NNRNB_Tab");
-	 MyButton tglbtnQ = new MyButton(this, "Q", "SLWUA1_4");
+	 MyButton tglbtnQ = new MyButton(this, "Q", "SLWUA1_4" );
 	 MyButton tglbtnW = new MyButton(this, "W", "SLWUA2_4");
 	 MyButton tglbtnE = new MyButton(this, "E", "XLWUA4_4");
 	 MyButton tglbtnR = new MyButton(this, "R", "SLWUA4_4");
@@ -57,8 +61,8 @@ public class KeyboardPiano {
 	 MyButton tglbtnI = new MyButton(this, "I", "SLWUA1_3");
 	 MyButton tglbtnO = new MyButton(this, "O", "SLWUA2_3");
 	 MyButton tglbtnP = new MyButton(this, "P", "XLWUA4_3");
-	 MyButton tglbtnClosebracket = new MyButton(this, "CloseBracket", "SLWUA5_3"); //[  
-	 MyButton tglbtnOpenbracket = new MyButton(this, "OpenBracket", "SLWUA4_3"); //]
+	 MyButton tglbtnOpenbracket = new MyButton(this, "OpenBracket", "SLWUA4_3"); //[
+	 MyButton tglbtnClosebracket = new MyButton(this, "CloseBracket", "SLWUA5_3"); //]  
 	 MyButton tglbtnBackslash = new MyButton(this, "BackSlash", "SLWUB6_3"); //\
 	
 	 MyButton tglbtnCaps = new MyButton(this, "Caps", "NNRNC_Caps");
@@ -262,6 +266,17 @@ public class KeyboardPiano {
 	public static final char L = 'L';
 	public static final char R = 'R';
 	
+//	public static List<MyButton> buttons = null;
+	
+	public MyButton selectedButton = null;
+	
+	public PopupWindowManage popupWindowManager = null;
+	
+	private static final int ICON_LENGTH = 20;
+	
+	public static ImageIcon selectIcon = new ImageIcon("img2.png");
+	public static ImageIcon unselectIcon = new ImageIcon("img3.png");
+	
 	/**
 	 * Create the application.
 	 */
@@ -269,6 +284,169 @@ public class KeyboardPiano {
 		new MainFrame(this).initialize(frmKeyboardpiano);
 		new MusicPlayer(getWavPath("START")).start();
 		keyboardHook = new KeyboardHook(this);
+//		buttons = getButtons();
+//		addPopupWindowForButtons(buttons);
+		
+		selectIcon.setImage(selectIcon.getImage().getScaledInstance(ICON_LENGTH, ICON_LENGTH, Image.SCALE_DEFAULT));
+		unselectIcon.setImage(unselectIcon.getImage().getScaledInstance(ICON_LENGTH, ICON_LENGTH, Image.SCALE_DEFAULT));
+		
+		popupWindowManager = new PopupWindowManage(this);
+		
+		/*
+		 * add before shows, how to display items after the mouse event?
+		 */
+		/*
+		tglbtnSlash.popupWindow = new PopupWindow(tglbtnSlash, this); 
+		tglbtnEsc.popupWindow = new PopupWindow(tglbtnEsc, this);
+		*/
+//		addPopupWindow();
+		/*
+		for(int i = 0; i < mnNewMenu_PitchOctave.getItemCount(); i++) {
+			mnNewMenu_PitchOctave.getItem(i).addMouseListener(mouseMonitor);
+		}
+		*/
+		/*
+		buttons = getButtons();
+		for(int i = 0; i < buttons.size(); i++) {
+			String name = "NNN" + 
+					buttons.get(i).getName().charAt(MyButton.TYPE_INDEX) + "N_" +  
+					buttons.get(i).getText();
+			System.out.println(name);
+		}
+		*/
+	}
+
+	private void addPopupWindowForButtons(List<MyButton> buttons) {
+//		for(MyButton button : buttons) {
+		for(int i = 0; i < buttons.size(); i++) {
+			MyButton button = buttons.get(i);
+			button.popupWindow = new PopupWindow(button, this);
+		}
+	}
+	
+	/*
+	 * add buttons one by one
+	 */
+	private List<MyButton> getButtons() {
+		List<MyButton> buttons = new ArrayList<>();
+		 buttons.add(tglbtnEsc); 
+		 buttons.add(tglbtnF_1); 
+		 buttons.add(tglbtnF_2); 
+		 buttons.add(tglbtnF_3); 
+		 buttons.add(tglbtnF_4); 
+		 buttons.add(tglbtnF_5); 
+		 buttons.add(tglbtnF_6); 
+		 buttons.add(tglbtnF_7); 
+		 buttons.add(tglbtnF_8); 
+		 buttons.add(tglbtnF_9); 
+		 buttons.add(tglbtnF_10); 
+		 buttons.add(tglbtnF_11); 
+		 buttons.add(tglbtnF_12); 
+		
+		 buttons.add(tglbtnBackquote); 
+		 buttons.add(tglbtn_1); 
+		 buttons.add(tglbtn_2); 
+		 buttons.add(tglbtn_3); 
+		 buttons.add(tglbtn_4); 
+		 buttons.add(tglbtn_5); 
+		 buttons.add(tglbtn_6); 
+		 buttons.add(tglbtn_7); 
+		 buttons.add(tglbtn_8); 
+		 buttons.add(tglbtn_9); 
+		 buttons.add(tglbtn_0); 
+		 buttons.add(tglbtnMinus); 
+		 buttons.add(tglbtnEquals); 
+		 buttons.add(tglbtnBackspace); 
+		
+		 buttons.add(tglbtnTab); 
+		 buttons.add(tglbtnQ); 
+		 buttons.add(tglbtnW); 
+		 buttons.add(tglbtnE); 
+		 buttons.add(tglbtnR); 
+		 buttons.add(tglbtnT); 
+		 buttons.add(tglbtnY); 
+		 buttons.add(tglbtnU); 
+		 buttons.add(tglbtnI); 
+		 buttons.add(tglbtnO); 
+		 buttons.add(tglbtnP); 
+		 buttons.add(tglbtnClosebracket); 
+		 buttons.add(tglbtnOpenbracket); 
+		 buttons.add(tglbtnBackslash); 
+		
+		 buttons.add(tglbtnCaps); 
+		 buttons.add(tglbtnA); 
+		 buttons.add(tglbtnS); 
+		 buttons.add(tglbtnD); 
+		 buttons.add(tglbtnF); 
+		 buttons.add(tglbtnG); 
+		 buttons.add(tglbtnH); 
+		 buttons.add(tglbtnJ); 
+		 buttons.add(tglbtnK); 
+		 buttons.add(tglbtnL); 
+		 buttons.add(tglbtnSemicolon); 
+		 buttons.add(tglbtnQuote); 
+		 buttons.add(tglbtnEnter); 
+		
+		 buttons.add(tglbtnShiftleft); 
+		 buttons.add(tglbtnZ); 
+		 buttons.add(tglbtnX); 
+		 buttons.add(tglbtnC); 
+		 buttons.add(tglbtnV); 
+		 buttons.add(tglbtnB); 
+		 buttons.add(tglbtnN); 
+		 buttons.add(tglbtnM); 
+		 buttons.add(tglbtnComma); 
+		 buttons.add(tglbtnPeriod); 
+		 buttons.add(tglbtnSlash); 
+		 buttons.add(tglbtnShiftright); 
+		
+		 buttons.add(tglbtnCtrlleft); 
+		 buttons.add(tglbtnWinleft); 
+		 buttons.add(tglbtnAltleft); 
+		 buttons.add(tglbtnSpace); 
+		 buttons.add(tglbtnCtrlright); 
+		
+		/*
+		 * Can not catch Fn anyway, whether use KeyEvent/vkCode
+		 */
+		 buttons.add(tglbtnFn); 
+		
+		 buttons.add(tglbtnWinright); 
+		 buttons.add(tglbtnAltright); 
+		
+		 buttons.add(tglbtnPrtsc); 
+		 buttons.add(tglbtnScrlk); 
+		 buttons.add(tglbtnPause); 
+		 buttons.add(tglbtnIns); 
+		 buttons.add(tglbtnHome); 
+		 buttons.add(tglbtnPgup); 
+		 buttons.add(tglbtnDel); 
+		 buttons.add(tglbtnEnd); 
+		 buttons.add(tglbtnPgdn); 
+		 buttons.add(tglbtnUp); 
+		 buttons.add(tglbtnLeft); 
+		 buttons.add(tglbtnDown); 
+		 buttons.add(tglbtnRight); 
+		
+		 buttons.add(tglbtnNum); 
+		 buttons.add(tglbtnNumpaddivide); 
+		 buttons.add(tglbtnNumpadmultiply); 
+		 buttons.add(tglbtnNumpadminus); 
+		 buttons.add(tglbtnNumpad_7); 
+		 buttons.add(tglbtnNumpad_8); 
+		 buttons.add(tglbtnNumpad_9); 
+		 buttons.add(tglbtnNumpad_4); 
+		 buttons.add(tglbtnNumpad_5); 
+		 buttons.add(tglbtnNumpad_6); 
+		 buttons.add(tglbtnNumpad_1); 
+		 buttons.add(tglbtnNumpad_2); 
+		 buttons.add(tglbtnNumpad_3); 
+		 buttons.add(tglbtnNumpad_0); 
+		 buttons.add(tglbtnNumpaddecimal); 
+		 buttons.add(tglbtnNumpadplus); 
+		 buttons.add(tglbtnNumpadenter);
+		 
+		 return buttons;
 	}
 	
 	private static KeyboardPiano window = null;
@@ -339,6 +517,26 @@ public class KeyboardPiano {
 			return type;
 		}
 		return null;
+	}
+	
+	public static final char getColorOnDiffSide(char type) {
+		Character theOtherType = null;
+		switch(type) {
+		case MyButton.COLOR_W :
+			theOtherType = MyButton.COLOR_L;
+			break;
+		case MyButton.COLOR_L :
+			theOtherType = MyButton.COLOR_W;
+			break;
+		case MyButton.COLOR_G :
+			theOtherType = MyButton.COLOR_B;
+			break;
+		case MyButton.COLOR_B :
+			theOtherType = MyButton.COLOR_G;
+			break;
+		}
+		System.out.println(theOtherType);
+		return theOtherType;
 	}
 	
 }
