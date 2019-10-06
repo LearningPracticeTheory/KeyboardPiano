@@ -47,7 +47,7 @@ public class KeyboardPiano {
 	 MyButton tglbtnBackspace = new MyButton(this, "BackSpace", "NNRNC_Backspace");
 	
 	 MyButton tglbtnTab = new MyButton(this, "Tab", "NNRNB_Tab");
-	 MyButton tglbtnQ = new MyButton(this, "Q", "SLWUA1_4");
+	 MyButton tglbtnQ = new MyButton(this, "Q", "SLWUA1_4" );
 	 MyButton tglbtnW = new MyButton(this, "W", "SLWUA2_4");
 	 MyButton tglbtnE = new MyButton(this, "E", "XLWUA4_4");
 	 MyButton tglbtnR = new MyButton(this, "R", "SLWUA4_4");
