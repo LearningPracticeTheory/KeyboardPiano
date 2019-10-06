@@ -69,15 +69,10 @@ public class MyButton extends JToggleButton {
 	public static final char OCTAVE_7 = '7'; // +3
 	public static final char OCTAVE_8 = '8'; // +4
 	
-	
-	/*
-	 * if the name start from "N", which means the index of "_" is 5
-	 * else the other case is 6
-	 */
 	private KeyboardPiano kp;
 	public String name = null;
 	private String imageName = null; //default is U & N
-	public String imageUpPath = null;
+	private String imageUpPath = null;
 	private String imageDownPath = null;
 	private String wavPath = null;
 	
@@ -106,18 +101,11 @@ public class MyButton extends JToggleButton {
 		
 		setImageAndWavByName(name);
 		
-//		popupWindow = new PopupWindow(this);
-		
         this.setHorizontalTextPosition(SwingConstants.CENTER); //Text displays on center
         this.setBorderPainted(false); //do NOT paint the border of the button
 
-        /*
-         * too many mouse listener
-         */
         this.addMouseListener(new MouseMonitor(this));
 	}
-	
-
 	
 	public void setImageAndWavByName(String name) { //UpName
 		imageName = name;
@@ -194,20 +182,6 @@ public class MyButton extends JToggleButton {
 	
 	@Override
 	protected void paintComponent(Graphics g) {
-		
-		/********
-		 * Test *
-		 ********/
-
-		/*
-		System.out.println(" 0 " + kp.tglbtn_0.getName());
-		System.out.println(" 1 " + kp.tglbtn_1.getName());
-		*/
-		
-		/********
-		 * Test *
-		 ********/
-		
 		
         Graphics2D g2d = (Graphics2D) g;
 
