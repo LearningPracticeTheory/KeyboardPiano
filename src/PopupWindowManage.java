@@ -13,18 +13,18 @@ public class PopupWindowManage {
 	private KeyboardPiano kp;
 	
 	JMenu mnNewMenu_PitchOctave = new JMenu("Pitch/Octave");
-	JMenu mnNewMenu_X1 = new JMenu("1");
-	JMenu mnNewMenu_S1 = new JMenu("#1");
-	JMenu mnNewMenu_X2 = new JMenu("2");
-	JMenu mnNewMenu_S2 = new JMenu("#2");
-	JMenu mnNewMenu_X3 = new JMenu("3");
-	JMenu mnNewMenu_X4 = new JMenu("4");
-	JMenu mnNewMenu_S4 = new JMenu("#4");
-	JMenu mnNewMenu_X5 = new JMenu("5");
-	JMenu mnNewMenu_S5 = new JMenu("#5");
-	JMenu mnNewMenu_X6 = new JMenu("6");
-	JMenu mnNewMenu_S6 = new JMenu("#6");
-	JMenu mnNewMenu_X7 = new JMenu("7");
+	JMenu mnNewMenu_A = new JMenu("1");
+	JMenu mnNewMenu_B = new JMenu("#1");
+	JMenu mnNewMenu_C = new JMenu("2");
+	JMenu mnNewMenu_D = new JMenu("#2");
+	JMenu mnNewMenu_E = new JMenu("3");
+	JMenu mnNewMenu_F = new JMenu("4");
+	JMenu mnNewMenu_G = new JMenu("#4");
+	JMenu mnNewMenu_H = new JMenu("5");
+	JMenu mnNewMenu_I = new JMenu("#5");
+	JMenu mnNewMenu_J = new JMenu("6");
+	JMenu mnNewMenu_K = new JMenu("#6");
+	JMenu mnNewMenu_L = new JMenu("7");
 	
 	JMenu mnNewMenu_Channel = new JMenu("Channel");
 	JMenuItem mntmNewMenuItem_LeftHand = new JMenuItem("Left Hand");
@@ -66,18 +66,18 @@ public class PopupWindowManage {
 	}
 	
 	private void initPitches(List<JMenu> pitches) {
-		pitches.add(mnNewMenu_X1);
-		pitches.add(mnNewMenu_S1);
-		pitches.add(mnNewMenu_X2);
-		pitches.add(mnNewMenu_S2);
-		pitches.add(mnNewMenu_X3);
-		pitches.add(mnNewMenu_X4);
-		pitches.add(mnNewMenu_S4);
-		pitches.add(mnNewMenu_X5);
-		pitches.add(mnNewMenu_S5);
-		pitches.add(mnNewMenu_X6);
-		pitches.add(mnNewMenu_S6);
-		pitches.add(mnNewMenu_X7);
+		pitches.add(mnNewMenu_A);
+		pitches.add(mnNewMenu_B);
+		pitches.add(mnNewMenu_C);
+		pitches.add(mnNewMenu_D);
+		pitches.add(mnNewMenu_E);
+		pitches.add(mnNewMenu_F);
+		pitches.add(mnNewMenu_G);
+		pitches.add(mnNewMenu_H);
+		pitches.add(mnNewMenu_I);
+		pitches.add(mnNewMenu_J);
+		pitches.add(mnNewMenu_K);
+		pitches.add(mnNewMenu_L);
 	}
 	
 	private void addMouseListenerForAllMenus(List<JMenu> pitches) {
@@ -93,42 +93,42 @@ public class PopupWindowManage {
 		@Override
 		public void mouseEntered(MouseEvent e) {
 			Object source = e.getSource();
-			if(source.equals(mnNewMenu_S1)) {
-				pitchSelectItem = mnNewMenu_S1;
-				addOctaves(mnNewMenu_S1);
-			} else if(source.equals(mnNewMenu_X1)) {
-				addOctaves(mnNewMenu_X1);
-				pitchSelectItem = mnNewMenu_X1;
-			} else if(source.equals(mnNewMenu_X2)) {
-				addOctaves(mnNewMenu_X2);
-				pitchSelectItem = mnNewMenu_X2;
-			} else if(source.equals(mnNewMenu_S2)) {
-				addOctaves(mnNewMenu_S2);
-				pitchSelectItem = mnNewMenu_S2;
-			} else if(source.equals(mnNewMenu_X3)) {
-				addOctaves(mnNewMenu_X3);
-				pitchSelectItem = mnNewMenu_X3;
-			} else if(source.equals(mnNewMenu_X4)) {
-				addOctaves(mnNewMenu_X4);
-				pitchSelectItem = mnNewMenu_X4;
-			} else if(source.equals(mnNewMenu_S4)) {
-				addOctaves(mnNewMenu_S4);
-				pitchSelectItem = mnNewMenu_S4;
-			} else if(source.equals(mnNewMenu_X5)) {
-				addOctaves(mnNewMenu_X5);
-				pitchSelectItem = mnNewMenu_X5;
-			} else if(source.equals(mnNewMenu_S5)) {
-				addOctaves(mnNewMenu_S5);
-				pitchSelectItem = mnNewMenu_S5;
-			} else if(source.equals(mnNewMenu_X6)) {
-				addOctaves(mnNewMenu_X6);
-				pitchSelectItem = mnNewMenu_X6;
-			} else if(source.equals(mnNewMenu_S6)) {
-				addOctaves(mnNewMenu_S6);
-				pitchSelectItem = mnNewMenu_S6;
-			} else if(source.equals(mnNewMenu_X7)) {
-				addOctaves(mnNewMenu_X7);
-				pitchSelectItem = mnNewMenu_X7;
+			if(source.equals(mnNewMenu_A)) {
+				addOctaves(mnNewMenu_A);
+				pitchSelectItem = mnNewMenu_A;
+			} else if(source.equals(mnNewMenu_B)) {
+				pitchSelectItem = mnNewMenu_B;
+				addOctaves(mnNewMenu_B);
+			} else if(source.equals(mnNewMenu_C)) {
+				addOctaves(mnNewMenu_C);
+				pitchSelectItem = mnNewMenu_C;
+			} else if(source.equals(mnNewMenu_D)) {
+				addOctaves(mnNewMenu_D);
+				pitchSelectItem = mnNewMenu_D;
+			} else if(source.equals(mnNewMenu_E)) {
+				addOctaves(mnNewMenu_E);
+				pitchSelectItem = mnNewMenu_E;
+			} else if(source.equals(mnNewMenu_F)) {
+				addOctaves(mnNewMenu_F);
+				pitchSelectItem = mnNewMenu_F;
+			} else if(source.equals(mnNewMenu_G)) {
+				addOctaves(mnNewMenu_G);
+				pitchSelectItem = mnNewMenu_G;
+			} else if(source.equals(mnNewMenu_H)) {
+				addOctaves(mnNewMenu_H);
+				pitchSelectItem = mnNewMenu_H;
+			} else if(source.equals(mnNewMenu_I)) {
+				addOctaves(mnNewMenu_I);
+				pitchSelectItem = mnNewMenu_I;
+			} else if(source.equals(mnNewMenu_J)) {
+				addOctaves(mnNewMenu_J);
+				pitchSelectItem = mnNewMenu_J;
+			} else if(source.equals(mnNewMenu_K)) {
+				addOctaves(mnNewMenu_K);
+				pitchSelectItem = mnNewMenu_K;
+			} else if(source.equals(mnNewMenu_L)) {
+				addOctaves(mnNewMenu_L);
+				pitchSelectItem = mnNewMenu_L;
 			} 
 		}
 
@@ -180,9 +180,9 @@ public class PopupWindowManage {
 	 * there is only ones selected
 	 */
 	public void clear(String name) {
-		char sharp = sharp(name);
+		char direction = direction(name);
 		
-		if(sharp == MyButton.N) { //it's black already
+		if(direction == MyButton.N) { //it's black already
 			return;
 		}
 		
@@ -263,7 +263,7 @@ public class PopupWindowManage {
 		String newName = replaceStringByIndex(name, MyButton.SIDE_INDEX, side);
 		newName = replaceStringByIndex(newName, MyButton.COLOR_INDEX, 
 				KeyboardPiano.getColorOnDiffSide(name.charAt(MyButton.COLOR_INDEX)));
-System.out.println("$% Old Name = " + kp.selectedButton.getName() + " new Name = " + newName);
+//System.out.println("$% Old Name = " + kp.selectedButton.getName() + " new Name = " + newName);
 		kp.selectedButton.setName(newName);
 		kp.selectedButton.setImageAndWavByName(newName);
 		kp.selectedButton.repaint();
@@ -297,9 +297,8 @@ System.out.println("$% Old Name = " + kp.selectedButton.getName() + " new Name =
 	}
 	
 	private void resetButton() {
-		String newName = renameButtonBySharpPitchOctave(
+		String newName = renameButtonByPitchOctave(
 				kp.selectedButton.getName(), 
-				getSharpValueByName(pitchSelectItem.getText()), 
 				getPitchValueByName(pitchSelectItem.getText()), 
 				octaveSelectedValue);
 		System.out.println("((( Old Name = " + kp.selectedButton.getName() +
@@ -309,10 +308,8 @@ System.out.println("$% Old Name = " + kp.selectedButton.getName() + " new Name =
 		kp.selectedButton.repaint();
 	}
 	
-	private String renameButtonBySharpPitchOctave(String name, 
-			char sharp, char pitch, char octave) {
-		String newName = replaceStringByIndex(name, MyButton.SHARP_INDEX, sharp);
-		newName = replaceStringByIndex(newName, MyButton.PITCH_INDEX, pitch);
+	private String renameButtonByPitchOctave(String name, char pitch, char octave) {
+		String newName = replaceStringByIndex(name, MyButton.PITCH_INDEX, pitch);
 		newName = replaceStringByIndex(newName, MyButton.OCTAVE_INDEX, octave);
 		return newName;
 	}
@@ -329,39 +326,35 @@ System.out.println("$% Old Name = " + kp.selectedButton.getName() + " new Name =
 	 * @param text the text of JMenu, rather than the name of JMenu 
 	 * @return
 	 */
+	
 	private char getPitchValueByName(String text) {
 		char pitch = '0';
-		if(text.equals(mnNewMenu_S1.getText()) || text.equals(mnNewMenu_S1.getText())) {
-			pitch = MyButton.PITCH_1;
-		} else if(text.equals(mnNewMenu_S2.getText()) || text.equals(mnNewMenu_S2.getText())) {
-			pitch = MyButton.PITCH_2;
-		} else if(text.equals(mnNewMenu_X3.getText())) {
-			pitch = MyButton.PITCH_3;
-		} else if(text.equals(mnNewMenu_S4.getText()) || text.equals(mnNewMenu_S4.getText())) {
-			pitch = MyButton.PITCH_4;
-		} else if(text.equals(mnNewMenu_S5.getText()) || text.equals(mnNewMenu_S5.getText())) {
-			pitch = MyButton.PITCH_5;
-		} else if(text.equals(mnNewMenu_S6.getText()) || text.equals(mnNewMenu_S6.getText())) {
-			pitch = MyButton.PITCH_6;
-		} else if(text.equals(mnNewMenu_X7.getText())) {
-			pitch = MyButton.PITCH_7;
+		if(text.equals(mnNewMenu_A.getText())) {
+			pitch = MyButton.PITCH_A;
+		} else if(text.equals(mnNewMenu_B.getText())) {
+			pitch = MyButton.PITCH_B;
+		} else if(text.equals(mnNewMenu_C.getText())) {
+			pitch = MyButton.PITCH_C;
+		} else if(text.equals(mnNewMenu_D.getText())) {
+			pitch = MyButton.PITCH_D;
+		} else if(text.equals(mnNewMenu_E.getText())) {
+			pitch = MyButton.PITCH_E;
+		} else if(text.equals(mnNewMenu_F.getText())) {
+			pitch = MyButton.PITCH_F;
+		} else if(text.equals(mnNewMenu_G.getText())) {
+			pitch = MyButton.PITCH_G;
+		} else if(text.equals(mnNewMenu_H.getText())) {
+			pitch = MyButton.PITCH_H;
+		} else if(text.equals(mnNewMenu_I.getText())) {
+			pitch = MyButton.PITCH_I;
+		} else if(text.equals(mnNewMenu_J.getText())) {
+			pitch = MyButton.PITCH_J;
+		} else if(text.equals(mnNewMenu_K.getText())) {
+			pitch = MyButton.PITCH_K;
+		} else if(text.equals(mnNewMenu_L.getText())) {
+			pitch = MyButton.PITCH_L;
 		}
 		return pitch;
-	}
-	
-	
-	/**
-	 * 
-	 * @param text the text of JMenu
-	 * @return
-	 */
-	private char getSharpValueByName(String text) {
-		if(text.length() == 1) {
-			return 'X';
-		} else if(text.length() == 2) {
-			return 'S';
-		}
-		return 'N';
 	}
 	
 	public void setSelectedByName(String name) {
@@ -370,15 +363,15 @@ System.out.println("$% Old Name = " + kp.selectedButton.getName() + " new Name =
 			System.out.println("The name is empty");
 			return;
 		}
-		char sharp = sharp(name);
-		if(sharp == MyButton.N) {
+		char direction = direction(name);
+		if(direction == MyButton.N) {
 			return;
 		}
 		
 		char side = side(name);
 		char pitch = pitch(name);
 		sideCase(side);
-		pitchCase(pitch, sharp);
+		pitchCase(pitch);
 		
 		/*
 		 * Shows the octave window on actionPerformed();
@@ -387,44 +380,44 @@ System.out.println("$% Old Name = " + kp.selectedButton.getName() + " new Name =
 //		octaveCase(octave, findSelectedMenuOnPitch(mnNewMenu_PitchOctave), true);
 	}
 	
-	private void pitchCase(char pitch, char sharp) {
+	private void pitchCase(char pitch) {
 		switch(pitch) {
-		case MyButton.PITCH_1 : 
-			sharpCase(sharp, mnNewMenu_S1, mnNewMenu_X1);
+		case MyButton.PITCH_A : 
+			setSelectedByIcon(mnNewMenu_A, true);
 			break;
-		case MyButton.PITCH_2 :
-			sharpCase(sharp, mnNewMenu_S2, mnNewMenu_X2);
+		case MyButton.PITCH_B :
+			setSelectedByIcon(mnNewMenu_B, true);
 			break;
-		case MyButton.PITCH_3 : 
-			sharpCase(sharp, null, mnNewMenu_X3);
+		case MyButton.PITCH_C : 
+			setSelectedByIcon(mnNewMenu_C, true);
 			break;
-		case MyButton.PITCH_4 : 
-			sharpCase(sharp, mnNewMenu_S4, mnNewMenu_X4);
+		case MyButton.PITCH_D : 
+			setSelectedByIcon(mnNewMenu_D, true);
 			break;
-		case MyButton.PITCH_5 : 
-			sharpCase(sharp, mnNewMenu_S5, mnNewMenu_X5);
+		case MyButton.PITCH_E : 
+			setSelectedByIcon(mnNewMenu_E, true);
 			break;
-		case MyButton.PITCH_6 : 
-			sharpCase(sharp, mnNewMenu_S6, mnNewMenu_X6);
+		case MyButton.PITCH_F : 
+			setSelectedByIcon(mnNewMenu_F, true);
 			break;
-		case MyButton.PITCH_7 : 
-			sharpCase(sharp, null, mnNewMenu_X7);
+		case MyButton.PITCH_G :
+			setSelectedByIcon(mnNewMenu_G, true);
 			break;
-		}
-	}
-	
-	/*
-	 * sharp from pitch
-	 */
-	private void sharpCase(char sharp, JMenu menuS, JMenu menuX) {
-		if(menuS == null) {
-			setSelectedByIcon(menuX, true);
-			return;
-		}
-		if(sharp == MyButton.S) {
-			setSelectedByIcon(menuS, true);
-		} else if(sharp == MyButton.X) {
-			setSelectedByIcon(menuX, true);
+		case MyButton.PITCH_H : 
+			setSelectedByIcon(mnNewMenu_H, true);
+			break;
+		case MyButton.PITCH_I :
+			setSelectedByIcon(mnNewMenu_I, true);
+			break;
+		case MyButton.PITCH_J :
+			setSelectedByIcon(mnNewMenu_J, true);
+			break;
+		case MyButton.PITCH_K :
+			setSelectedByIcon(mnNewMenu_K, true);
+			break;
+		case MyButton.PITCH_L :
+			setSelectedByIcon(mnNewMenu_L, true);
+			break;
 		}
 	}
 	
@@ -445,11 +438,11 @@ System.out.println("$% Old Name = " + kp.selectedButton.getName() + " new Name =
 	
 	private void octaveCase(char octave, JMenu menus, boolean select) {
 		int intOctave = Integer.parseInt(String.valueOf(octave));
-		setSelectedByIcon(menus.getItem(intOctave), select);
+		setSelectedByIcon(menus.getItem(MyButton.NUM_OCTAVES-intOctave), select);
 	}
 	
-	private static char sharp(String name) {
-		return name.charAt(MyButton.SHARP_INDEX);
+	private static char direction(String name) {
+		return name.charAt(MyButton.DIRECTION_INDEX);
 	}
 	
 	private static char side(String name) {

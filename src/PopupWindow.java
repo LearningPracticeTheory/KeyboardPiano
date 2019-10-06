@@ -49,18 +49,18 @@ public class PopupWindow {
 		addPopup(myButton, popupMenu);
 		popupMenu.add(kp.popupWindowManager.mnNewMenu_PitchOctave);
 		
-		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_X1);
-		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_S1);
-		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_X2);
-		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_S2);
-		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_X3);
-		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_X4);
-		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_S4);
-		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_X5);
-		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_S5);
-		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_X6);
-		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_S6);
-		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_X7);
+		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_A);
+		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_B);
+		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_C);
+		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_D);
+		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_E);
+		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_F);
+		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_G);
+		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_H);
+		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_I);
+		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_J);
+		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_K);
+		kp.popupWindowManager.mnNewMenu_PitchOctave.add(kp.popupWindowManager.mnNewMenu_L);
 		
 		kp.popupWindowManager.unselectAllItems(kp.popupWindowManager.mnNewMenu_PitchOctave);
 		

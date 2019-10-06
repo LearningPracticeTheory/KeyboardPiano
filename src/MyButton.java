@@ -13,13 +13,15 @@ import javax.swing.SwingConstants;
 public class MyButton extends JToggleButton {
 
 	private static final long serialVersionUID = 1L;
-	public static final int SHARP_INDEX = 0;
-	public static final int SIDE_INDEX = 1; 
-	public static final int COLOR_INDEX = 2;
-	public static final int DIRECTION_INDEX = 3;
-	public static final int TYPE_INDEX = 4;
-	public static final int PITCH_INDEX = 5; //pitch
-	public static final int OCTAVE_INDEX = 7;//octave
+	
+	public static final int SIDE_INDEX = 0; 
+	public static final int COLOR_INDEX = 1;
+	public static final int DIRECTION_INDEX = 2;
+	public static final int TYPE_INDEX = 3;
+	public static final int PITCH_INDEX = 4; //pitch
+	
+	//underline index = 5;
+	public static final int OCTAVE_INDEX = 6;//octave/name
 	public static final char N = 'N';
 	public static final char S = 'S';
 	public static final char X = 'X';
@@ -51,23 +53,29 @@ public class MyButton extends JToggleButton {
 	public static final char L = 'L';
 	public static final char R = 'R';
 	
-	public static final char PITCH_1 = '1'; //C
-	public static final char PITCH_2 = '2'; //D
-	public static final char PITCH_3 = '3'; //E
-	public static final char PITCH_4 = '4'; //F
-	public static final char PITCH_5 = '5'; //G
-	public static final char PITCH_6 = '6'; //A
-	public static final char PITCH_7 = '7'; //B
+	public static final char PITCH_A = 'A'; //  1
+	public static final char PITCH_B = 'B'; // #1
+	public static final char PITCH_C = 'C'; //  2
+	public static final char PITCH_D = 'D'; // #2
+	public static final char PITCH_E = 'E'; //  3
+	public static final char PITCH_F = 'F'; //  4
+	public static final char PITCH_G = 'G'; // #4
+	public static final char PITCH_H = 'H'; //  5
+	public static final char PITCH_I = 'I'; // #5
+	public static final char PITCH_J = 'J'; //  6
+	public static final char PITCH_K = 'K'; // #6
+	public static final char PITCH_L = 'L'; //  7
 	
-	public static final char OCTAVE_0 = '0'; // -4
-	public static final char OCTAVE_1 = '1'; // -3
-	public static final char OCTAVE_2 = '2'; // -2
-	public static final char OCTAVE_3 = '3'; // -1
-	public static final char OCTAVE_4 = '4'; // +0
-	public static final char OCTAVE_5 = '5'; // +1
-	public static final char OCTAVE_6 = '6'; // +2
-	public static final char OCTAVE_7 = '7'; // +3
 	public static final char OCTAVE_8 = '8'; // +4
+	public static final char OCTAVE_7 = '7'; // +3
+	public static final char OCTAVE_6 = '6'; // +2
+	public static final char OCTAVE_5 = '5'; // +1
+	public static final char OCTAVE_4 = '4'; // +0
+	public static final char OCTAVE_3 = '3'; // -1
+	public static final char OCTAVE_2 = '2'; // -2
+	public static final char OCTAVE_1 = '1'; // -3
+	public static final char OCTAVE_0 = '0'; // -4
+	public static final int NUM_OCTAVES = 8;
 	
 	private KeyboardPiano kp;
 	public String name = null;
@@ -89,6 +97,12 @@ public class MyButton extends JToggleButton {
 	 */
 	MyButton(KeyboardPiano kp, String text, String name) {
 		super(text);
+		
+		/*
+		 * output every brown name
+		 */
+		System.out.println("NNN" + name.charAt(TYPE_INDEX) + "N_" + text);
+		
 		this.name = name;
         setOpaque(false);
         /*
@@ -116,7 +130,7 @@ public class MyButton extends JToggleButton {
 		wavPath = getWavPath(name);
 		imageDown = new ImageIcon(imageDownPath);
 		
-		System.out.println("* " + imageUpPath + "\n" + imageDownPath);
+//		System.out.println("* " + imageUpPath + "\n" + imageDownPath);
 		
 		modifyImageByType(imageName.charAt(TYPE_INDEX));
 	}
@@ -216,7 +230,7 @@ public class MyButton extends JToggleButton {
 		if(name.charAt(DIRECTION_INDEX) == N) {
 			return null;
 		}
-		String tmp = String.valueOf(name.charAt(SHARP_INDEX));
+		String tmp = "";
 		tmp += String.valueOf(name.charAt(PITCH_INDEX));
 		tmp += String.valueOf(name.charAt(OCTAVE_INDEX));
 		return tmp;
@@ -245,7 +259,7 @@ public class MyButton extends JToggleButton {
 	}
 
 	private String getPath(String upImageName) {
-		return kp.getPicPath(upImageName);
+		return kp.getImgPath(upImageName);
 	}
 	
 	private char getType() {

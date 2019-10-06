@@ -285,7 +285,13 @@ System.out.println(outputName);
     	 * cut N type
     	 */
     	
-//    	createDirectionsByType("N");
+    	/*
+    	cutInputPath = "./img_split/N/";
+		cutOutputPath = "./img_split/N_Zone/";
+		splitInputPath = cutOutputPath;
+		splitOutputPath = "./img_split/N_Type/";
+    	createDirectionsByType("N");
+    	*/
 
     	int x = 368;
     	int y = 494;

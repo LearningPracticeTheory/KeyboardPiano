@@ -66,40 +66,40 @@ public class KeyboardHook {
 				select(kp.tglbtnEsc, type);
 				break;
 			case KeyboardPiano.VK_F1 :
-				select(kp.tglbtnF_1, type);
+				select(kp.tglbtn_F1, type);
 				break;
 			case KeyboardPiano.VK_F2 :
-				select(kp.tglbtnF_2, type);
+				select(kp.tglbtn_F2, type);
 				break;
 			case KeyboardPiano.VK_F3 :
-				select(kp.tglbtnF_3, type);
+				select(kp.tglbtn_F3, type);
 				break;
 			case KeyboardPiano.VK_F4 :
-				select(kp.tglbtnF_4, type);
+				select(kp.tglbtn_F4, type);
 				break;
 			case KeyboardPiano.VK_F5 :
-				select(kp.tglbtnF_5, type);
+				select(kp.tglbtn_F5, type);
 				break;
 			case KeyboardPiano.VK_F6 :
-				select(kp.tglbtnF_6, type);
+				select(kp.tglbtn_F6, type);
 				break;
 			case KeyboardPiano.VK_F7 :
-				select(kp.tglbtnF_7, type);
+				select(kp.tglbtn_F7, type);
 				 break;
 			case KeyboardPiano.VK_F8 :
-				select(kp.tglbtnF_8, type);
+				select(kp.tglbtn_F8, type);
 				 break;
 			case KeyboardPiano.VK_F9 :
-				select(kp.tglbtnF_9, type);
+				select(kp.tglbtn_F9, type);
 				 break;
 			case KeyboardPiano.VK_F10 :
-				select(kp.tglbtnF_10, type);
+				select(kp.tglbtn_F10, type);
 				 break;
 			case KeyboardPiano.VK_F11 :
-				select(kp.tglbtnF_11, type);
+				select(kp.tglbtn_F11, type);
 				 break;
 			case KeyboardPiano.VK_F12 :
-				select(kp.tglbtnF_12, type);
+				select(kp.tglbtn_F12, type);
 				break;
 				
 			case KeyboardPiano.VK_BACK_QUOTE :
